@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Kuhn Capital Partners</title>
+<meta name="description" content="Comprehensive wealth management services: investment management, tax planning, estate planning, insurance, corporate retirement, and institutional investing. Oak Brook, IL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&family=Rambla:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Rambla', sans-serif;
+  font-size: 18px;
+  line-height: 1.57;
+  color: #151515;
+  background: #FFFFFE;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ─── TOKENS ──────────────────────────────────────── */
+:root {
+  --navy:      #022C58;
+  --mid-navy:  #20569C;
+  --gold:      #FFB921;
+  --sky:       #B4E2FF;
+  --white:     #FFFFFE;
+  --off-white: #F4F5F7;
+  --black:     #151515;
+  --gray:      #6B7280;
+  --font-d:    'Rubik', sans-serif;
+  --font-b:    'Rambla', sans-serif;
+  --ease:      cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* ─── LAYOUT ──────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.container--wide { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+/* ─── TYPOGRAPHY ──────────────────────────────────── */
+.display-xl {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.93;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.display-lg {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+.display-md {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.eyebrow {
+  display: block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.eyebrow--dark { color: var(--navy); }
+
+/* ─── BUTTONS ─────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 15px 32px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: transform 0.5s var(--ease), background 0.2s, color 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover { transform: scale(0.98); }
+.btn-gold  { background: var(--gold); border-color: var(--navy); color: var(--black); }
+.btn-navy  { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.btn-white { background: var(--white); border-color: var(--white); color: var(--navy); }
+
+/* ─── NAV ─────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  background: var(--navy);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.nav-logo img { height: 34px; }
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 28px;
+}
+.nav-links a {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.78);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-cta { flex-shrink: 0; }
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--white);
+}
+.nav-burger svg { width: 24px; height: 24px; }
+
+/* Mobile nav overlay */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 72px 0 0;
+  background: var(--navy);
+  z-index: 800;
+  flex-direction: column;
+  padding: 40px;
+  gap: 24px;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 24px;
+}
+.mobile-nav a:hover { color: var(--gold); }
+
+/* ─── PAGE HERO ───────────────────────────────────── */
+.page-hero {
+  padding: 160px 0 100px;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,185,33,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(180,226,255,0.06) 0%, transparent 50%);
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero h1 { color: var(--white); margin-bottom: 24px; max-width: 900px; }
+.page-hero h1 span { color: var(--gold); }
+.page-hero p {
+  font-size: clamp(17px, 1.8vw, 21px);
+  color: rgba(255,255,255,0.78);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* ─── SERVICES GRID ───────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(2,44,88,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.service-card {
+  background: var(--white);
+  padding: 48px 40px;
+  transition: background 0.25s var(--ease);
+  position: relative;
+  cursor: default;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 40px; right: 40px;
+  height: 3px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease);
+}
+.service-card:hover { background: var(--off-white); }
+.service-card:hover::after { transform: scaleX(1); }
+.service-number {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--navy);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--gold);
+  transition: transform 0.3s var(--ease);
+}
+.service-card:hover .service-icon { transform: scale(1.08); }
+.service-icon svg { width: 26px; height: 26px; }
+.service-card h3 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.service-card p {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+.service-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.service-bullets li {
+  font-size: 14px;
+  color: #444;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.service-bullets li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ─── APPROACH STRIP ──────────────────────────────── */
+.approach-strip {
+  background: var(--sky);
+  padding: 80px 0;
+}
+.approach-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.approach-text h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3vw, 40px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1;
+}
+.approach-text p {
+  font-size: 17px;
+  color: rgba(2,44,88,0.8);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.approach-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.step-num {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--navy);
+  opacity: 0.18;
+  flex-shrink: 0;
+  width: 48px;
+}
+.step-body h4 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.step-body p {
+  font-size: 15px;
+  color: rgba(2,44,88,0.75);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ─── FIDUCIARY BANNER ────────────────────────────── */
+.fiduciary-banner {
+  background: var(--navy);
+  padding: 80px 0;
+  text-align: center;
+}
+.fiduciary-banner h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 44px);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.fiduciary-banner h2 span { color: var(--gold); }
+.fiduciary-banner p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.72);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ─── CTA STRIP ───────────────────────────────────── */
+.cta-strip {
+  background: var(--gold);
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-strip h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 44px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.cta-strip p {
+  font-size: 18px;
+  color: rgba(2,44,88,0.75);
+  margin-bottom: 36px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-strip .btn-navy { font-size: 16px; padding: 18px 40px; }
+
+/* ─── SECTIONS ────────────────────────────────────── */
+.s-light { background: var(--white); }
+.s-off   { background: var(--off-white); }
+.section-pad { padding: 100px 0; }
+
+/* ─── FOOTER ──────────────────────────────────────── */
+.site-footer {
+  background: var(--black);
+  color: rgba(255,255,255,0.6);
+  padding: 80px 0 40px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+.footer-brand img { height: 30px; margin-bottom: 20px; }
+.footer-tagline {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.footer-brand p { font-size: 14px; line-height: 1.65; }
+.footer-col h4 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-contact p { font-size: 14px; line-height: 1.8; }
+.footer-contact a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer-contact a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-legal { font-size: 11px; line-height: 1.7; max-width: 900px; color: rgba(255,255,255,0.35); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 1100px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: block; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .section-pad { padding: 72px 0; }
+  .page-hero { padding: 130px 0 72px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .nav-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ───────────────────────────────────────── -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" aria-label="Kuhn Capital Partners Home">
+      <img src="../assets/KUHN-logo-on-white.svg" alt="Kuhn Capital Partners">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../energy/">Energy</a></li>
+      <li><a href="../wealth-management/">Wealth Management</a></li>
+      <li><a href="../structured-notes/">Structured Notes</a></li>
+      <li><a href="../webinar/">Join a Webinar</a></li>
+      <li><a href="../services/" class="active">Services</a></li>
+      <li><a href="../about/">About</a></li>
+    </ul>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold nav-cta" target="_blank" rel="noopener">Schedule a Call</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE NAV ────────────────────────────────── -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="../energy/">Energy</a>
+  <a href="../wealth-management/">Wealth Management</a>
+  <a href="../structured-notes/">Structured Notes</a>
+  <a href="../webinar/">Join a Webinar</a>
+  <a href="../services/" style="color:var(--gold);">Services</a>
+  <a href="../about/">About</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener" style="color:var(--gold);">Schedule a Call →</a>
+</div>
+
+<!-- ─── PAGE HERO ──────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">What We Do</span>
+    <h1 class="display-xl">
+      Full-Spectrum<br><span>Wealth</span><br>Management
+    </h1>
+    <p>Seven service disciplines, one integrated plan. Because a single strategy was never enough to protect and grow what you've built.</p>
+  </div>
+</section>
+
+<!-- ─── SERVICES GRID ───────────────────────────────── -->
+<section class="s-light section-pad">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="eyebrow eyebrow--dark">Our Services</span>
+      <h2 class="display-md" style="color:var(--navy);">Every Angle. Every Stage.</h2>
+    </div>
+    <div class="services-grid">
+
+      <!-- 01 Wealth Management -->
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Wealth Management</h3>
+        <p>Comprehensive investment management built around your risk tolerance, time horizon, and long-term goals — not a model portfolio that wasn't designed for you.</p>
+        <ul class="service-bullets">
+          <li>Portfolio construction &amp; asset allocation</li>
+          <li>Fiduciary investment oversight</li>
+          <li>Alternative investments &amp; structured products</li>
+          <li>Quarterly performance reviews</li>
+        </ul>
+      </div>
+
+      <!-- 02 Tax Planning -->
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <h3>Tax Planning</h3>
+        <p>Tax reduction isn't an afterthought — it's engineered into the plan. We identify strategies most advisors overlook, including energy deductions and structured note tax treatment.</p>
+        <ul class="service-bullets">
+          <li>Intangible Drilling Cost (IDC) deductions</li>
+          <li>Tax-loss harvesting &amp; gain deferral</li>
+          <li>Roth conversion strategies</li>
+          <li>Business owner tax reduction planning</li>
+        </ul>
+      </div>
+
+      <!-- 03 Estate Planning -->
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Estate Planning</h3>
+        <p>Wealth doesn't transfer automatically. We work alongside your estate attorney to make sure your plan is structured so more of what you built reaches the people you intend.</p>
+        <ul class="service-bullets">
+          <li>Trust &amp; beneficiary strategy coordination</li>
+          <li>Generational wealth transfer planning</li>
+          <li>Business succession planning</li>
+          <li>Charitable giving &amp; donor-advised funds</li>
+        </ul>
+      </div>
+
+      <!-- 04 Insurance Services -->
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3>Insurance Services</h3>
+        <p>Insurance done right is a risk management tool, not a sales product. We audit your existing coverage and close gaps before they become catastrophic losses.</p>
+        <ul class="service-bullets">
+          <li>Life insurance needs analysis</li>
+          <li>Long-term care planning</li>
+          <li>Disability income protection</li>
+          <li>Annuity &amp; income rider evaluation</li>
+        </ul>
+      </div>
+
+      <!-- 05 Corporate Retirement -->
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+        <h3>Corporate Retirement</h3>
+        <p>Plan design that works for both the business and its employees — with fiduciary oversight that protects the company and maximizes participation at every level.</p>
+        <ul class="service-bullets">
+          <li>401(k) &amp; 403(b) plan design</li>
+          <li>ERISA fiduciary services</li>
+          <li>Investment menu curation &amp; monitoring</li>
+          <li>Employee financial wellness programs</li>
+        </ul>
+      </div>
+
+      <!-- 06 Financial Planning -->
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h.01M7 20v-4"/><path d="M12 20v-8"/><path d="M17 20v-12"/>
+            <path d="M22 4l-10 10-4-4-6 6"/>
+          </svg>
+        </div>
+        <h3>Financial Planning</h3>
+        <p>A complete blueprint that shows where you stand today, where you want to go, and what has to be true for the plan to work — stress-tested across scenarios.</p>
+        <ul class="service-bullets">
+          <li>Retirement income projections</li>
+          <li>Cash flow &amp; savings rate analysis</li>
+          <li>Social Security optimization</li>
+          <li>College funding &amp; 529 planning</li>
+        </ul>
+      </div>
+
+      <!-- 07 Institutional Investing -->
+      <div class="service-card" style="grid-column: span 1;">
+        <div class="service-number">07</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+            <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+            <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+            <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+          </svg>
+        </div>
+        <h3>Institutional Investing</h3>
+        <p>Access to institutional-quality investment structures — structured notes, private placements, and direct participation programs — typically reserved for pensions and endowments.</p>
+        <ul class="service-bullets">
+          <li>Structured notes &amp; principal protection</li>
+          <li>Oil &amp; gas direct participation programs</li>
+          <li>Private credit &amp; alternative income</li>
+          <li>Accredited investor opportunities</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── APPROACH STRIP ──────────────────────────────── -->
+<section class="approach-strip">
+  <div class="container">
+    <div class="approach-inner">
+      <div class="approach-text">
+        <span class="eyebrow eyebrow--dark">Our Process</span>
+        <h2>How We Build Your Plan</h2>
+        <p>Every KCP engagement follows the same four-step process — because structure is what separates a real plan from good intentions.</p>
+        <p>We start with the downside, build for multiple environments, and revisit the plan every time your life changes.</p>
+      </div>
+      <div class="approach-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h4>Discovery — Where You Stand</h4>
+            <p>Full inventory of assets, liabilities, income, goals, and risk tolerance. We find the gaps before recommending anything.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h4>Stress Test — What Could Go Wrong</h4>
+            <p>We model the plan against market downturns, tax law changes, long-term care scenarios, and sequence-of-returns risk.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h4>Strategy — Build for All Environments</h4>
+            <p>Portfolio construction, tax optimization, and income planning designed to hold up whether markets cooperate or not.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h4>Monitor &amp; Adjust — Stay on Track</h4>
+            <p>Quarterly reviews, proactive rebalancing, and adjustments when life changes. Your plan lives and breathes with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FIDUCIARY BANNER ────────────────────────────── -->
+<section class="fiduciary-banner">
+  <div class="container">
+    <h2>We Are <span>Legally Required</span> to Act in Your Best Interest</h2>
+    <p>As a registered investment adviser, Kuhn Capital Partners operates under the fiduciary standard at all times — not just when it's convenient, but in every recommendation we make.</p>
+    <a href="../about/" class="btn btn-gold">Learn More About Our Firm</a>
+  </div>
+</section>
+
+<!-- ─── CTA STRIP ───────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Let's Talk About Your Situation</h2>
+    <p>A 30-minute call costs you nothing. Staying in the wrong plan costs you everything.</p>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-navy" target="_blank" rel="noopener">Schedule a Free Consultation</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/KUHN-logo-on-white.svg" alt="Kuhn Capital Partners">
+        <div class="footer-tagline">Protect · Grow · Reduce Taxes</div>
+        <p>Independent fiduciary wealth management for high-net-worth individuals, business owners, and families. Based in Oak Brook, IL. Serving clients nationwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Strategies</h4>
+        <ul>
+          <li><a href="../energy/">Energy &amp; Tax Advantage</a></li>
+          <li><a href="../wealth-management/">Wealth Management</a></li>
+          <li><a href="../structured-notes/">Structured Notes</a></li>
+          <li><a href="../webinar/">Join a Webinar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about/">About Us</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../podcast/">Podcast</a></li>
+          <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Schedule a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:4698955699">(469) 895-5699</a><br>
+          Oak Brook, IL<br><br>
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Book a Meeting →</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice or a solicitation. Past performance is not indicative of future results. Investments involve risk, including possible loss of principal. Please consult with a qualified professional before making any investment decision.</p>
+      <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ─────────────────────────────────────── -->
+<script>
+/* Mobile Nav Toggle */
+const burger = document.getElementById('nav-burger');
+const mobileNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', isOpen);
+  mobileNav.setAttribute('aria-hidden', !isOpen);
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  });
+});
+</script>
+</body>
+</html>

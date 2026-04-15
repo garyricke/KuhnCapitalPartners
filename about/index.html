@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Kuhn Capital Partners</title>
+<meta name="description" content="Boutique by design. Independent fiduciary wealth management built around discipline, clear thinking, and accountability. Meet the Kuhn Capital Partners team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&family=Rambla:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & BASE ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Rambla', sans-serif;
+  font-size: 18px;
+  line-height: 1.57;
+  color: #151515;
+  background: #FFFFFE;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* ─── TOKENS ──────────────────────────────────────── */
+:root {
+  --navy:      #022C58;
+  --mid-navy:  #20569C;
+  --gold:      #FFB921;
+  --sky:       #B4E2FF;
+  --white:     #FFFFFE;
+  --off-white: #F4F5F7;
+  --black:     #151515;
+  --gray:      #6B7280;
+  --font-d:    'Rubik', sans-serif;
+  --font-b:    'Rambla', sans-serif;
+  --ease:      cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* ─── LAYOUT ──────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.container--wide { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+/* ─── TYPOGRAPHY ──────────────────────────────────── */
+.display-xl {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.93;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+.display-lg {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(36px, 4.5vw, 56px);
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+.display-md {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.eyebrow {
+  display: block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.eyebrow--dark { color: var(--navy); }
+
+/* ─── BUTTONS ─────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 15px 32px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: transform 0.5s var(--ease), background 0.2s, color 0.2s;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover { transform: scale(0.98); }
+.btn-gold  { background: var(--gold); border-color: var(--navy); color: var(--black); }
+.btn-navy  { background: var(--navy); border-color: var(--navy); color: var(--white); }
+.btn-white { background: var(--white); border-color: var(--white); color: var(--navy); }
+.btn-outline { background: transparent; border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+/* ─── NAV ─────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 900;
+  background: var(--navy);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.nav-logo img { height: 34px; }
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 28px;
+}
+.nav-links a {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.78);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-cta { flex-shrink: 0; }
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--white);
+}
+.nav-burger svg { width: 24px; height: 24px; }
+
+/* Mobile nav overlay */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 72px 0 0;
+  background: var(--navy);
+  z-index: 800;
+  flex-direction: column;
+  padding: 40px;
+  gap: 24px;
+  overflow-y: auto;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 24px;
+}
+.mobile-nav a:hover { color: var(--gold); }
+
+/* ─── PAGE HERO ───────────────────────────────────── */
+.page-hero {
+  padding: 160px 0 100px;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,185,33,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(180,226,255,0.06) 0%, transparent 50%);
+}
+.page-hero .container { position: relative; z-index: 1; }
+.page-hero .eyebrow { color: var(--gold); }
+.page-hero h1 { color: var(--white); margin-bottom: 24px; max-width: 900px; }
+.page-hero h1 span { color: var(--gold); }
+.page-hero p {
+  font-size: clamp(17px, 1.8vw, 21px);
+  color: rgba(255,255,255,0.78);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ─── ABOUT BODY ──────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-copy p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2a2a2a;
+  margin-bottom: 24px;
+}
+.about-copy p:last-child { margin-bottom: 0; }
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pillar-card {
+  background: var(--off-white);
+  border-radius: 10px;
+  padding: 28px 32px;
+  border-left: 4px solid var(--gold);
+}
+.pillar-card h3 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.pillar-card p {
+  font-size: 16px;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+/* ─── CONVICTION CALLOUT ──────────────────────────── */
+.conviction-callout {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 60px 64px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.conviction-callout blockquote {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.conviction-callout blockquote span { color: var(--gold); }
+.conviction-callout cite {
+  font-style: normal;
+  font-family: var(--font-b);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ─── TEAM ────────────────────────────────────────── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.team-card {
+  text-align: center;
+}
+.team-photo-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--off-white);
+  border: 3px solid var(--gold);
+}
+.team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s var(--ease);
+}
+.team-card:hover .team-photo-wrap img { transform: scale(1.06); }
+.team-name {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.team-title {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.team-bio {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.6;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* ─── NUMBERS ─────────────────────────────────────── */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.number-item {
+  background: var(--navy);
+  padding: 56px 32px;
+  text-align: center;
+}
+.number-item:first-child { border-radius: 12px 0 0 12px; }
+.number-item:last-child { border-radius: 0 12px 12px 0; }
+.number-val {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.number-label {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ─── INDEPENDENCE ────────────────────────────────── */
+.independence-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.independence-text h2 { color: var(--navy); margin-bottom: 28px; }
+.independence-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #2a2a2a;
+  margin-bottom: 20px;
+}
+.independence-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.badge-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--off-white);
+  border-radius: 10px;
+  border: 1px solid rgba(2,44,88,0.08);
+}
+.badge-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.badge-icon svg { width: 22px; height: 22px; }
+.badge-text h4 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.badge-text p {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* ─── CTA STRIP ───────────────────────────────────── */
+.cta-strip {
+  background: var(--gold);
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-strip h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: clamp(28px, 3.5vw, 44px);
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.cta-strip p {
+  font-size: 18px;
+  color: rgba(2,44,88,0.75);
+  margin-bottom: 36px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-strip .btn-navy { font-size: 16px; padding: 18px 40px; }
+
+/* ─── SECTIONS ────────────────────────────────────── */
+.s-light { background: var(--white); }
+.s-off   { background: var(--off-white); }
+.s-dark  { background: var(--navy); }
+.s-sky   { background: var(--sky); }
+.section-pad { padding: 100px 0; }
+
+/* ─── FOOTER ──────────────────────────────────────── */
+.site-footer {
+  background: var(--black);
+  color: rgba(255,255,255,0.6);
+  padding: 80px 0 40px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+.footer-brand img { height: 30px; margin-bottom: 20px; }
+.footer-tagline {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.footer-brand p { font-size: 14px; line-height: 1.65; }
+.footer-col h4 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-contact p { font-size: 14px; line-height: 1.8; }
+.footer-contact a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer-contact a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-legal { font-size: 11px; line-height: 1.7; max-width: 900px; color: rgba(255,255,255,0.35); }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media (max-width: 1100px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: block; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+  .number-item:first-child { border-radius: 12px 0 0 0; }
+  .number-item:nth-child(2) { border-radius: 0 12px 0 0; }
+  .number-item:nth-child(3) { border-radius: 0 0 0 12px; }
+  .number-item:last-child { border-radius: 0 0 12px 0; }
+  .independence-row { grid-template-columns: 1fr; gap: 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .conviction-callout { padding: 48px 40px; }
+}
+@media (max-width: 640px) {
+  .container { padding: 0 20px; }
+  .section-pad { padding: 72px 0; }
+  .page-hero { padding: 130px 0 72px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .numbers-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; }
+  .conviction-callout { padding: 36px 24px; }
+  .nav-inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ───────────────────────────────────────── -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" aria-label="Kuhn Capital Partners Home">
+      <img src="../assets/KUHN-logo-on-white.svg" alt="Kuhn Capital Partners">
+    </a>
+    <ul class="nav-links">
+      <li><a href="../energy/">Energy</a></li>
+      <li><a href="../wealth-management/">Wealth Management</a></li>
+      <li><a href="../structured-notes/">Structured Notes</a></li>
+      <li><a href="../webinar/">Join a Webinar</a></li>
+      <li><a href="../services/">Services</a></li>
+      <li><a href="../about/" class="active">About</a></li>
+    </ul>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold nav-cta" target="_blank" rel="noopener">Schedule a Call</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE NAV ────────────────────────────────── -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <a href="../energy/">Energy</a>
+  <a href="../wealth-management/">Wealth Management</a>
+  <a href="../structured-notes/">Structured Notes</a>
+  <a href="../webinar/">Join a Webinar</a>
+  <a href="../services/">Services</a>
+  <a href="../about/" style="color:var(--gold);">About</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener" style="color:var(--gold);">Schedule a Call →</a>
+</div>
+
+<!-- ─── PAGE HERO ──────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About Kuhn Capital Partners</span>
+    <h1 class="display-xl">
+      Built on a<br><span>Simple</span><br>Conviction
+    </h1>
+    <p>Most investors are being underserved — not because of a lack of products, but a lack of discipline, clear thinking, and accountability.</p>
+  </div>
+</section>
+
+<!-- ─── ABOUT BODY ──────────────────────────────────── -->
+<section class="s-light section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <span class="eyebrow eyebrow--dark">Our Story</span>
+        <p>We built this firm around a simple conviction: most investors are being underserved.</p>
+        <p>Not because of a lack of products — but a lack of discipline, clear thinking, and accountability. What investors actually need is a better framework. One that shows them where they stand, where they're going, and what could go wrong along the way.</p>
+        <p>Kuhn Capital Partners is boutique by design. That's not a concession — it's the point. Every relationship is direct. Every strategy is intentional. Nothing gets pushed through a system that was never built for you.</p>
+        <p>We believe access matters. You shouldn't need an eight-figure net worth to get institutional-quality advice and portfolio construction. That standard has been reserved for pensions, endowments, and the ultra-wealthy for too long. We exist to bring that same level of thinking and discipline to individual investors.</p>
+        <p>Our approach starts with the downside. Before we think about upside, we define the risk. What breaks the plan? What needs to be true? What can't happen? From there, we build strategies designed to hold up across different environments — not just the one we hope plays out.</p>
+        <p><strong>Because a plan that can't survive uncertainty was never really a plan.</strong></p>
+      </div>
+      <div class="about-pillars">
+        <span class="eyebrow eyebrow--dark">What Sets Us Apart</span>
+        <div class="pillar-card">
+          <h3>Boutique by Design</h3>
+          <p>Small by choice. Every client relationship is direct — no layers, no hand-offs, no accounts lost in the shuffle.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Institutional Access</h3>
+          <p>We bring pension-level thinking and portfolio construction to individual investors who deserve the same standard.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Downside First</h3>
+          <p>We define risk before we reach for return. If a strategy can't survive uncertainty, it doesn't belong in the plan.</p>
+        </div>
+        <div class="pillar-card">
+          <h3>Aligned Incentives</h3>
+          <p>100% principal-owned. No private equity. No outside backers. We answer only to our clients — full stop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONVICTION CALLOUT ──────────────────────────── -->
+<section class="s-off section-pad">
+  <div class="container">
+    <div class="conviction-callout">
+      <blockquote>"Kuhn Capital Partners is <span>100% owned</span> by its principals. No private equity. No outside backers. No conflicting agenda."</blockquote>
+      <cite>— Our Independence Commitment</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BY THE NUMBERS ──────────────────────────────── -->
+<section class="s-dark section-pad">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center;display:block;margin-bottom:48px;">By the Numbers</span>
+    <div class="numbers-grid">
+      <div class="number-item">
+        <div class="number-val">20+</div>
+        <div class="number-label">Years of Experience</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">$500M+</div>
+        <div class="number-label">Assets Advised</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">14</div>
+        <div class="number-label">States Served</div>
+      </div>
+      <div class="number-item">
+        <div class="number-val">100%</div>
+        <div class="number-label">Fiduciary Standard</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INDEPENDENCE ────────────────────────────────── -->
+<section class="s-light section-pad">
+  <div class="container">
+    <div class="independence-row">
+      <div class="independence-text">
+        <span class="eyebrow eyebrow--dark">Our Independence</span>
+        <h2 class="display-md">The Foundation Isn't a Footnote</h2>
+        <p>Kuhn Capital Partners is 100% owned by its principals. No private equity. No outside backers. No conflicting agenda.</p>
+        <p>While much of the industry answers to someone else — parent companies, private equity owners, Wall Street distribution agreements — we answer only to our clients. That independence shapes every conversation, every recommendation, and every strategy we build.</p>
+      </div>
+      <div class="independence-badges">
+        <div class="badge-row">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="badge-text">
+            <h4>Registered Investment Adviser</h4>
+            <p>Fully registered fiduciary — legally required to act in your best interest.</p>
+          </div>
+        </div>
+        <div class="badge-row">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <div class="badge-text">
+            <h4>No Proprietary Products</h4>
+            <p>We never recommend what pays us most. Our shelves hold only what's right for you.</p>
+          </div>
+        </div>
+        <div class="badge-row">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="badge-text">
+            <h4>Team-Based Approach</h4>
+            <p>Multiple advisors across your plan. You're never dependent on one person.</p>
+          </div>
+        </div>
+        <div class="badge-row">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="badge-text">
+            <h4>Fee Transparent</h4>
+            <p>Clear, straightforward fees. No hidden charges. No commission surprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ────────────────────────────────────────── -->
+<section class="s-off section-pad">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="eyebrow">The People Behind the Plan</span>
+      <h2 class="display-md" style="color:var(--navy);">Our Team</h2>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-robert-kuhn-gem.png" alt="Robert Kuhn" loading="lazy">
+        </div>
+        <div class="team-name">Robert Kuhn</div>
+        <div class="team-title">Founder &amp; Managing Principal</div>
+        <p class="team-bio">Host of Destination Retirement on WGN Radio. Financial educator, strategist, and the driving voice behind KCP's mission to raise America's financial IQ.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-andrew-kuhn-gem.png" alt="Andrew Kuhn" loading="lazy">
+        </div>
+        <div class="team-name">Andrew Kuhn</div>
+        <div class="team-title">Principal &amp; Wealth Strategist</div>
+        <p class="team-bio">Specializes in tax-advantaged investment strategies and complex estate planning for business owners and high-income professionals.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-brian-phillips-gem.png" alt="Brian Phillips" loading="lazy">
+        </div>
+        <div class="team-name">Brian Phillips</div>
+        <div class="team-title">Senior Wealth Advisor</div>
+        <p class="team-bio">A seasoned advisor with deep expertise in retirement income planning and portfolio construction across multiple market cycles.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-eric-shaffer.png-gem.png" alt="Eric Shaffer" loading="lazy">
+        </div>
+        <div class="team-name">Eric Shaffer</div>
+        <div class="team-title">Wealth Advisor</div>
+        <p class="team-bio">Focuses on structured products, institutional-quality portfolio solutions, and serving clients navigating significant liquidity events.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-Alexa-Cirrincione-gem.png" alt="Alexa Cirrincione" loading="lazy">
+        </div>
+        <div class="team-name">Alexa Cirrincione</div>
+        <div class="team-title">Director of Client Relations</div>
+        <p class="team-bio">The connective tissue of the KCP client experience — ensuring every relationship runs smoothly from onboarding through ongoing service.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="../images/profile-Paige-Lacy-gem.png" alt="Paige Lacy" loading="lazy">
+        </div>
+        <div class="team-name">Paige Lacy</div>
+        <div class="team-title">Client Services Specialist</div>
+        <p class="team-bio">Dedicated to making sure every client interaction is responsive, organized, and reflects the white-glove standard KCP is built on.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA STRIP ───────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to Talk?</h2>
+    <p>No pitch. No pressure. Just a conversation about where you stand and where you want to go.</p>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-navy" target="_blank" rel="noopener">Schedule a Free Call</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ──────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="../assets/KUHN-logo-on-white.svg" alt="Kuhn Capital Partners">
+        <div class="footer-tagline">Protect · Grow · Reduce Taxes</div>
+        <p>Independent fiduciary wealth management for high-net-worth individuals, business owners, and families. Based in Oak Brook, IL. Serving clients nationwide.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Strategies</h4>
+        <ul>
+          <li><a href="../energy/">Energy &amp; Tax Advantage</a></li>
+          <li><a href="../wealth-management/">Wealth Management</a></li>
+          <li><a href="../structured-notes/">Structured Notes</a></li>
+          <li><a href="../webinar/">Join a Webinar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="../about/">About Us</a></li>
+          <li><a href="../services/">Services</a></li>
+          <li><a href="../podcast/">Podcast</a></li>
+          <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Schedule a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p>
+          <a href="tel:4698955699">(469) 895-5699</a><br>
+          Oak Brook, IL<br><br>
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Book a Meeting →</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice or a solicitation. Past performance is not indicative of future results. Investments involve risk, including possible loss of principal.</p>
+      <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ─────────────────────────────────────── -->
+<script>
+/* Mobile Nav Toggle */
+const burger = document.getElementById('nav-burger');
+const mobileNav = document.getElementById('mobile-nav');
+burger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', isOpen);
+  mobileNav.setAttribute('aria-hidden', !isOpen);
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileNav.setAttribute('aria-hidden', 'true');
+  });
+});
+</script>
+</body>
+</html>
