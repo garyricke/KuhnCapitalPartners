@@ -757,9 +757,137 @@ a { text-decoration: none; }
   .footer-nav { flex-direction: column; gap: 24px; }
   .footer-bottom { flex-direction: column; }
 }
+
+/* ─── LOCK SCREEN ─────────────────────────────────── */
+#lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #022C58;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  transition: opacity 0.45s ease;
+}
+#lock-screen.fade-out { opacity: 0; pointer-events: none; }
+.lock-box { width: 100%; max-width: 420px; text-align: center; }
+.lock-logo-wrap { margin-bottom: 48px; }
+.lock-logo-wrap img { height: 38px; margin: 0 auto; display: block; }
+.lock-tagline {
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #FFB921;
+  margin-top: 14px;
+}
+.lock-eyebrow {
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 32px;
+}
+#lock-pw {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 17px;
+  color: #fff;
+  outline: none;
+  letter-spacing: 0.1em;
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+  display: block;
+  box-sizing: border-box;
+}
+#lock-pw::placeholder { color: rgba(255,255,255,0.3); letter-spacing: 0.04em; }
+#lock-pw:focus { border-color: #FFB921; }
+.lock-submit {
+  width: 100%;
+  background: #FFB921;
+  border: 2px solid #022C58;
+  border-radius: 6px;
+  padding: 16px;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #151515;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.lock-submit:hover { opacity: 0.88; }
+#lock-error {
+  display: none;
+  margin-top: 14px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 13px;
+  color: #ff8080;
+}
+.lock-credit {
+  margin-top: 56px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
 </style>
 </head>
 <body>
+
+<!-- ─── LOCK SCREEN ──────────────────────────────── -->
+<div id="lock-screen" role="dialog" aria-modal="true" aria-label="Password required">
+  <div class="lock-box">
+    <div class="lock-logo-wrap">
+      <img src="../assets/KUHN-logo-on-white.svg" alt="Kuhn Capital Partners">
+      <span class="lock-tagline">Protect · Grow · Reduce Taxes</span>
+    </div>
+    <span class="lock-eyebrow">Private Access Required</span>
+    <form id="lock-form" novalidate>
+      <input type="password" id="lock-pw" placeholder="Enter password" autocomplete="current-password" autofocus>
+      <button type="submit" class="lock-submit">Unlock</button>
+      <p id="lock-error">Incorrect password. Try again.</p>
+    </form>
+    <p class="lock-credit">Prepared by Orbis Marketing</p>
+  </div>
+</div>
+<script>
+(function(){
+  var H='768c5aebaedd7dd4a97bf64af5f26067d75e4e61e884bdbca3742ccc7c4ceecc';
+  var K='kcp_auth';
+  var ls=document.getElementById('lock-screen');
+  if(sessionStorage.getItem(K)===H){ls.style.display='none';return;}
+  async function sha256(s){
+    var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');
+  }
+  document.getElementById('lock-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var h=await sha256(document.getElementById('lock-pw').value);
+    if(h===H){
+      sessionStorage.setItem(K,h);
+      ls.classList.add('fade-out');
+      setTimeout(function(){ls.style.display='none';},460);
+    } else {
+      document.getElementById('lock-error').style.display='block';
+      document.getElementById('lock-pw').value='';
+      document.getElementById('lock-pw').focus();
+    }
+  });
+})();
+</script>
 
 <!-- ─── NAV ──────────────────────────────────────── -->
 <nav class="site-nav">
