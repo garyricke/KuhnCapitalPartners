@@ -1,0 +1,526 @@
+Gary Ricke  
+Oops, Hi, I it My bad. Hey there. Good morning, Andrew, how are we doing? Not bad for a Monday.
+
+Speaker 1  
+Not bad, not bad. That's good. How are you just peachy? I'm good to go.
+
+Gary Ricke  
+Ready to ripe. You If kids, two, two kids, how old are they
+
+Unknown Speaker  
+three and a half and one and a half? Okay, yeah, so I'm in the trenches.
+
+Gary Ricke  
+Man. Yeah. I, I was just telling, you know, so I'm my, my youngest is in college, but I, I remember like it was yesterday out. I was look outside on Easter morning to see how many parents are out there doing what I used to do, which is try and get up before sunrise to get those eggs hidden.
+
+Andrew Kuhn  
+Yeah, yeah. I saw a bunch yesterday too, and we did a we did Easter egg hunt inside, but yeah, which got the job done.
+
+Gary Ricke  
+But yeah, yesterday was an Inside Day, for sure. So they're doing good your kids. They enjoy, yeah,
+
+Speaker 1  
+yeah, great. Enjoyed it. Had fun. Had a lot of chocolate. You know, exactly what they should have done to get a pump to get going on our website. I'm really excited to see what you where you come up with,
+
+Gary Ricke  
+you did some really good work on that. I know, I know.
+
+Speaker 1  
+I kind of, I mean, I, I know you said don't add design stuff. But I'm kind of like, you know, just you could put your own spin on it, your own design on it. I just thought it'd be great just to kind of see what, you know, what we want, and you could, you could go from there. Wanted to rip a lot from that Ritz Holtz website. My dad really likes it. It's bowl, it's cutting edge. It's kind of like a tech company, which he really likes. And, you know, we know those guys, and they probably spent, you know, a ton of money on consultants to to come up with, you know, that. So I thought, why not put our own little edge on it, or a little spin? And, no, my dad's pretty adamant about having those boxes. And I was like, Oh, well, they got three boxes right there that maybe we could do our own version of it, you know, for the energy, the wealth management, and then custom income notes. And I don't know if we're going to change any of those names, but nonetheless, it's a good placeholder. I think for you know what, we like energy tax advantage, right? Dan Mayo may want us to change that, but I think that's fine. But yeah. So here to answer any questions you have, anything you need from me, but really, definitely excited just to get going on it and see what you come up with.
+
+Gary Ricke  
+Yeah, I thought we just go through the document, just so I can capture your, conversationally, the things that you're thinking about. So let's, let's so let's see, all right, so I'm gonna pull up Ritz here.
+
+Unknown Speaker  
+Actually, I'll do a screen share. Totally helpful. Just close call these tabs here. I'm ready
+
+Unknown Speaker  
+for it to get a little warmer here.
+
+Gary Ricke  
+I know, I know. I think I told you I recently got an SP, FPV drone, and I'm looking that's pretty Did I not say that?
+
+Unknown Speaker  
+No, that's awesome.
+
+Unknown Speaker  
+It's insane, man,
+
+Speaker 1  
+is there like, a temperature of when, like, I just,
+
+Gary Ricke  
+I just been looking, no, it's actually not bad. The temperature doesn't have a big effect on it. It's the humidity in the air, actually, that does. So it's technically, it's drier when it's colder, so that changes how it flies. But I got to get a pilot's license in order to legally film and charge for that. So I'm trying to get that done quickly so I can, as soon as it gets warm, I'll be able to basically do anything.
+
+Speaker 1  
+It's incredible. I mean, so what do you mean a pilot, an actual pilot. I mean,
+
+Gary Ricke  
+obviously it's an unmanned aircraft pilot's license. I'll show you really quick. I'll just show you, because it's just, I thought I showed this to you, but if I didn't, it's helpful. It's helpful to know, because I think, in terms of education, what you guys can do is some of this stuff that's pretty amazing. So, so I'm, I'm starting this topdrone club at the high school, and I've got and I it was based off of this video I saw four years ago. This is a fly by through Wrigley Field. And ever since I saw it, I said, I need to, I need to figure out how to do this. And I finally pulled the trigger and bought the type of drone that they They do this through and so I'm going to set up a training course over at the high school, BATAVIA. I've been to that bar, right?
+
+Unknown Speaker  
+Yeah, I've been there, yeah.
+
+Gary Ricke  
+So, but this is, this is the motivation. So I did that, and this is a first test flight with my son. So my son's a gamer. He's sitting right there. He was back for spring break, and I said, Hey, you got to help me with this thing. So this is his first time flying, and we're over at this forest preserve, and this is him just cruising through this path.
+
+Unknown Speaker  
+How far can you fly that away
+
+Gary Ricke  
+from you? You can go up to 400 feet. Is the limit. I was up this day. I was up at 300 feet. It can go about 100 miles an hour. I think that's what the speed is, and it's it's crazy. But what I did do also, here is the, here is the study guide. So I took the, it's called the part 107 guide, and I just took all that information, and I built this study guide from all the information that I have to study for the test. And I did this so that the students are, they're going to have to take the test too. But it goes through, and it's really easy to create these tools with AI. And you know what I do is I'd read something. What was that? I'd read something, and I go, I really don't understand that, so I'd study it. I'd go to Google, Gemini, I get the answer, and then I'd say, hey, add this as a little pop up for that area. So I've just constantly been adding study guide stuff. And then it has a quiz. And again, I think for some financial stuff. So as you take this, you can take this quiz, and it scores you. It has all different weather theory. So these are all things to try and ace this test that I built. And again, I sit there on my phone, and I just study this when I get some spare time.
+
+Speaker 1  
+Yeah, that's awesome. Where do you So, where do you actually, so, so, what do you create it? I mean, do you just, it does Claude or Gemini, where we use and do they just send you, like, the HTML file, and then you host it somewhere?
+
+Gary Ricke  
+Yeah, it builds the HTML file and and I use Cloud code to tweak it and whatnot, and then I use Git repo. If you heard of GitHub,
+
+Unknown Speaker  
+okay, I know GitHub.
+
+Gary Ricke  
+So I post to Git, and then I use a hosting company called Netlify, which monitors git so that every time there's a change on Git, it will pull changes to Netlify. And that's the hosting cool. Yeah, it's a really great process, super efficient, way more efficient than anything I've ever experienced, yeah,
+
+Speaker 1  
+because, you know, like, I've done it on like, WordPress in the past, and, like, there's always plugins being updated, there's always something going wrong. And when I've just, like, vibe coded just for fun, different things through Claude, it just sends the HTML, and you just host it. And it's like, as long as you have that file, when you want to change something, you just how I've done it, which I'm sure is not the best way to I just copy and paste and say, didn't make the changes that I want. So it's like, it's just, it's so easy then, like, my experience with WordPress,
+
+Gary Ricke  
+yeah, no, I will never build. So I Yeah. So this is so I've been building since 95 Yeah, and and doing all the, you know, they didn't have WordPress back then, they didn't have any of that stuff. And then slow. So I was building it by hand, C sharp, active server, pages, all that kind of stuff. Database, equal databases. And then finally, the pricing of content management systems came down, and I started working on Drupal. Never really liked WordPress, got into Squarespace, tried a couple of different ones, Joomla and all that, but then settled into Squarespace because it was easiest that I could train my clients on and interns.
+
+Unknown Speaker  
+And Squarespace is pretty easy. Yeah, I've done that
+
+Gary Ricke  
+too, and the hosting is really ideal in terms of you can't host it anywhere, but WordPress is the most hacked, and it's because you can buy cheap hosting anywhere, and if you're not constantly updating those plugins, then you get hacked really easy. So Squarespace eliminates all that. So that's why I've been on Squarespace. That being said, I could never build this on Squarespace, and that's what I or square or any kind of a content management system, because I can fine tune anything that I want, add a pop up, do this change that you
+
+Speaker 1  
+don't have to worry about, like finding the widget, finding the certain thing. Yeah. It's totally
+
+Gary Ricke  
+never realized how constrained you are to the structure of a content management system until this. Yeah. So that's, that's why it's, it's pretty crazy. Now I have to do a lot of extra work, but there's less there's 1000 times over less overhead. Yeah. And just for another client, I was doing a bunch of checks on the hosting company. And the hosting company is a, what they call, it's a global CDN, a content delivery network. And so it you're when you host on there, it's hosted all over the world, and so whenever somebody, wherever anybody, logs in, it will find the closest server to serve that. So Squarespace doesn't, can't even touch that. So the speed is insanely fast, because it's all HTML. You don't have a the security's way higher because you're not you don't have server hacks that you have to worry about because it's HTML. It's super fast. So like the the delivery and the security is through the roof in terms of this process, straight HTML. And then the GitHub is really great, because every time I push just a little change. It logs every single change at GitHub. There's a record of every single one, so I could go back to any any update that I've made. And everything is now automated through cloud code. So you could takes a little time to get that set up, but now I just say, push it up. Push it up, and it'll automatically push it and then Netlify. So it's really great. It's so many, so that's exactly what we're going to have. And I put that in the in the estimate, I updated the estimate, but there's so much detail in estimate. I'm not surprised. You didn't see that stuff.
+
+Speaker 1  
+It's just, it's crazy. Like, I even, like, last I think it was Friday, I I have a different website for a different company, and the website, I got a thing from WordPress, and my website's down. And of course, like, I go there. I'm like, Okay, I don't know how to fix this, but, you know, it's like, gave me the error. And I'm like, so lazy with AI where I let Claude take my browser, and I just kept saying, fix it, fix it. And it would be like, Oh, I can't do this. I just like, fix it. And it just after like, a couple of times, it just boom, did exactly, and it was up. I was like, I would have had to reach out to someone, yes, you know, paid him. Had to fix it. Would have been down for a few days. And it was like, I figured it out in 20 minutes. I'm just being lazy about it. I'm not even being smart. I'm literally just like, here's the error. Go fix it. And it tried a bunch of different ways, and finally got a way to fix it. Obviously, it's just crazy.
+
+Gary Ricke  
+It's interesting that you call it lazy. I see it a little bit differently in the sense that it's I'm going through the exact same experience. There's stuff that I in setting up these hosting and doing security checks like I've had to do security checks, run security scans forever for clients, and even on we're on Squarespace, and until recently, I don't know how the hell to make these changes, but when I take what the Scaredy scan says and pop it into AI, and it tells me this is what you got to do, or this is what you can or can't do. So I communicate now back and forth with clients and stuff that goes way beyond my I know enough to ask it stuff, because I've been doing this for so long, but I don't know the details in the minutia and how it does. And I would, you know, I don't think is anymore.
+
+Speaker 1  
+Can you hear me? Your mic? I hear you out. Oh, I hear you. Got me. I hear you. Can you hear me?
+
+Unknown Speaker  
+I do, yes, okay,
+
+Speaker 1  
+so I can't hear you. We're just all right. See here. I check one now I hear you, yeah, now I hear okay, that's weird.
+
+Gary Ricke  
+So anyway, what I'm saying is I think it's just completely enabling. I think it's enabling people to do things that you shouldn't have to call somebody if the if the intelligence is there for you to utilize. And I'm doing the same with my students. I'm telling them put every error you get into Gemini. I tell them to go Gemini cloud co those are that's the dance that I like the most put in the Gemini. Yeah. And it will tell you what to do. Now, what you should do is you should read what it's telling you to get a familiarity with what it's going but so, I mean, you can be lazy if you don't want to actually kind of study it a little bit. So I tell them to study it so you can learn some of that stuff, but definitely, just get it done.
+
+Speaker 1  
+Man. Yeah, it's crazy. It's insane. I just again, I don't even know what life's going to be like even five years from now. I feel like it's good. Everything's gonna be so exponential, right? If you think the growth from, let's call it the, you know, mid 1800s to 2026 was extreme, I feel like 2026 to, you know, 22 126, is going to be just, oh, unrecognizable,
+
+Gary Ricke  
+without question. But so I'm really glad you're doing all this stuff. But I, because I, I do like to go all right, when everybody can do this, what are we doing that's better and and so one of the things we're going to go through this site, but what I really wanted to do is get a time in the calendar, sooner than later, where I come out to the office and I interview as many of you guys, many people on your team as I can, and if your dad can talk for hours, yeah, let's do it, you know, let's get as we all like AWC in there, because I think that that's the differentiator. Because if you're not, nobody can take that away. That's timeless is our own personalized intelligence. Use all these AI tools, but front load it with as much of this information as we can. And while I will use your notes and we'll build this out the way that he's looking for, the reason why I say take the design out of it is that it's really easy to to take the whole look of this site and then store it into a design aspect, but then let the information of what you're trying to express and communicate, let it figure out what the best practices are to deliver that, and see what It comes up with, because even with my own site, I'm doing the same thing. I'm rebuilding my site, and I'm lending I'm asking it best practices, and it's showing and then I and it shows me stuff that I never even thought and I I realized that most marketers and most websites, no matter how cool they look, NOBODY'S actually using a quantitative type of design approach and interact and UI, user experience, user interaction approach that I think that these are delivering, and everything that it delivers when you just, when you let it make its suggestions, and then you could tweak from there. So we, I can follow this to the exact T of what you guys are saying. But I kind of like this idea of of just seeing also, you know, what it suggests based on what you're trying to express, without trying to tell it how to do it. Yeah, yeah, sure. All right. So let's, let's, yeah, let's just, but let's go through everything so, so let's see the header. So yeah, so this is interesting that that you said this because this type of header, and I've studied this, I It's over 10 years ago. This was the trend was to put something behind a click. And what a lot of companies realized is that a lot of people, including Facebook, even even on mobile, they realize people weren't finding stuff, and so they started to put back put stuff back in so this, and I've learned that from personal experience with sites, when we got it too simple and you just figured people would click on something they don't. Yeah, sure. So I would highly recommend that you just do this.
+
+Unknown Speaker  
+That's fine. Yeah, I'll blame it on you. No worries.
+
+Gary Ricke  
+All right, so let's see. All right, so right, change the video train. So here's, here's my question, here's another reason, here's another thing that I that I really push for, and the reason why I got that drone, I'm calling that drone my anti AI tool, because as more and more people can produce anything, it all starts to look the same, right? And nobody trusts something that that that looks like it's stock, and pretty soon, NOBODY'S going to trust anything that looks like it was aI generated. So as we go through these things, what I what I want to do is I want to make sure like sometimes I'll use AI to generate images and placeholders, but I'd rather then go in and take real pictures of anything that's that's 100% authentic of you guys. And use AI to make it look like it was studio shop and whatnot. But if there's anything that we can do to represent you guys that is not just some kind of a stock or look and feel, because I'm just putting that out there, because just to think it through and again, what are we trying to communicate? So I guess, like, what are we saying? This is cool looking, but I'm not sure what it tells us. What is a what is, you know, in a mind, what is the most important thing that you can think of, that you would want somebody just seeing your get let's forget about the website. When you or your dad meet somebody for the first time and you know that they're really interested in maybe the services that you guys offer, what's the what's the first thing that you say to somebody?
+
+Speaker 1  
+Hmm, I mean, I'm just trying to think, like how to phrase it in a way that, because it's every situation is so different. But I could tell you, is what we do is we bring institutional like strategies to the everyday, individual investor. If I could really cut exactly what we do, it's that it's bridging the gap between what was traditionally for investors that, have you know, eight figure net worths to the individual investor. So democratizing, I guess you could say access to everyday investors. The industry has trained individual investors that the best way to invest is to just buy a bunch of mutual funds or ETFs and go up and down with the market. Let the markets do all the work, because the advisor collects their 1% fee and they're out raising new money, trying to build a business. The approach that we take to it is we're truly a boutique. We have custom portfolios for everybody. It's completely custom, and we bring a bunch of different strategies that may Zig when the other Zags to create more of a holistic portfolio that's different than just buying the s, p5, 100 and hoping that it goes up every single day. So that's the true value prop of what we're doing. Most advisors people meet with, they'll say, oh, we have your tax strategies and different, you know, options like that, good mutual funds. All those are great. We have access to those too. But the true, true differentiators for us are these institutional like strategies that we bring to the individual investors, which are the energy strategy, we have a hedge fund strategy, and then the custom income notes strategy. That's why we get the amount of business that we do, is because it's so unique to people. That's our blue ocean, right, where we have zero competition there in the custom income notes. So I don't know if that answered your question.
+
+Gary Ricke  
+No, that's, that's really,
+
+Speaker 1  
+that's really good. The message is that we're not just like a plain Jane financial firm. And I know everybody probably says that, and every advisor probably says that, but then you look at how they're managing money and what they're doing, and it's incredibly plain Jane, because they're all trying to build a business. They're out trying to get new clients. They're really just rainmakers and salesmen, where we're actually bringing more cutting edge type strategies that are different, and that's why we've had the growth that we've had.
+
+Gary Ricke  
+What is, tell me a little, just a little bit about the your favorite clients when they first come to you, what do they know? What are their pain points like? What do they understand? What don't they understand? What is their biggest struggle?
+
+Speaker 1  
+So, biggest struggle, I would say, is a everyone always says it. I heard a lot from my advisor, until I became a client. Never hear from them, ever again, again, which leads back to what I was saying. Is because they're out building a business. The name of this game is to get more clients, because then you get a percentage of your, Aum, your assets under management, right? So if you got a million bucks, you're a client of mine. I charge you 1% I just made $10,000 in ARR, that's going to grow with the markets, right? Well, to build a business, you got to reach scale. How do you reach scale? By getting more clients. So I would say first pain point is, I would say it's communication, not understanding what they own. I think most recognize that they really are paying for something that they can do themselves. It's pretty easy to go and buy like an S, p5, 100 index fund. A lot of advisors, they dress it up where it looks pretty complicated, but you really just own one thing, which is the market, maybe some bonds. But the market, you don't pay. You don't need to pay somebody for that. You could go and do that yourself for free. So I would say lack of communication, lack of or, I guess I should say paying for something that they feel like they could do themselves. Everyone's just interested in the structured notes. No tax planning. They don't do any sort of like tax planning. A lot of what they do for even income planning is pretty generic. We go very in depth on that side. So people can, you know, be comfortable. One thing I've learned, and I've lived in Dallas, which I don't know if you've been to Dallas, but it's a pretty waspy place, pretty flashy, pretty waspy place. What I like about the Midwest is you can have a guy that, or gal that will come in and never made more than $100,000 their entire life, right? But they saved they, you know, did everything by the book, right? Sort of like, there's like a book called, like The Millionaire Next Door, right? They say they live below their means, they invested their capital, and then they'll come in and have like, $5 million and it's just like, it's just crazy to me, whereas in Dallas, you could have a client come in and they can make half a million bucks a year, but they have, you know, $2 million in Debt. Mortgage cash is an issue. Cash flow is an issue, whatever. And I think that's sort of the Midwestern values. I don't think the Midwest is AWC place at all, especially when you find it like places in Florida, places in Dallas. So I mean, I've just always been super shocked by that. So I'm telling you this because that type of personality that saves a lot has always lived below their means, probably value's different things in life than maybe somewhere else, like in Dallas, they care a lot about certainty, and they care a lot about income planning and not out living their means in retirement, how they're going to responsibly pass on The means to their children or their grandchildren. So going into the financial planning aspect is something that is super important to people here, which has been, I mean, we didn't even really do much of that when we were in Dallas, but here it's, it's, it's like, entirely why people work with us is because they want the certainty of, you know, counting beans and feeling comfortable on paper that the assets that they have can can last them in retirement. So it's really communication, financial planning. So what that means is, like, income planning, stuff like that, and then the difference in how we manage money. So sprinkling, sprinkling in these different strategies that are different than just buying a bunch of stocks, and you know, being like, knowing how you're doing on the day, just because you could look at CNBC and say, Oh, the market's up, so I'm up, or the market's down, so I'm down. We bring different strategies that Zig while the other may zag. So it's just a, it's a defensive portfolio. I would say where, in theory, you should do well in any market environment. No, you know there's, there's a head show manager. I like Ray Dalio. I'm sure you've heard of him because he's written a few books past couple of years. And you know, his portfolio. I don't even know what their their returns have been that great. But he manages, you know, a metric AFM, ton of money. And you know, it's really branded as I think they call it the All Weather portfolio. You know, it does well in any situation. So they've been good at branding, from that perspective. But yeah, people work with us, communication, certainty around,
+
+Speaker 1  
+you know, financial planning, retirement planning, like the actual plan itself, so they could feel comfortable and and then, you know, the difference of how we're actually managing it. You know, a lot of people in the Midwest, too are blue collar. So, you know, they could swing a hammer really well, but this other stuff may be a bit foreign to them, which is great, because I can't swing a hammer really well. So it's just different. You know, we're in Dallas, for example, you get a lot of white collar, and people may be a little bit more this is their side of maybe what they think they know, or what they feel like they could figure it out. So the client base is just so different.
+
+Gary Ricke  
+My daughter's went to TCU. Okay, so Texas is definitely a different space, especially TCU, actually, yeah,
+
+Speaker 1  
+TCU is nicer than that. I mean, Fort Worth is a different culture than Dallas, but I'm sure if you ask your daughter, she would, she would know that Dallas is pretty Porsche, Porsche, Porsches, purses and pearls. It's a very it's, it's a different place. And that's not even me. You could ask AI about it. They'll tell you it's one of the most flashy places in the country. And I think it's that's definitely true.
+
+Gary Ricke  
+Yeah, yeah. Well, they mean that they tons of, well, a lot of, lot of forgot what the nickname was it. But a lot of kids came from California to TAF. So a lot of California, you
+
+Speaker 1  
+get a lot of California kids there, like California rich kids. I mean, when I mean, like, rich kids showing up in, like Ferraris, it's not an exaggeration.
+
+Gary Ricke  
+It's, it's crazy. Like my daughter ran the dorms there. She she was, well, that's she got a degree in, but that the the fraternities and the sorority buildings are un insane. The money out there is. It's crazy,
+
+Speaker 1  
+yeah, SMU, 50,000 a year. And everyone I know that that went there. I mean, they didn't pay for their college. You know, it's just, it's just different, like the Midwestern mind, it's kind of hard to comprehend it, but it's, it's just different. It's so different, truly is even, even Midwestern wealthy people. It's just different, the values, the culture, the It's just different.
+
+Gary Ricke  
+Yeah, so let me ask you this. I got two questions. First one is, is so I think what really struck me is you said that you guys maintain constant communications, whereas you said most people say that as soon as they're a client, they kind of don't feel the communication. Can you tell me a little bit about, how do you communicate? Like, how do you differentiate that? What's, what's your process?
+
+Speaker 1  
+Well, we're getting better at it, I should say. But quarterly letters, annual reviews here, whenever they need us, white glove service, right? Like, one thing I'm changing is, is, is really, like, I think Chick fil A does really good is when you go there and you take, like, a fast food experience a lot of other fast food companies, for the most part, it's kind of not the nicest sometimes, you know, make culverts as a good job, but that's a privately owned, you know, Culver is privately owned, and they've only, I read a stat. I don't know if it's true, but it's crazy. If it is that, like, only, they've only closed, like, three locations ever. I don't know how it's possible that's crazy, if true. But just, you know, just the culture, right? Chick fil A, my pleasure. It's just a pleasant experience, you know. So we, that's why I'm trying to model for what we do, right? Like, it's just, we are just trying to do create a world class experience for them, very responsive. We have annual meetings, but of course, if someone wants more, we're always here for them. You know, the goal is just to make them not feel like they're not heard, and that we're here for them. We're the quarterback, right? They may be the head coach, but we're on the field trying to drive the ball downfield. So, yeah,
+
+Gary Ricke  
+I don't believe I checked. Do you guys have do you have Google Reviews? I'm sorry I didn't check it. Do you know how you guys
+
+Speaker 1  
+rank in Google? We don't have reviews, no. And also, I wish we could turn that off. I don't like that feature. It's just because you never know. I mean, you get a discretion, you get a competitor that could say stuff, and I know it's any company. I just, I don't like it. We would turn them off if we could, but we have zero reviews. We've also never asked for reviews. But I just, I don't like it. Yeah, is there a way to turn that off?
+
+Gary Ricke  
+No, I don't think. There isn't a way to turn it off and
+
+Speaker 1  
+but maybe, I mean, we should, we could just start asking for a more, you know, because we do. We have a lot of happy clients. I don't know why we have it. So, I mean, just I came back on somewhat recently, and we're changing. I mean, we've grown so much where we just, there's just things that needed to change. It just improve. That's it. Because everyone here is spinning their wheels at a million miles per hour. So it's hard to dedicate time to do all these things,
+
+Gary Ricke  
+sure, sure how long so you you were, you weren't, so you just came back recently to the company. So we
+
+Speaker 1  
+started, my dad, I started in a tiny office in 2016 and then 2019 I when I started a different company, which is still still active. It's called Focus compounding. It's a hedge fund. But still always have been involved. It just not, as you know, involved, like, I should say. And then in 2024 started getting involved much more, in a big way. And then then became full time, where all my attention is pretty much focusing on this in the past few months. So I was away, but never, like too far away, because it's all, you know, so involved in a lot of stuff. But we just grow so much, and that's all. We just need more help.
+
+Gary Ricke  
+So just from the Google review standpoint, it really, really helps if you, if you have a good client, and you kind of have a script that everybody uses. And then we set up a URL that's, you know, be coon capital, or coon TV, whatever the URL slash reviews. And whenever there's a great moment, you you ask somebody say, hey, you know, would you mind just leaving a review? Yeah. And then when you start to do that, then you start putting up your reviews. It's huge. It's huge in terms of SEO and AEO is to really push that and make it
+
+Unknown Speaker  
+what does AEO mean?
+
+Gary Ricke  
+Uh, answer, engine optimization. So, yeah, search engine optimization is what everybody is familiar with, yeah, but everything is going towards everybody's going through the chat, you know, Google, AI and all that. And so you really got to start thinking to that. So the SEO tactics are really changing, but aside from the way that you should build your pages and all that kind of stuff, you got to do it differently from an from an answer engine standpoint, but local or just Google reviews are probably the one of the most important things that you can you can do because it really pushes you to the top versus your competitors. And it's, it's really not that hard to do, as long as you, if you identify when there's a good experience and you just be aggressive. One of my clients, they have a Christmas party and whoever, they put up a bunch of balloons. And there's like, you know, $500 or $1,000 behind the balloons. And for every review that you got, you get a Dart. And so reviews are coming in left and right for this company, because you need to, at least with it, with the employees, they need some kind of incentivization, because, you know, they're out there working in the field. But when they have that incentivization, and you just, you just knock all the reviews out, you just come up first all the time, Google really responds really well to that. Now that being said, the thing that would really blow your wife's website out of the water is, if you have these clients, and I can have a conversation with them, and they can talk in their own words. That would make a huge difference. So far, a lot of what you're saying, we can incorporate it, but marketing's one thing, but just testimonials are a whole different level. And that's what I want to do, is I want to be able to
+
+Speaker 1  
+prove, yeah, the SEC sort of changed their tone on testimonials lately, like it used to be, you couldn't put any client testimonials on your website. Anyone could leave a Google review, but that has changed, I guess, somewhat recently from a compliance standpoint, where you could, you could give testimonials, but that's just
+
+Gary Ricke  
+totally forgot about that. I have a friend who's in finance, and he did tell me that, so I just now I recall that he said, you can't.
+
+Speaker 1  
+But I think it's changed that. I think their tone has changed. I don't know what the rules are, so I can figure that out. But from what I've heard, it's somewhat changed recently. All right.
+
+Gary Ricke  
+Well, that's something we can investigate. Yeah, yeah, but let's see and do you do? Do you do email communications as part of that white glove service?
+
+Speaker 1  
+And, yeah, even more. So we do text. So we love our CRM because we have a texting CRM clients nowadays. They get so many phone calls. I don't know about you, but I mean, I get like, probably 30 a day from people that I don't know. I just don't answer it. I just literally, like, I turned more over. I turned this thing on my iPhone where, I guess, if I don't talk to them often, or it's unknown, it just sends it to voicemail. I'm like, if they really want to get ahold of me, if it's they'll get a hold of me, you know, shoot me a text. But everyone looks at text messages, so it's just so our CRM we have, we're all on it. So you could text in instantly, someone, one of us, will pick it up. And clients really like the ability. I mean, of course, they want to call us, call us, but people really like the ability to text. Because it's just, you know, I don't know, we're kind of, I think, as a culture, for better, for worse, it's, it's kind of people like that. You know, I'm not here to make the rules, but people, people like that,
+
+Gary Ricke  
+no texting and email are, I think, are really important. And it's this, like you said, I like this idea, this white glove approach that you describe, this constant communication that is lacking.
+
+Speaker 1  
+I mean, look, my, my, what we talk about to everybody is, I just say, like, I want the bar for us to be world class, right? Every time you do something right, I try, and we try to live by it, and you're never going to meet it because it's world class. But sometimes, I'm sure, even when you do a website, you could be like, Can I do a little bit more? Right? Is this everything? Is this world class? And sometimes you could give another 5% choose, and then you're happy that you you did it right. So I just want to, we want to create a world class financial firm. So everything we do has to be world class, even people trustable too. Yeah. But I
+
+Gary Ricke  
+think trustable is the real challenge, right? It's how do we show you guys are different in ways that nobody else is showing so, yeah, we can match this. This Ritz Ritholtz, but I want to search for those things that we can say and demonstrate that they're not going to see anywhere else. That's why I asked for testimonials, because that's, that's something that you just can't You can't build like a testimonial. But if we can't do that, that's okay. But I want, that's what I'm trying to figure out, is I just want to make sure that somebody can go here and go, whoa. These guys are different, for sure. They're saying things that are different, and they're demonstrating it in some kind of a way, yeah, okay, well, let's keep flying through here. All right, so this little copy is straightforward. I think that's easy enough. All right, so let's see, this is the focus on what works. So these are, no, these aren't our three boxes yet. This is just kind of describing how we're different, right?
+
+Speaker 1  
+Yeah, well, those three box, I don't know. I mean, if you could, I think my dad really wants the three boxes somewhere up there. So that's why I thought maybe that could be, like, a good way. But you, you come up with your own spin on it, right? Like I'm not, I'm not telling you how to design it and do it. I just would say, hey, this kind of looks nice. But yeah, we want, he wants three boxes of, like, you know, energy and the tax management as a subtitle, and wealth manager. Because it's really, like, that's our those three things are who we are. It's that's what makes us different, but from every other advisor, but
+
+Gary Ricke  
+not this specific content.
+
+Speaker 1  
+No, no. I like the right that. I think that's kind of we don't know.
+
+Gary Ricke  
+That's what I was just trying to make sure I understood correctly when you say, like this section, but you're saying that you like the design of the section, but this is the, this is the stuff we want. Okay? That makes sense. Yeah, yeah, yeah, yeah, no. I mean, I No. I don't have a problem with the three boxes. I actually want to, I want to figure out in the best way possible how to make these so engaging. That's what I really want to do. I want to draw somebody into these, because these are the key, right? These are big and kind of like, you know, you down, down later, you showed me this map, this little interactive map that shows the little little guys right there. My question is, and I can duplicate that, but my question is, is that, what is that doing? What does that mean? Why is that important that animation? I don't know, but I do know if I was going to think of some kind of an animation and some kind of engagement, it would be all right around this.
+
+Speaker 1  
+So to your earlier question about trust, I think it, I think it kind of shows trust in a way, like by the numbers, whatever we like, we manage this amount of money. We've been in business for this long. We have this amount of clients. And not only that, but we work with clients, you know, in the States, all over the country, but maybe not Gotcha.
+
+Gary Ricke  
+So that's right. So the by the numbers is that, is that information in here, that the numbers, or is in your exam?
+
+Speaker 1  
+I will you could pull them from the from the existing site. You can use it for a placeholder. I'll dial it like, I'll give you the exact numbers, yeah,
+
+Gary Ricke  
+gotcha, and I'll
+
+Unknown Speaker  
+give you the exact states too.
+
+Gary Ricke  
+Okay, yeah. So that's kind of like two. That's kind of what I was that's what we want to shoot for, is as much of the information as we possibly can get. And if we don't have it, we put placeholders in we can address that's not a problem. But alright, so let's see. So okay, I'll work on that. This, right? So I can basically pull basically, we're going to rebuild this whole site into a page, right? Exactly. Yeah, okay, that's not a problem. All right, so, all right. So this next section, right brush, let's go back to Kuhn. You're talking about this,
+
+Speaker 1  
+yeah, I don't really, probably redo it, but my dad really likes to show that, like, so back to your question about trust. People really like to see, you know, oh, they've been on these radio shows. Like, I think we're gonna get on WGN soon. You know that can be up on there, not it can't be up on there until. We do get on it, right? You know that that's the idea. Let me see, okay, let me find Kathy. Do it. This person has see as Texas. What's her name? Kathy?
+
+Speaker 1  
+Yeah, I forget, but yeah, just a my dad really likes a brag bar because he thinks,
+
+Gary Ricke  
+no problem. I understand it now, radio show? Yep, I get the radio show. I think the do anything with the radio show. I gotta look at this again. I
+
+Unknown Speaker  
+I have to Okay, so
+
+Gary Ricke  
+are you guys. I'm not seeing any descriptions. I'll look at the RSS feed.
+
+Speaker 1  
+I click on, oh no, see if he has anything. No, no. So he doesn't do like in today's podcast we do, which I know we should do for SEO and whatever, but
+
+Gary Ricke  
+well, even just for engagement period, it's this all looks the same. We don't even know what the difference is. We just see dates, yeah. So I want to make sure that,
+
+Speaker 1  
+for instance, go like, I'll show you like, go to mine. Go type in focus, compounding, iTunes, sed, it's focus, yeah, sorry about that component type in I Yeah, that. So that's my podcast. We knew it for a while, but yeah, just see Yeah.
+
+Gary Ricke  
+So this is a, this is something. So this is a podcast I help these guys with. This is, you build the website, built the website, and I'm pulling this from the RS 's feed. See how we got the titles. They can play it right from there. They can sort it.
+
+Speaker 1  
+So I think my Yeah, we'll see. I think that's we'll see. I think, yeah, I'm trying to my dad. I mean, he talked about, like, a floating player, you know, I don't know, but maybe I
+
+Gary Ricke  
+don't know. No, I remember, I remember him saying that. But I think what's, what's really important is you got to see these titles, and you got to see descriptions if you really want to get engaged in the way they're gonna get engaged is by and I could do that.
+
+Speaker 1  
+I could go into the podbean, like, pull the transcripts, create a title and do it that's going to be
+
+Gary Ricke  
+important everywhere. It's going to be important on podbean. It's going to be important on our site. And I don't know why sUAS can do that. Yeah, you got to, you know. So the headline is really the key. And you can do all kinds of really cool UI and design around great headlines, and you could even generate an image automatically, like it would be really easy if you got a good headline and a good description to automate some kind of a visual that gets so that every single one looks a little bit different, and everything shows me a little bit of what I'm going to learn that is what's going to cause somebody to actually listen and engage with it. So I'm just trying to figure out how the best way, but having a floating player is not the issue. It's just, you know what I'm saying? All right? So then this next section is the the map by the numbers that's over here.
+
+Unknown Speaker  
+That was on CCP, yeah. There you go. Yeah.
+
+Gary Ricke  
+So this is really important. And again, I can mimic this. I just don't know what it's what it's doing, why it's important.
+
+Speaker 1  
+So I think I personally, if I were a client, I would, I think it would show that these guys work with a lot of people in a lot of different states. I don't know. Does that add credibility? Maybe it doesn't, you know. I don't know. I always thought it kind of looked cool that they do that,
+
+Gary Ricke  
+but in it, and I'm not gonna say it doesn't look cool, but if there's a way to actually juice it up a little bit more, that's the question I'm asking. Are there other ways that we can really show this? Maybe this is the best way. But my first thought when I saw this is, it feels like it should be interactive, but it's not. I don't see that it is. It's weird that you can click on this stuff, but it doesn't tell us anything. I would call that a bit of a friction
+
+Speaker 1  
+and it doesn't need, I mean, look, and we don't even actually have to have those things. It could just be like a heat map of what of what states, you know, but,
+
+Gary Ricke  
+yeah, so to that point, and your experience with Claude, like, if we have information, I don't care how much it is, I don't care if it's sloppy. I don't care if it's all over the place. We can build really cool, engaging things that really get people into it. We just got to know what we're building against and and to to just like, yeah, again, I don't know what this means. Like, this, are you? Is this something?
+
+Speaker 1  
+Again, we're just, they're saying that they work. They work with the client. Clients in Texas, they have clients in Alaska, clients in Florida, clients in so do you have all the same
+
+Gary Ricke  
+clients or the some states?
+
+Speaker 1  
+Not, no. Well, ours will be a lot less than that, yeah. But we do have clients in a bunch of different states, yeah.
+
+Gary Ricke  
+So if we want to do this, I need to know exactly what those states are and rebuild it to that step. Yeah. But as you're thinking, if there are other ways to show the numbers, I mean, I think by the numbers is really
+
+Speaker 1  
+important, yeah, to me, that adds like credibility for sure.
+
+Gary Ricke  
+Yeah, that's for sure. There's no question. 37 stays, 27 employees. So anyways, I'm just kind of just picking it apart a little bit, all right, so then next section. Okay, so these are the experts, right? So what's that Wait? Where's that
+
+Unknown Speaker  
+from? Do you know where this is from?
+
+Speaker 1  
+It looks like I Okay, so I think that was under team, maybe. Okay, my dad, he just really liked that. You could click. It's more so where it took you to. So let's see where did I get that I like, maybe talk to an advisor, takes you to the same place down. See here,
+
+Unknown Speaker  
+I could look, that's okay. I just
+
+Speaker 1  
+he really liked, he really liked, yeah, go to that clock because, yeah, that's what he really, he really liked this part of it where you could, like, there's a there's blocks that say, talk to somebody now. And he loved that. This is what it goes to for people. I mean, even so much to the point you like, like, the contact method. He liked that. Like, those were, like, oval 's verse, you know, square 's like, he loved this page. Okay, yeah.
+
+Gary Ricke  
+So this is basically a yeah, just kind of contact 's page.
+
+Unknown Speaker  
+That's all, yeah, okay.
+
+Gary Ricke  
+Now to that end, where are your ex? Let's go look at your experts. I We're
+
+Speaker 1  
+gonna change. Obviously, all this was gonna look updated and better,
+
+Gary Ricke  
+but we're
+
+Speaker 1  
+still missing two people on that side. Gotcha. And it just looks awful. I just, I hate the way this looks. Go to CCC, ccpwealth.com if you could. I like the way that their pictures look. So go to about, I think team or something. Oh no. About No, it's, yeah, our team.
+
+Gary Ricke  
+See here, sorry, let me just move this over here, our team, okay, I
+
+Unknown Speaker  
+like their pictures a lot, but,
+
+Gary Ricke  
+and what's it taken us?
+
+Speaker 1  
+Yeah, where ours won't be this will not be that in depth. That's, this is pretty in depth.
+
+Unknown Speaker  
+Yes, ours won't be like that goodness.
+
+Speaker 2  
+I Okay, yeah, that's, that's a lot we we don't want our 's to be this busy.
+
+Gary Ricke  
+Yeah, that's it. But I understand, I understand in terms of, I like more. So the
+
+Speaker 1  
+like the professional headshots, like how it looks. That's why I met when I said that,
+
+Gary Ricke  
+Okay, gotcha copy that. All right, all right. So let's keep rolling here. About Us, okay, so you've got some information our team,
+
+Unknown Speaker  
+we're going to build a massive webinar campaign.
+
+Speaker 1  
+So, yeah, so this is you could copy this, do our own spin on it. I kind of was messing around with Claude, and I kind of just vibe coded something. But, I mean, I want this so you could say I actually that bubble linger thing, yeah, that link I just like was messing around. I want you to do your own version of it doesn't have to look like this. I really love that. You know, the latest yield that we priced, that latest like Netlify. So you that's where Claude, that's where Claude told me where you could host it.
+
+Gary Ricke  
+Yeah, yeah. That's what I use, Netlify.
+
+Speaker 1  
+Netlify 's Claude told me that. But look, so this is, this is okay go, if you could go back to the page because I want to, or to that Phoenix energy page. It's the tab right next. Yeah, that these guys raise hundreds of millions of dollars through offering bonds to individual investors. So all a bond is is a promise to pay. Basically, they are lending Phoenix energy money. Phoenix energy takes their money. They invested in oil and gas wells, and then all they're doing is paying fixed income back to their bond holders. These guys raise over $200 million a year for a POS product. It 's crazy to me. You are an investor in an oil gas company. There are a lot of tax benefits that come with doing that. If you most people do it through like an equity offering of some sort. People invest in these bonds, they get zero tax benefits. I can't believe people invest in this however, they're very good at creating a story around fixed income. Income and retirement. Are the average or the the average age of our bond holders is 55, to 70. What does that mean? It's people in retirement. They care about income. They care about cash flow. You're investing in real assets to you know, earn cash flow. They're really it's complete bullshit, but they're really good at telling a story. How they do this is they have meta ads that drive people to this page, right here on their website. People sign up for the webinars. They host daily webinars, and they raise so much money. Our version of this is the structured notes, the custom income notes, because ours is offered by the big banks, JP, Morgan, Berkshire's, Goldman, Sachs, it pays income, it pays cash flow, right? It could be anywhere from nine to 13% depending on what they're offering, and they come with downside protection. So you could have 30% downside protection, and as long as the indexes it tracks. Do not breach that 30% you're collecting your coupon, right? So I want to really do a campaign around that, because if these guys can raise so much money on crappy oil well, 's where they're taking all the tax benefits, and it's kind of even up in the air. If these guys are a Ponzi, honestly, in the industry, we can do this with a structure note, where a client sees it at Charles Schwab, they see the exact note that it is. They see the distribution 's that they get. And it's easy for them to track. So I want to take inspiration from that, from them. You could scroll down, you could see the type of bond offerings that they have. 's really big. I was on one of the webinars last week. The webinars, it's so retail focused. It's so big letters, you know, super easy to read. I mean, they're really good at raising money, so there's a lot we can learn from them. But yeah, and I want this on our homepage, because what I'm going to what we are going to do when this is all built out, I mean, we're ready to do this like yesterday, is we are going to run METAR ads and drive people to our website, to this page, sign up for webinar or receive a webinar. However, we're going to do it. We haven't fully desired yet, and then as soon as they do that, we're calling them. So I think this is going to be great for gaining clients outside of, you know, our traditional Chicago market, with the radio show, we have that on lock, where we receive, you know, three or four leads a week, hot leads. People have listened for a long time. It's sort of rinse and repeat. How do we go beyond that, to repurpose content, you know, use all the leverage that we have to gain more clients. And I think this is going to be our way to do it, right? So like even somebody may come to us because, oh, they heard about the structure note, they may only do 100 grand or not only, but they may do 5020, whatever it is, but it's a natural introduction to everything else that we do at our firm, right? And a lot of people, too, even from the radio show, they'll, they'll purchase a like, you know, a structured note, they'll hit the minimum 10 grand, and then, like, a couple months later, after they've gotten a couple coupon payments, they understand it more, then they'll be like, I want to buy it, you know, I want to put $100,000 from my IRA in this thing.
+
+Speaker 1  
+So this is really important to us, this page, because we want to do webinars, and we're going to drive people to these webinars through Facebook and stuff, which we got to polish that up too. I was just messing one night and just mess with this. I really don't like it, like a lot, you know, it's not bad. I think, I think the top reasons to invest in a structured notes is kind of redundant, because I have, you know, that second section under it, like, inside this free webinar, like, it's like, I don't want to, we don't want to give so much information away, because we want them to go to the webinar, you know. And this and what I included, if you go back to the the Google sheet I sent you, I included two piece of content. You should be able to click those Google Drives that you could feed into Claude. So this was an actual note that we did, you tell Claude this, and it'll know exactly what it is. And then we have another white paper thing that we did called, like, top reasons to invest in a structure note. So this will also help your cloud have some context on what it is, but they'll, or it'll be able to, you know, use it.
+
+Gary Ricke  
+Yeah, all right. So this is the webinar. Got it good, yeah? So that's
+
+Speaker 1  
+super important to have on our on our thing, yeah, because I think that's going to be our driver. That is our blue ocean. That is we have zero competition. That's why everyone reaches out from the radio show. And we're trying to do that nationwide, and we're going to pay for my dad to drive them to this sign up for webinar. Watch the webinar. We're calling them the next day. How can we work together?
+
+Gary Ricke  
+Great. Oh, that's awesome. I love it. And then just the services here. So in terms of the content for each of these services, where should I pull that from?
+
+Speaker 1  
+Yeah, I'm not like crazy about this. I just kind of put this in before. I don't know we, may, we may, you know, because it's like, here's the thing, right? One of our boxes is wealth management. So I'm almost like, does all this go under the wealth management page? So we're not making things too redundant, you know, like to show that's out of our business, that we do like we do wealth management, we do tax planning, we do estate planning, insurance services, like we do all that. I don't know if we need a separate page for that, because if, if what we're doing is we have three boxes, the energy, the wealth management and the custom income notes, I wonder if all this stuff should go in the wealth management page. You know I'm saying, yeah, yeah, yeah. I see what you're saying.
+
+Gary Ricke  
+You know, in some of the analysis I've done on some other projects, the suggestion is, is like there are two it's not bad to have two paths to get to the same answer, yeah. If this is how somebody wants to think about it, it's okay to to to put this out as a as just as another interface, like somebody could start from here and then end up into the three key boxes in some kind of a way, even though we're really that we're driving people from the three key boxes. But to have this as a page and maybe some landing pages for each of these probably would be good for an SEO AEO type of standpoint. Because, you know, just like you said, if somebody just wants to get estate planning and they end up on your site because you had good information about that, you said, Hey, we're a boutique service. We take care of you from an estate planning like we're going to do it the way nobody else does. That's how I could see this still being kind of an important inclusion, and how we can do it okay, let me, let me see. Let me review everything that we've gone over today, and I still feel like we have to, we have to organize a, you know, a couple of hours at your office, I would take pictures of everybody current pictures. I'd like to do some interviews, I think so I think what? And again, I'm trying to think about some different ways to approach this. But let's from a trust standpoint, let's say I just did some interviews with you and your dad and some of the other folks, maybe every single one of them that could be, that could be the what leads in terms of, you know, instead of this really flashy kind of hero, again, that would be easy to do, that's not, that's a no brainer. Honestly, you said I want this, or we can make that. But if we actually had some videos that somebody can Click and watch, and we get somebody click and watch it a lot of times, hearing you speak, or your dad speak, or the people. There's a lot of times when I interview somebody that they'll say 's is something that I'm like, that's gonna sell people write what you just said, is, if somebody hears what you just said, it's a done deal that happens all the time. Uh huh. So I think our next step is to see when we can get a date on the calendar right, come out there and do that and, yeah, it's really important too. I mean, you're going to be no problem, and your dad 's going to be no problem. But I don't know how these other folks feel, and we got it, we want them to feel good about it and not intimidated,
+
+Speaker 1  
+like they'll be fine. Yeah, they should be fine, yeah. I mean, now we have, I mean, there's, there's, I mean, really, one other advisor, and then we have a wealth management associate who, she just started a few months ago, but I think the other other advisor, he's been at around the block a little bit, he, he'd be a good person to talk to as well, yeah, including my dad, obviously. Yeah, yeah.
+
+Gary Ricke  
+So let's, let's, it's gonna be hard. 's for you to try and get everybody in one place, right, right?
+
+Speaker 1  
+No, that's shy. What about, what about Thursday? This Thursday? Yeah, are you trying to do next week sometime? I just want to go on the website. So I'd rather do this sooner or later, if this is gonna, like, stop from, you know, getting
+
+Gary Ricke  
+no, no, I think yeah, yeah, we could do Thursday, actually, Thursday 's open. I'm just looking at my calendar. Let me go.
+
+Speaker 1  
+Let me go see I'll be right back. I'm gonna just double check some Hold on.
+
+Speaker 1  
+So what about Thursday after like, maybe like three o'clock after three, because we have meetings all during the day,
+
+Gary Ricke  
+so like three to five. That'd be great. Yeah, all right, I'll be there Thursday, three to five.
+
+Unknown Speaker  
+Awesome, outstanding, beautiful,
+
+Gary Ricke  
+yeah, yeah. So, so the plan will be, and I'll bring, I'll bring my 360 and I'll bring the drone.
+
+Unknown Speaker  
+What are you gonna do with
+
+Gary Ricke  
+the drone? I don't know, sir, the video that you show you showed me one of the videos of somebody's office, and that was a drone.
+
+Unknown Speaker  
+Yeah, my dad didn't like that, so he wasn't a fan of that.
+
+Gary Ricke  
+I thought you guys like that. That's why you
+
+Speaker 1  
+showed it. Yeah, yeah, no, he, yeah, I liked it. He, but, yeah, he didn't like that,
+
+Gary Ricke  
+no problem. But I will bring a 360 my 360 as well, so I'll just get some office shots. So do we need, do we need?
+
+Speaker 1  
+Do we need, like, to dress up for pictures, or is AI?
+
+Gary Ricke  
+Do that we want, you know, if you guys want to look I want to use AI as little as possible. So the best AI is going to be, you know, change it to make it look professionally lit, yeah, that kind of stuff. And if we wanted to change the background to improve it, we can do that. But I think, I think just dressing well, I think would be good. And I
+
+Speaker 1  
+think what like are these gonna be, like, headshot? 's what I'm saying. Because if we do head shots, then we should be in suits, if
+
+Gary Ricke  
+that's what you want to project, yeah, yeah, then I think you should. And plus, the interviews are going to be done that way, right?
+
+Unknown Speaker  
+So you're going to record video. So you'll record the actual video,
+
+Gary Ricke  
+any interview, every single person, five to seven minutes each person, Uh huh And but I do think we want it to feel approachable, yeah? Authentic, real, yeah. You know, so not casual, but the, if he wants, if you think suits are important, then go for suits. But they
+
+Speaker 1  
+are for, at least for the care, at least for online, yeah, I know it's, it is in this, yeah,
+
+Gary Ricke  
+well, you know, the clients I'm not gonna wear 's
+
+Unknown Speaker  
+best, yeah, I'm not gonna wear a tie, but just, yeah,
+
+Gary Ricke  
+yeah, sport coat, a sport coat and a button up is nice, I think, for sure, but I think we do. I really would like, I'm thinking now, really featuring these videos of you guys would be better, the best thing that we could do. Okay, these little interviews. And if somebody clicks and watches it, and gets a couple of and starts watching it, and they're like, oh, wow, these people like that would probably be different than what you're going to see anybody to see anybody else's site. I would imagine. I haven't seen a single site that kind of just gets, well, let me hear what this person has to say. Yeah, now whether that turns out to be the case, but that's kind of what I'm starting to lean towards now that I think about it. So we could play with that. We can see that it could be lower down the page, if that's not what we like, but that feels let's give it a shot. Give it a shot. Never fails. It never fails.
+
+Speaker 1  
+Worst cases, we, worst cases, we, we don't use it. Let's give
+
+Gary Ricke  
+it a shot. Well, we'll use it. It just it. Just depends on how high we'll promote it and how hard. But there is no question that getting the getting your folks talking it 100% of the time. It makes a difference with when I sit and talk with people, and when I talk with people in a way that's so what I want you to do before Thursday is, I want you to give me a list of each of these people, what their names are, properly spelled, what their roles are, and if there are some questions that you think that would be good to ask these particular individuals. List them, but I really don't want them to know what those questions are. Okay? One of the things that really wrecks interviews all the time, and I, and I mentioned this when I first started, just
+
+Unknown Speaker  
+so you know, it'll be four of us here for those, for those four people,
+
+Gary Ricke  
+these are there's more people, just for you guys, not the full and
+
+Speaker 1  
+the Well, one of them 's gone, and then two other people are remote. Couple the other people are remote.
+
+Gary Ricke  
+Okay, well, we'll have to think about how we could do those remote people too. But so we'll do four people. Okay, what questions are good to ask? Now, again, I prefer that they don't know what those questions are, so that, because too many people worry about it and they think, Well, what do we want to say? Whereas you know, if you're good at what you do, then you shouldn't have to write it down or think about it. You should just be able to speak to it. Yep. So what I've done for other clients is, if I know their role and I know their company, I can research the questions, but if you know better what questions you think would be good, just make sure I have those ahead of time. And then, yeah, no, that's that'll be good. Cool. That'd be great. And then I think what we'll do, so I've done this in the past two we could do this as well. So I'll do, like, an audio interview for 's with a voice memo, just for, just to get content. Let's think this through a little bit. So what I just did with the project is that we sat down for 2025, minutes, and I'm like, unload everything about your job and what's important from your perspective. After that 's then I do the short five to seven minutes, because then by that time, they're relaxed, and then then we kind of riff a little bit on some of the high points to get the video. And so we could do that too. And if it's just for you guys, then we can definitely knock that out within the two hours. Get a couple of shots, yeah, get some profile shots. Get a couple shots at the office. Yeah, that sounds good. Let's do that. Okay, does that work?
+
+Unknown Speaker  
+Yeah, it looks right. All right, good.
+
+Gary Ricke  
+All right, so I will confirm with Google, Google Calendar meet, and we'll see you guys on Thursday, alrighty, man,
+
+Speaker 1  
+looking forward to it. If you could book it for two hours and I'll go on the website. All right, on our calendar three to five, that'd be great. Yep, appreciate Gary, when you think we're like, I guess, I guess, do you have like, a deadline in your head on, like, when we could start to see, like, a mock of, you know, a working of the website, or, how does that week?
+
+Gary Ricke  
+God, yeah, cool. I think I'll feed in everything that you've given me, plus these interviews and, and let's Yeah, and let's do your dad maybe last, sure in the year, every sequence. Well, I think then that way, if he's really rolling, then it means I can stay a little longer, you know what I'm saying. So if he's the last person, and NOBODY'S waiting, and he's really going, I don't want to hold him. I want to take as much out of him as I can. So we'll put him last. And then from all of these that will help build the site, out and in and so again, if there's any information that you can supply that I don't have on any of the things that are in that outline. The more you give me when I start to build this out, the better that first look is going to be cool. But yeah. All right, definitely
+
+Speaker 1  
+appreciate it. We'll talk to you soon. All right, take care. Everyone. Bye.
+
+Transcribed by https://otter.ai

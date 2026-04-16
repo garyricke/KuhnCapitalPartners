@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Reduction: A Year-Round Activity — Study Guide · Destination Retirement</title>
+<meta name="description" content="Deep-dive study guide for the Destination Retirement episode on year-round tax reduction strategies. Interactive quizzes, key term definitions, and chapter breakdowns.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&family=Rambla:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET ──────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Rambla',sans-serif;font-size:18px;line-height:1.6;color:#151515;background:#FFFFFE;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none}
+button{cursor:pointer}
+
+/* ─── TOKENS ──────────────────────────────────────── */
+:root{
+  --navy:#022C58;--mid:#20569C;--gold:#FFB921;--sky:#B4E2FF;
+  --white:#FFFFFE;--off:#F4F5F7;--black:#151515;--gray:#6B7280;
+  --green:#16A34A;--red:#DC2626;
+  --fd:'Rubik',sans-serif;--fb:'Rambla',sans-serif;
+  --ease:cubic-bezier(.42,0,.58,1);
+}
+
+/* ─── LOCK SCREEN ─────────────────────────────────── */
+#lock-screen{position:fixed;inset:0;background:var(--navy);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .45s var(--ease)}
+#lock-screen.fade-out{opacity:0;pointer-events:none}
+.lock-box{width:100%;max-width:420px;text-align:center;padding:0 24px}
+.lock-logo{font-family:var(--fd);font-weight:900;font-size:22px;color:var(--white);margin-bottom:8px;letter-spacing:.06em}
+.lock-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:40px;font-style:italic}
+#lock-pw{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:14px 18px;color:var(--white);font-size:16px;font-family:var(--fb);outline:none;margin-bottom:12px;display:block}
+#lock-pw:focus{border-color:var(--gold)}
+#lock-pw::placeholder{color:rgba(255,255,255,.3)}
+.lock-submit{width:100%;background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:14px;border:none;border-radius:8px;transition:background .2s}
+.lock-submit:hover{background:#ffc93a}
+#lock-error{color:#FCA5A5;font-size:13px;margin-top:10px;display:none}
+
+/* ─── PROGRESS BAR ────────────────────────────────── */
+.progress-bar-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(2,44,88,.12);z-index:100}
+.progress-bar-fill{height:100%;background:var(--gold);width:0%;transition:width .4s var(--ease)}
+
+/* ─── NAV ──────────────────────────────────────────── */
+.site-nav{background:var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:99;border-bottom:2px solid rgba(255,185,33,.2)}
+.nav-brand{font-family:var(--fd);font-weight:900;font-size:13px;color:var(--white);letter-spacing:.08em;text-transform:uppercase}
+.nav-brand span{color:var(--gold)}
+.nav-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.6);font-size:13px;font-family:var(--fb);font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+.nav-back svg{width:14px;height:14px}
+
+/* ─── HERO ──────────────────────────────────────────── */
+.sg-hero{background:var(--navy);padding:80px 40px 72px;text-align:center;position:relative;overflow:hidden}
+.sg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(255,185,33,.1) 0%,transparent 70%)}
+.sg-hero .container{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.sg-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,185,33,.15);border:1px solid rgba(255,185,33,.3);color:var(--gold);font-family:var(--fd);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:28px}
+.sg-badge svg{width:12px;height:12px}
+.sg-hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(32px,5vw,56px);color:var(--white);line-height:1.05;margin-bottom:20px}
+.sg-hero h1 span{color:var(--gold)}
+.sg-hero p{color:rgba(255,255,255,.68);font-size:clamp(15px,1.8vw,18px);max-width:600px;margin:0 auto 36px}
+.sg-meta{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.sg-meta-item{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.55);font-size:13px;font-family:var(--fb);font-weight:700}
+.sg-meta-item svg{width:14px;height:14px;color:var(--gold)}
+.sg-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:13px 24px;border-radius:6px;transition:background .2s,transform .2s;border:none}
+.btn-gold:hover{background:#ffc93a;transform:translateY(-1px)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;border:2px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);font-family:var(--fd);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border-radius:6px;transition:all .2s}
+.btn-outline-white:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ─── CHAPTER NAV ─────────────────────────────────── */
+.chapter-nav{background:var(--off);border-bottom:1px solid rgba(2,44,88,.1);padding:0 40px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chapter-nav-inner{display:flex;gap:0;min-width:max-content}
+.chapter-nav-btn{padding:16px 20px;font-family:var(--fd);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);background:none;border:none;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s}
+.chapter-nav-btn:hover{color:var(--navy)}
+.chapter-nav-btn.active{color:var(--navy);border-bottom-color:var(--gold)}
+
+/* ─── SCORE TRACKER ───────────────────────────────── */
+.score-tracker{position:fixed;bottom:80px;right:24px;background:var(--navy);border:2px solid var(--gold);border-radius:12px;padding:12px 18px;text-align:center;z-index:98;box-shadow:0 8px 32px rgba(0,0,0,.25);transition:transform .3s var(--ease)}
+.score-tracker:hover{transform:scale(1.04)}
+.score-label{font-family:var(--fb);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:4px}
+.score-num{font-family:var(--fd);font-weight:900;font-size:22px;color:var(--gold);line-height:1}
+.score-denom{font-family:var(--fb);font-size:11px;color:rgba(255,255,255,.4)}
+
+/* ─── CONTENT LAYOUT ──────────────────────────────── */
+.container{max-width:860px;margin:0 auto;padding:0 40px}
+.section-pad{padding:72px 0}
+.s-white{background:var(--white)}
+.s-off{background:var(--off)}
+.s-navy{background:var(--navy)}
+
+/* ─── CHAPTER HEADER ──────────────────────────────── */
+.chapter{padding:72px 0 64px}
+.chapter-num{font-family:var(--fd);font-weight:900;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.chapter h2{font-family:var(--fd);font-weight:900;font-size:clamp(26px,3.5vw,38px);color:var(--navy);line-height:1.08;margin-bottom:20px}
+.chapter-intro{font-size:clamp(16px,1.8vw,18px);color:#374151;line-height:1.7;margin-bottom:40px;max-width:720px}
+.chapter-divider{height:3px;width:48px;background:var(--gold);margin-bottom:40px;border-radius:2px}
+
+/* ─── KEY TERM ────────────────────────────────────── */
+.key-term{border-bottom:2px dashed var(--gold);color:var(--navy);font-weight:700;cursor:pointer;transition:color .15s;white-space:nowrap}
+.key-term:hover{color:var(--gold)}
+
+/* ─── POPUP ───────────────────────────────────────── */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:none;align-items:center;justify-content:center;padding:20px}
+.popup-overlay.open{display:flex}
+.popup-card{background:var(--white);border-radius:16px;max-width:480px;width:100%;padding:32px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.3);animation:popIn .2s var(--ease)}
+@keyframes popIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+.popup-close{position:absolute;top:16px;right:16px;background:none;border:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:18px;line-height:1;transition:background .2s}
+.popup-close:hover{background:var(--off)}
+.popup-tag{font-family:var(--fd);font-weight:900;font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin-bottom:8px}
+.popup-term{font-family:var(--fd);font-weight:900;font-size:20px;color:var(--navy);margin-bottom:14px}
+.popup-def{font-size:15px;color:#374151;line-height:1.65}
+.popup-example{margin-top:14px;padding:12px 16px;background:var(--off);border-radius:8px;border-left:3px solid var(--gold);font-size:14px;color:var(--gray);line-height:1.6;font-style:italic}
+
+/* ─── ACCORDION ───────────────────────────────────── */
+.accordion{border:1px solid rgba(2,44,88,.12);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.accordion-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;background:var(--white);border:none;text-align:left;font-family:var(--fd);font-weight:700;font-size:15px;color:var(--navy);transition:background .2s}
+.accordion-trigger:hover{background:var(--off)}
+.accordion-trigger.open{background:var(--navy);color:var(--white)}
+.accordion-icon{width:24px;height:24px;border-radius:50%;background:rgba(2,44,88,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;line-height:1;transition:all .3s var(--ease)}
+.accordion-trigger.open .accordion-icon{background:rgba(255,185,33,.25);transform:rotate(45deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.accordion-body.open{max-height:600px}
+.accordion-inner{padding:24px;font-size:15px;color:#374151;line-height:1.7;border-top:1px solid rgba(2,44,88,.08)}
+.accordion-inner ul{padding-left:20px;margin-top:8px}
+.accordion-inner li{margin-bottom:8px}
+.accordion-inner strong{color:var(--navy)}
+
+/* ─── STAT CARDS ──────────────────────────────────── */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0}
+.stat-card{background:var(--navy);border-radius:12px;padding:24px 20px;text-align:center}
+.stat-num{font-family:var(--fd);font-weight:900;font-size:clamp(28px,3.5vw,40px);color:var(--gold);line-height:1;margin-bottom:8px}
+.stat-label{font-size:13px;color:rgba(255,255,255,.65);line-height:1.4}
+@media(max-width:600px){.stat-grid{grid-template-columns:1fr 1fr}}
+
+/* ─── CALLOUT ─────────────────────────────────────── */
+.callout{background:rgba(2,44,88,.06);border-left:4px solid var(--navy);border-radius:0 12px 12px 0;padding:20px 24px;margin:24px 0}
+.callout.gold{background:rgba(255,185,33,.1);border-left-color:var(--gold)}
+.callout.green{background:rgba(22,163,74,.08);border-left-color:var(--green)}
+.callout-label{font-family:var(--fd);font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--navy);margin-bottom:6px}
+.callout.gold .callout-label{color:#a07000}
+.callout p{font-size:15px;color:#374151;line-height:1.65}
+
+/* ─── QUIZ ────────────────────────────────────────── */
+.quiz-block{background:var(--navy);border-radius:16px;padding:32px;margin-top:40px}
+.quiz-header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.quiz-icon{width:40px;height:40px;border-radius:10px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.quiz-icon svg{width:20px;height:20px;color:var(--navy)}
+.quiz-title{font-family:var(--fd);font-weight:900;font-size:16px;color:var(--white)}
+.quiz-subtitle{font-size:13px;color:rgba(255,255,255,.5);margin-top:2px}
+.quiz-question{margin-bottom:28px}
+.q-text{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--white);margin-bottom:14px;line-height:1.45}
+.q-num{display:inline-block;background:rgba(255,185,33,.2);color:var(--gold);font-size:10px;font-family:var(--fd);font-weight:900;letter-spacing:.1em;padding:2px 8px;border-radius:4px;margin-bottom:10px}
+.q-options{display:flex;flex-direction:column;gap:8px}
+.q-option{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.1);border-radius:10px;cursor:pointer;transition:all .18s;font-size:14px;color:rgba(255,255,255,.85);font-family:var(--fb);user-select:none}
+.q-option:hover:not(.locked){background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+.q-option.selected{border-color:var(--gold);background:rgba(255,185,33,.12);color:var(--white)}
+.q-option.correct{border-color:#4ADE80;background:rgba(74,222,128,.12);color:#4ADE80}
+.q-option.incorrect{border-color:#F87171;background:rgba(248,113,113,.1);color:#F87171}
+.q-option.locked{cursor:default}
+.q-option .opt-letter{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:900;font-size:11px;flex-shrink:0}
+.q-option.correct .opt-letter{background:rgba(74,222,128,.25);color:#4ADE80}
+.q-option.incorrect .opt-letter{background:rgba(248,113,113,.2);color:#F87171}
+.q-option.selected:not(.correct):not(.incorrect) .opt-letter{background:rgba(255,185,33,.3);color:var(--gold)}
+.q-feedback{margin-top:10px;padding:12px 16px;border-radius:8px;font-size:14px;font-family:var(--fb);line-height:1.5;display:none}
+.q-feedback.show{display:block}
+.q-feedback.correct{background:rgba(74,222,128,.1);color:#4ADE80;border:1px solid rgba(74,222,128,.3)}
+.q-feedback.wrong{background:rgba(248,113,113,.08);color:#F87171;border:1px solid rgba(248,113,113,.25)}
+.q-check{margin-top:14px;background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding:10px 20px;border-radius:8px;border:none;transition:background .2s,opacity .2s}
+.q-check:hover{background:#ffc93a}
+.q-check:disabled{opacity:.4;cursor:default}
+
+/* ─── FINAL SCORE ─────────────────────────────────── */
+.final-score{background:var(--navy);border-radius:20px;padding:48px 40px;text-align:center;margin:48px 0}
+.fs-emoji{font-size:56px;margin-bottom:20px;display:block}
+.fs-score{font-family:var(--fd);font-weight:900;font-size:clamp(52px,8vw,80px);color:var(--gold);line-height:1;margin-bottom:8px}
+.fs-total{font-size:16px;color:rgba(255,255,255,.5)}
+.fs-grade{font-family:var(--fd);font-weight:900;font-size:22px;color:var(--white);margin:20px 0 12px}
+.fs-msg{font-size:16px;color:rgba(255,255,255,.65);max-width:500px;margin:0 auto 32px;line-height:1.65}
+.fs-bar-wrap{background:rgba(255,255,255,.1);border-radius:20px;height:12px;max-width:400px;margin:0 auto 36px;overflow:hidden}
+.fs-bar{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--gold),#ffd970);transition:width 1.2s cubic-bezier(.34,1.56,.64,1)}
+
+/* ─── CHAPTER COLORS ──────────────────────────────── */
+.ch-1{background:#F0F7FF}
+.ch-2{background:#FFFFFE}
+.ch-3{background:#F4F5F7}
+.ch-4{background:#F0F7FF}
+.ch-5{background:#FFF8E7}
+.ch-6{background:#F4F5F7}
+.ch-7{background:#FFFFFE}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+.sg-footer{background:var(--navy);padding:48px 40px;text-align:center}
+.sg-footer p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:680px;margin:0 auto}
+
+/* ─── RESPONSIVE ──────────────────────────────────── */
+@media(max-width:640px){
+  .container{padding:0 20px}
+  .site-nav{padding:0 20px}
+  .sg-hero{padding:60px 20px 56px}
+  .chapter{padding:56px 0 48px}
+  .quiz-block{padding:24px 20px}
+  .final-score{padding:36px 24px}
+  .score-tracker{bottom:100px;right:12px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+}
+
+/* ─── AUDIO PLAYER ────────────────────────────────── */
+.apc-console{background:linear-gradient(160deg,#0d1b2e 0%,#081016 100%);border:1px solid rgba(255,185,33,.22);border-radius:20px;padding:24px 28px;margin-top:32px;box-shadow:0 16px 48px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.05);position:relative;overflow:hidden}
+.apc-console::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--gold) 50%,transparent 100%);opacity:.5}
+.apc-top{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.apc-waveform{display:flex;align-items:center;gap:2px;height:38px;flex-shrink:0}
+.apc-waveform span{display:block;width:3px;border-radius:2px;background:rgba(255,185,33,.25);transform-origin:bottom}
+.apc-waveform.playing span{background:var(--gold);animation:wvBar .9s ease-in-out infinite}
+.apc-waveform span:nth-child(1){height:8px;animation-delay:0s}
+.apc-waveform span:nth-child(2){height:14px;animation-delay:.07s}
+.apc-waveform span:nth-child(3){height:22px;animation-delay:.14s}
+.apc-waveform span:nth-child(4){height:30px;animation-delay:.21s}
+.apc-waveform span:nth-child(5){height:36px;animation-delay:.28s}
+.apc-waveform span:nth-child(6){height:38px;animation-delay:.35s}
+.apc-waveform span:nth-child(7){height:34px;animation-delay:.42s}
+.apc-waveform span:nth-child(8){height:26px;animation-delay:.49s}
+.apc-waveform span:nth-child(9){height:18px;animation-delay:.56s}
+.apc-waveform span:nth-child(10){height:12px;animation-delay:.63s}
+.apc-waveform span:nth-child(11){height:20px;animation-delay:.70s}
+.apc-waveform span:nth-child(12){height:32px;animation-delay:.77s}
+.apc-waveform span:nth-child(13){height:38px;animation-delay:.84s}
+.apc-waveform span:nth-child(14){height:28px;animation-delay:.91s}
+.apc-waveform span:nth-child(15){height:16px;animation-delay:.98s}
+@keyframes wvBar{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+.apc-info{flex:1;min-width:0}
+.apc-show{font-size:10px;color:rgba(255,185,33,.65);font-family:var(--fd);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.apc-title{font-family:var(--fd);font-weight:900;font-size:15px;color:var(--white);line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.apc-timeline{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.apc-time{font-family:monospace;font-size:11px;color:rgba(255,255,255,.38);flex-shrink:0;min-width:34px}
+.apc-time-right{text-align:right}
+.apc-prog-wrap{flex:1;position:relative;height:6px;background:rgba(255,255,255,.1);border-radius:3px;cursor:pointer}
+.apc-prog-fill{position:absolute;left:0;top:0;height:100%;background:linear-gradient(90deg,var(--gold),#ffd44a);border-radius:3px;pointer-events:none;width:0%}
+.apc-scrubber{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;margin:0;padding:0}
+.apc-controls{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.apc-left{display:flex;align-items:center;gap:14px}
+.apc-right{display:flex;align-items:center;gap:10px}
+.apc-play-btn{width:50px;height:50px;border-radius:50%;background:var(--gold);border:none;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:all .2s;box-shadow:0 4px 16px rgba(255,185,33,.3);flex-shrink:0}
+.apc-play-btn:hover{background:#ffc93a;transform:scale(1.07);box-shadow:0 6px 22px rgba(255,185,33,.5)}
+.apc-play-btn svg{width:20px;height:20px}
+.apc-skip{background:none;border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:5px;padding:7px 11px;font-size:11px;font-family:var(--fd);font-weight:700;letter-spacing:.04em;transition:all .2s}
+.apc-skip:hover{border-color:var(--gold);color:var(--gold)}
+.apc-skip svg{width:13px;height:13px}
+.apc-speed{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:rgba(255,255,255,.65);padding:6px 10px;font-size:11px;font-family:var(--fd);font-weight:700;cursor:pointer;outline:none;transition:border-color .2s}
+.apc-speed:focus{border-color:var(--gold)}
+.apc-speed option{background:#0d1b2e}
+.apc-vol-wrap{display:flex;align-items:center;gap:6px}
+.apc-mute{background:none;border:none;color:rgba(255,255,255,.45);display:flex;align-items:center;transition:color .2s;padding:2px}
+.apc-mute:hover{color:var(--gold)}
+.apc-mute svg{width:15px;height:15px}
+.apc-vol{-webkit-appearance:none;appearance:none;width:64px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;outline:none;cursor:pointer}
+.apc-vol::-webkit-slider-thumb{-webkit-appearance:none;width:12px;height:12px;border-radius:50%;background:var(--gold);cursor:pointer}
+.apc-download{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.38);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:7px 9px;transition:all .2s}
+.apc-download:hover{border-color:var(--gold);color:var(--gold)}
+.apc-download svg{width:14px;height:14px}
+.apc-chapters{border-top:1px solid rgba(255,255,255,.06);padding-top:14px}
+.apc-ch-label{font-size:9px;color:rgba(255,255,255,.28);font-family:var(--fd);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.apc-ch-btns{display:flex;flex-wrap:wrap;gap:6px}
+.apc-ch-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:rgba(255,255,255,.45);font-size:10px;font-family:var(--fd);font-weight:700;padding:5px 10px;transition:all .2s;letter-spacing:.03em}
+.apc-ch-btn:hover,.apc-ch-btn.apc-ch-active{background:rgba(255,185,33,.12);border-color:rgba(255,185,33,.35);color:var(--gold)}
+.apc-actions{display:flex;justify-content:center;margin-top:20px}
+@media(max-width:560px){.apc-right{gap:6px}.apc-vol{width:44px}.apc-title{font-size:13px}}
+
+/* ─── FLASHCARD ───────────────────────────────────── */
+.fc-card{margin-bottom:16px}
+.fc-front{border-radius:12px;padding:24px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.13);display:flex;flex-direction:column;gap:16px}
+.fc-back{display:none;border-radius:12px;padding:24px;background:rgba(255,185,33,.07);border:2px solid rgba(255,185,33,.28)}
+.fc-card.revealed .fc-front{display:none}
+.fc-card.revealed .fc-back{display:block;animation:fcReveal .38s ease}
+@keyframes fcReveal{from{opacity:0;transform:rotateY(-80deg)}to{opacity:1;transform:rotateY(0deg)}}
+.fc-badge{font-size:10px;font-family:var(--fd);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.fc-badge-ans{color:rgba(255,185,33,.7)}
+.fc-question{font-family:var(--fd);font-weight:700;font-size:17px;color:var(--white);line-height:1.4}
+.fc-flip-btn{align-self:flex-start;background:none;border:2px solid rgba(255,255,255,.18);border-radius:8px;color:rgba(255,255,255,.55);font-size:12px;font-family:var(--fd);font-weight:700;padding:9px 16px;transition:all .2s;display:flex;align-items:center;gap:6px}
+.fc-flip-btn:hover{border-color:var(--gold);color:var(--gold)}
+.fc-answer{font-size:15px;color:rgba(255,255,255,.88);line-height:1.6;margin-bottom:18px}
+.fc-answer strong{color:var(--gold)}
+.fc-score-row{border-top:1px solid rgba(255,185,33,.15);padding-top:14px}
+.fc-prompt{font-size:12px;color:rgba(255,255,255,.4);font-family:var(--fb);display:block;margin-bottom:10px}
+.fc-btns{display:flex;gap:10px}
+.fc-btn-knew,.fc-btn-missed{flex:1;padding:10px 12px;border-radius:8px;font-family:var(--fd);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.07em;transition:all .2s}
+.fc-btn-knew{background:rgba(74,222,128,.1);color:#4ADE80;border:2px solid rgba(74,222,128,.25)}
+.fc-btn-knew:hover:not(:disabled){background:rgba(74,222,128,.22)}
+.fc-btn-missed{background:rgba(248,113,113,.07);color:#F87171;border:2px solid rgba(248,113,113,.2)}
+.fc-btn-missed:hover:not(:disabled){background:rgba(248,113,113,.18)}
+.fc-btn-knew:disabled,.fc-btn-missed:disabled{opacity:.45;cursor:default}
+.fc-done-badge{margin-top:10px;padding:8px 12px;border-radius:8px;font-family:var(--fd);font-weight:700;font-size:12px;display:none;border:1px solid transparent}
+
+/* ─── TRUE / FALSE ───────────────────────────────── */
+.tf-question{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin-bottom:14px}
+.tf-stmt{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--white);line-height:1.45;margin-bottom:16px}
+.tf-buttons{display:flex;gap:10px}
+.tf-btn{flex:1;padding:12px;border-radius:10px;font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:.1em;border:2px solid;transition:all .2s}
+.tf-btn[data-choice="true"]{background:rgba(74,222,128,.08);color:#4ADE80;border-color:rgba(74,222,128,.25)}
+.tf-btn[data-choice="false"]{background:rgba(248,113,113,.06);color:#F87171;border-color:rgba(248,113,113,.2)}
+.tf-btn:hover:not(:disabled){filter:brightness(1.25);transform:translateY(-1px)}
+.tf-btn:disabled{cursor:default}
+.tf-btn.tf-correct{background:rgba(74,222,128,.22)!important;border-color:#4ADE80!important;color:#4ADE80!important}
+.tf-btn.tf-wrong{background:rgba(248,113,113,.18)!important;border-color:#F87171!important;color:#F87171!important}
+.tf-feedback{margin-top:12px;padding:11px 14px;border-radius:8px;font-size:14px;font-family:var(--fb);line-height:1.5;display:none}
+.tf-feedback.show{display:block}
+.tf-feedback.correct{background:rgba(74,222,128,.08);color:#4ADE80;border:1px solid rgba(74,222,128,.25)}
+.tf-feedback.wrong{background:rgba(248,113,113,.06);color:#F87171;border:1px solid rgba(248,113,113,.2)}
+
+/* ─── FILL IN BLANK ──────────────────────────────── */
+.fib-questions{margin-bottom:20px}
+.fib-row{margin-bottom:20px}
+.fib-qlabel{font-size:10px;color:var(--gold);font-family:var(--fd);font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.fib-sentence{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--white);line-height:1.5;margin-bottom:8px}
+.fib-blank-wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.fib-input{background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:8px;padding:9px 14px;color:var(--white);font-family:var(--fd);font-weight:700;font-size:15px;width:110px;outline:none;transition:border-color .2s}
+.fib-input:focus{border-color:var(--gold)}
+.fib-input.fib-right{border-color:#4ADE80;background:rgba(74,222,128,.1);color:#4ADE80}
+.fib-input.fib-wrong{border-color:#F87171;background:rgba(248,113,113,.07);color:#F87171}
+.fib-hint{font-size:13px;font-family:var(--fb);display:none}
+.fib-hint.show{display:block}
+.fib-hint.fib-ok{color:#4ADE80}
+.fib-hint.fib-err{color:#F87171}
+.fib-check-btn{background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding:12px 24px;border-radius:8px;border:none;transition:all .2s}
+.fib-check-btn:hover:not(:disabled){background:#ffc93a}
+.fib-check-btn:disabled{opacity:.5;cursor:default}
+
+/* ─── SLIDER CHALLENGE ───────────────────────────── */
+.slider-question{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px;margin-bottom:14px}
+.slider-question.sl-correct{border-color:rgba(74,222,128,.4)}
+.slider-question.sl-wrong{border-color:rgba(248,113,113,.3)}
+.sl-qlabel{font-size:10px;color:var(--gold);font-family:var(--fd);font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.sl-text{font-family:var(--fd);font-weight:700;font-size:15px;color:var(--white);line-height:1.45;margin-bottom:16px}
+.sl-track{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.sl-val{font-family:var(--fd);font-weight:900;font-size:22px;color:var(--gold);min-width:60px;text-align:center}
+.sl-input{-webkit-appearance:none;appearance:none;flex:1;height:6px;background:rgba(255,255,255,.12);border-radius:3px;outline:none;cursor:pointer}
+.sl-input::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);cursor:pointer;box-shadow:0 2px 8px rgba(255,185,33,.4);border:2px solid #fff}
+.sl-input:disabled{opacity:.5;cursor:default}
+.sl-range-hint{font-size:11px;color:rgba(255,255,255,.3);font-family:var(--fb);margin-bottom:4px}
+.sl-feedback{margin-top:10px;padding:10px 14px;border-radius:8px;font-size:14px;font-family:var(--fb);display:none}
+.sl-feedback.show{display:block}
+.sl-feedback.correct{background:rgba(74,222,128,.08);color:#4ADE80;border:1px solid rgba(74,222,128,.25)}
+.sl-feedback.wrong{background:rgba(248,113,113,.06);color:#F87171;border:1px solid rgba(248,113,113,.2)}
+.slider-check-btn{background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding:12px 24px;border-radius:8px;border:none;transition:all .2s;margin-top:6px}
+.slider-check-btn:hover:not(:disabled){background:#ffc93a}
+.slider-check-btn:disabled{opacity:.5;cursor:default}
+
+/* ─── CONNECT THE DOTS ───────────────────────────── */
+.ctd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.ctd-col-label{font-size:10px;color:rgba(255,255,255,.35);font-family:var(--fd);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.ctd-item{padding:13px 15px;border-radius:10px;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.75);font-size:13px;font-family:var(--fb);line-height:1.4;cursor:pointer;transition:all .18s;margin-bottom:8px;user-select:none}
+.ctd-item:hover:not(.ctd-locked){border-color:rgba(255,185,33,.35);background:rgba(255,185,33,.06);color:var(--white)}
+.ctd-item.ctd-selected{border-color:var(--gold);background:rgba(255,185,33,.14);color:var(--white)}
+.ctd-item.ctd-pending{border-color:rgba(255,185,33,.5);background:rgba(255,185,33,.1)}
+.ctd-item.ctd-matched-ok{border-color:#4ADE80!important;background:rgba(74,222,128,.1)!important;color:#4ADE80!important;cursor:default}
+.ctd-item.ctd-matched-err{border-color:#F87171!important;background:rgba(248,113,113,.07)!important;color:#F87171!important;cursor:default}
+.ctd-item.ctd-locked{cursor:default}
+.ctd-hint{font-size:12px;color:rgba(255,255,255,.3);font-family:var(--fb);font-style:italic;margin-top:2px}
+.ctd-check-btn{width:100%;background:var(--gold);color:var(--navy);font-family:var(--fd);font-weight:900;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding:12px;border-radius:8px;border:none;transition:all .2s;margin-top:4px}
+.ctd-check-btn:hover:not(:disabled){background:#ffc93a}
+.ctd-check-btn:disabled{opacity:.5;cursor:default}
+.ctd-result{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:14px;font-family:var(--fb);display:none}
+.ctd-result.show{display:block}
+.ctd-result.correct{background:rgba(74,222,128,.08);color:#4ADE80;border:1px solid rgba(74,222,128,.25)}
+.ctd-result.partial{background:rgba(255,185,33,.1);color:var(--gold);border:1px solid rgba(255,185,33,.3)}
+@media(max-width:560px){.ctd-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ─── LOCK SCREEN ─────────────────────────────────── -->
+<div id="lock-screen">
+  <div class="lock-box">
+    <div class="lock-logo">Kuhn Capital Partners</div>
+    <div class="lock-sub">Destination Retirement · Study Guide</div>
+    <form id="lock-form" novalidate>
+      <input type="password" id="lock-pw" placeholder="Enter password" autocomplete="current-password">
+      <button type="submit" class="lock-submit">Unlock</button>
+      <p id="lock-error">Incorrect password. Try again.</p>
+    </form>
+  </div>
+</div>
+<script>
+(function(){
+  var H='768c5aebaedd7dd4a97bf64af5f26067d75e4e61e884bdbca3742ccc7c4ceecc';
+  var K='kcp_auth';
+  var ls=document.getElementById('lock-screen');
+  if(sessionStorage.getItem(K)===H){ls.style.display='none';return;}
+  setTimeout(function(){document.getElementById('lock-pw').focus();},50);
+  async function sha256(s){
+    var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');
+  }
+  document.getElementById('lock-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var h=await sha256(document.getElementById('lock-pw').value);
+    if(h===H){
+      sessionStorage.setItem(K,h);
+      ls.classList.add('fade-out');
+      setTimeout(function(){ls.style.display='none';},460);
+    } else {
+      document.getElementById('lock-error').style.display='block';
+      document.getElementById('lock-pw').value='';
+      document.getElementById('lock-pw').focus();
+    }
+  });
+})();
+</script>
+
+<!-- ─── PROGRESS BAR ─────────────────────────────────── -->
+<div class="progress-bar-wrap"><div class="progress-bar-fill" id="progress-fill"></div></div>
+
+<!-- ─── NAV ──────────────────────────────────────────── -->
+<nav class="site-nav">
+  <div class="nav-brand">Destination Retirement · <span>Study Guide</span></div>
+  <a href="../" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Podcast
+  </a>
+</nav>
+
+<!-- ─── SCORE TRACKER ─────────────────────────────────── -->
+<div class="score-tracker" id="score-tracker">
+  <div class="score-label">Your Score</div>
+  <div class="score-num"><span id="score-display">0</span></div>
+  <div class="score-denom">/ <span id="total-display">0</span> pts</div>
+</div>
+
+<!-- ─── KEY TERM POPUP ────────────────────────────────── -->
+<div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true">
+  <div class="popup-card">
+    <button class="popup-close" id="popup-close" aria-label="Close">✕</button>
+    <div class="popup-tag">Key Term</div>
+    <div class="popup-term" id="popup-term"></div>
+    <div class="popup-def" id="popup-def"></div>
+    <div class="popup-example" id="popup-example"></div>
+  </div>
+</div>
+
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section class="sg-hero">
+  <div class="container">
+    <div class="sg-badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Deep Dive · 409 Downloads
+    </div>
+    <h1>Tax Reduction Is a<br><span>Year-Round Activity</span></h1>
+    <p>An interactive study guide built from the Destination Retirement episode. Work through 6 chapters, learn key concepts, and test your knowledge with scored quizzes.</p>
+    <div class="sg-meta">
+      <div class="sg-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        55 min episode · Nov 23, 2024
+      </div>
+      <div class="sg-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        6 chapters · 18 quiz questions
+      </div>
+      <div class="sg-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Robert Kuhn · Kuhn Capital Partners
+      </div>
+    </div>
+    <div class="apc-console">
+      <audio id="ep-audio" src="https://mcdn.podbean.com/mf/web/yiqq5ukhs8x3xz3b/Destination_Retirement_11-23-24_-_FULLb8bj4.mp3" preload="none"></audio>
+      <div class="apc-top">
+        <div class="apc-waveform" id="apc-waveform">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="apc-info">
+          <div class="apc-show">Destination Retirement · Nov 23, 2024 · 55 min</div>
+          <div class="apc-title">Tax Reduction Is a Year-Round Activity</div>
+        </div>
+      </div>
+      <div class="apc-timeline">
+        <span class="apc-time" id="apc-current">0:00</span>
+        <div class="apc-prog-wrap">
+          <div class="apc-prog-fill" id="apc-fill"></div>
+          <input type="range" class="apc-scrubber" id="apc-scrubber" min="0" max="100" value="0" step="0.1">
+        </div>
+        <span class="apc-time apc-time-right" id="apc-duration">55:10</span>
+      </div>
+      <div class="apc-controls">
+        <div class="apc-left">
+          <button class="apc-skip" id="apc-back" title="Rewind 15 seconds">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.71"/></svg>15s
+          </button>
+          <button class="apc-play-btn" id="apc-play" aria-label="Play / Pause">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" id="apc-play-icon"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          <button class="apc-skip" id="apc-fwd" title="Skip 30 seconds">
+            30s<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-.49-3.71"/></svg>
+          </button>
+        </div>
+        <div class="apc-right">
+          <select class="apc-speed" id="apc-speed" title="Playback speed">
+            <option value="0.75">0.75×</option>
+            <option value="1" selected>1×</option>
+            <option value="1.25">1.25×</option>
+            <option value="1.5">1.5×</option>
+            <option value="2">2×</option>
+          </select>
+          <div class="apc-vol-wrap">
+            <button class="apc-mute" id="apc-mute" aria-label="Mute">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" id="apc-vol-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            </button>
+            <input type="range" class="apc-vol" id="apc-vol" min="0" max="1" step="0.05" value="1">
+          </div>
+          <a href="https://mcdn.podbean.com/mf/web/yiqq5ukhs8x3xz3b/Destination_Retirement_11-23-24_-_FULLb8bj4.mp3" class="apc-download" title="Download episode" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="apc-chapters">
+        <div class="apc-ch-label">Jump to chapter</div>
+        <div class="apc-ch-btns">
+          <button class="apc-ch-btn apc-ch-active" data-time="0">01 · KCP Philosophy</button>
+          <button class="apc-ch-btn" data-time="600">02 · Advisor Problem</button>
+          <button class="apc-ch-btn" data-time="1320">03 · Structured Notes</button>
+          <button class="apc-ch-btn" data-time="1920">04 · Principal Protection</button>
+          <button class="apc-ch-btn" data-time="2400">05 · Tax Reduction</button>
+          <button class="apc-ch-btn" data-time="2820">06 · Portfolio & Hedging</button>
+        </div>
+      </div>
+    </div>
+    <div class="apc-actions">
+      <a href="#chapter-1" class="btn-outline-white">Start Study Guide ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CHAPTER NAV ────────────────────────────────────── -->
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <div class="chapter-nav-inner">
+    <button class="chapter-nav-btn active" data-target="chapter-1">1 · KCP Philosophy</button>
+    <button class="chapter-nav-btn" data-target="chapter-2">2 · The Advisor Problem</button>
+    <button class="chapter-nav-btn" data-target="chapter-3">3 · Structured Notes</button>
+    <button class="chapter-nav-btn" data-target="chapter-4">4 · Principal Protection</button>
+    <button class="chapter-nav-btn" data-target="chapter-5">5 · Tax Reduction</button>
+    <button class="chapter-nav-btn" data-target="chapter-6">6 · Portfolio & Hedging</button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 1 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-1" id="chapter-1">
+  <div class="container">
+    <div class="chapter-num">Chapter 01</div>
+    <h2>The KCP Philosophy</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      Kuhn Capital Partners is an independent <span class="key-term" data-term="fiduciary">fiduciary</span> advisory firm headquartered outside Chicago. Their core mandate is to bring institutional-quality strategies that can deliver <strong>positive returns in negative markets</strong> — something Robert argues 9 out of 10 advisors simply don't do.
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">9/10</div><div class="stat-label">Advisors running closet index fund strategies</div></div>
+      <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">Historical scenarios in the free Portfolio Stress Test</div></div>
+      <div class="stat-card"><div class="stat-num">$0</div><div class="stat-label">Cost of the Portfolio Stress Test (complimentary)</div></div>
+    </div>
+
+    <div class="accordion" id="acc-1a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-1a')">
+        What is a Portfolio Stress Test?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>The Portfolio Stress Test is a complimentary report KCP offers that benchmarks your current holdings against <strong>up to 100 different positive and negative historical market scenarios</strong>. It reveals:</p>
+          <ul>
+            <li>How your portfolio would perform in events like 2008, 2000 dot-com, 2018, etc.</li>
+            <li>Your portfolio's <strong><span class="key-term" data-term="correlation">correlation</span></strong> to the broader market</li>
+            <li>Whether your advisor is actually adding value vs. just tracking an index</li>
+          </ul>
+          <p>To get the report, you send your statements to KCP via their secure portal. Turnaround is approximately 72 hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-1b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-1b')">
+        What makes KCP different from a typical advisory firm?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Robert identifies three structural differences:</p>
+          <ul>
+            <li><strong>Independent:</strong> Not affiliated with a big bank or brokerage — no restrictions on what strategies they can offer clients.</li>
+            <li><strong>Fiduciary:</strong> Legally obligated to act in the client's best interest, not the firm's.</li>
+            <li><strong>Strategy breadth:</strong> Structured notes, energy tax strategies, principal protection, and momentum-based strategies — all in one portfolio.</li>
+          </ul>
+          <div class="callout gold">
+            <div class="callout-label">Robert's Take</div>
+            <p>"We don't need your business. We have a very good business. We have a very good client base. But we do want to help and we do want to educate. We will never lower our professional standards."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 1 · FLASHCARD FLIP -->
+    <div class="quiz-block" id="quiz-1">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><div class="quiz-title">Chapter 1 · Flashcard Flip</div><div class="quiz-subtitle">Flip each card, then rate your recall honestly · 2 points possible</div></div>
+      </div>
+
+      <div class="fc-card" id="fc1">
+        <div class="fc-front">
+          <div class="fc-badge">Card 1 of 2</div>
+          <div class="fc-question">What is KCP's primary competitive advantage as an investment firm?</div>
+          <button class="fc-flip-btn" onclick="flipCard('fc1')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="23 4 23 10 17 10"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+            Flip to see answer
+          </button>
+        </div>
+        <div class="fc-back">
+          <div class="fc-badge fc-badge-ans">Answer</div>
+          <div class="fc-answer">Strategies that can deliver <strong>positive returns in negative markets</strong>. Robert argues nine out of ten advisors can't offer this — they just track the market up and down while charging a fee.</div>
+          <div class="fc-score-row">
+            <span class="fc-prompt">Be honest — did you know this?</span>
+            <div class="fc-btns">
+              <button class="fc-btn-knew" onclick="scoreFlashcard('fc1',true)">✓ Got it</button>
+              <button class="fc-btn-missed" onclick="scoreFlashcard('fc1',false)">✗ Still learning</button>
+            </div>
+          </div>
+          <div class="fc-done-badge" id="fc1-badge"></div>
+        </div>
+      </div>
+
+      <div class="fc-card" id="fc2">
+        <div class="fc-front">
+          <div class="fc-badge">Card 2 of 2</div>
+          <div class="fc-question">What does KCP's Portfolio Stress Test benchmark your holdings against?</div>
+          <button class="fc-flip-btn" onclick="flipCard('fc2')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="23 4 23 10 17 10"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+            Flip to see answer
+          </button>
+        </div>
+        <div class="fc-back">
+          <div class="fc-badge fc-badge-ans">Answer</div>
+          <div class="fc-answer">Up to <strong>100 different historical market scenarios</strong> — both positive and negative — including 2008, 2000 dot-com, and 2018. The report is complimentary and takes ~72 hours.</div>
+          <div class="fc-score-row">
+            <span class="fc-prompt">Be honest — did you know this?</span>
+            <div class="fc-btns">
+              <button class="fc-btn-knew" onclick="scoreFlashcard('fc2',true)">✓ Got it</button>
+              <button class="fc-btn-missed" onclick="scoreFlashcard('fc2',false)">✗ Still learning</button>
+            </div>
+          </div>
+          <div class="fc-done-badge" id="fc2-badge"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 2 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-2" id="chapter-2">
+  <div class="container">
+    <div class="chapter-num">Chapter 02</div>
+    <h2>The Advisor Problem</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      Robert argues that the vast majority of retail investors are unknowingly in a <span class="key-term" data-term="closet-index">closet index fund</span> — their portfolio is dressed up as sophisticated but simply tracks the market up and down, all while paying advisory fees. Understanding this is the first step to demanding more.
+    </p>
+
+    <div class="callout">
+      <div class="callout-label">The Harsh Reality</div>
+      <p>"Nine out of ten individuals — your advisor tells you it's spruced up, it's custom, it's this, it's that — but at the end of the day it just simply tracks the market up and down. And then you pay a fee for that."</p>
+    </div>
+
+    <div class="accordion" id="acc-2a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-2a')">
+        What is portfolio correlation and why does it matter?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p><strong>Correlation</strong> measures how closely your portfolio moves relative to a benchmark index (like the S&P 500). A correlation of:</p>
+          <ul>
+            <li><strong>1.0</strong> = Your portfolio moves perfectly with the index (up when it's up, down when it's down)</li>
+            <li><strong>0.0</strong> = No relationship to the index</li>
+            <li><strong>-1.0</strong> = Moves opposite to the index</li>
+          </ul>
+          <p>Robert finds that most client portfolios he reviews have a correlation "darn near one" — meaning they're paying fees for what amounts to an expensive index fund.</p>
+          <div class="callout gold">
+            <div class="callout-label">The Math Problem</div>
+            <p>If your correlation is 1.0 and the market drops 30%, you drop ~30%. If your advisor charges 1%, you're paying to experience the full market drawdown. You could just buy a Vanguard index fund for near zero cost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-2b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-2b')">
+        The conflict of interest: why advisors keep you fully invested
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Robert reveals a systemic conflict he experienced firsthand at a major brokerage firm:</p>
+          <ul>
+            <li>Advisors typically earn fees based on <strong>assets under management (AUM)</strong></li>
+            <li>At his previous firm, if money sat in cash for more than <strong>3 months</strong>, the advisor stopped earning their management fee on it</li>
+            <li>This created an incentive to <em>always</em> be invested — regardless of market conditions</li>
+            <li>The decision of when to reallocate was driven by the advisor's pay, not the client's best interest</li>
+          </ul>
+          <p>This is why Robert runs KCP as an independent <span class="key-term" data-term="fiduciary">fiduciary</span> — legally bound to put client interests first, removing fee-based incentive conflicts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 2 · TRUE / FALSE RAPID FIRE -->
+    <div class="quiz-block" id="quiz-2">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div><div class="quiz-title">Chapter 2 · True / False Rapid Fire</div><div class="quiz-subtitle">Tap TRUE or FALSE — instant result, no take-backs! · 3 points possible</div></div>
+      </div>
+
+      <div class="tf-question" id="q3">
+        <div class="tf-stmt">A "closet index fund" is a portfolio that is sold as sophisticated and custom — but in reality just tracks the market up and down.</div>
+        <div class="tf-buttons">
+          <button class="tf-btn" data-choice="true" onclick="answerTF(this,'q3','true','true')">TRUE</button>
+          <button class="tf-btn" data-choice="false" onclick="answerTF(this,'q3','false','true')">FALSE</button>
+        </div>
+        <div class="tf-feedback" data-correct="Correct! That's exactly the definition — it looks custom and sophisticated on the surface, but it's just an expensive index tracker." data-wrong="This IS true. A closet index fund mimics active management in name only — underneath, the portfolio has near-1.0 correlation to the market."></div>
+      </div>
+
+      <div class="tf-question" id="q4">
+        <div class="tf-stmt">A portfolio with a 1.0 correlation to the S&amp;P 500 would only drop about 10% if the index falls 25%.</div>
+        <div class="tf-buttons">
+          <button class="tf-btn" data-choice="true" onclick="answerTF(this,'q4','true','false')">TRUE</button>
+          <button class="tf-btn" data-choice="false" onclick="answerTF(this,'q4','false','false')">FALSE</button>
+        </div>
+        <div class="tf-feedback" data-correct="Correct — FALSE! Correlation of 1.0 means perfect mirroring. If the S&P falls 25%, so does your portfolio. There's zero cushion." data-wrong="FALSE is correct. Correlation 1.0 means your portfolio mirrors the index exactly — a 25% S&P drop means a ~25% portfolio drop. No buffer at all."></div>
+      </div>
+
+      <div class="tf-question" id="q5">
+        <div class="tf-stmt">Microsoft stock took 14 years to recover to its year-2000 peak — an example Robert uses to warn about extended sideways markets.</div>
+        <div class="tf-buttons">
+          <button class="tf-btn" data-choice="true" onclick="answerTF(this,'q5','true','true')">TRUE</button>
+          <button class="tf-btn" data-choice="false" onclick="answerTF(this,'q5','false','true')">FALSE</button>
+        </div>
+        <div class="tf-feedback" data-correct="TRUE — and Robert finds this scenario scarier than a sharp crash. You can't simply 'wait it out' for 14 years in retirement." data-wrong="This IS true. Robert specifically cites Microsoft (peak in 2000, recovery in 2014) as a warning about slow, grinding, multi-year losses."></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 3 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-3" id="chapter-3">
+  <div class="container">
+    <div class="chapter-num">Chapter 03</div>
+    <h2>Structured Notes (Bank Notes)</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      <span class="key-term" data-term="structured-notes">Structured notes</span> — also called bank notes — are one of KCP's primary portfolio tools. They're issued by the world's largest banks and offer defined, predictable returns with significant downside protection. Robert sees them as a way to bring institutional strategies to retail investors.
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">12%+</div><div class="stat-label">Target annual coupon on KCP structured notes</div></div>
+      <div class="stat-card"><div class="stat-num">30%</div><div class="stat-label">Downside buffer before you stop earning the coupon</div></div>
+      <div class="stat-card"><div class="stat-num">Monthly</div><div class="stat-label">Coupon payment frequency on KCP-preferred notes</div></div>
+    </div>
+
+    <div class="accordion" id="acc-3a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-3a')">
+        How exactly does a structured note work?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>A structured note is a debt instrument issued by a large bank (JP Morgan, Morgan Stanley, BNP, etc.) with a return linked to the performance of one or more underlying indexes.</p>
+          <p><strong>KCP's preferred structure:</strong></p>
+          <ul>
+            <li>Tied to 2–3 indexes (e.g., S&P 500, Russell 2000, KRE Regional Bank Index)</li>
+            <li>Pays a monthly coupon (targeting 12%+ annually)</li>
+            <li>Has a <strong>30% downside buffer</strong> — as long as none of the tracked indexes fall more than 30%, the coupon is paid</li>
+            <li>If any index falls more than 30%, the coupon stops — but you don't lose principal unless the index is below the buffer at maturity</li>
+          </ul>
+          <div class="callout green">
+            <div class="callout-label">Real Example from the Episode</div>
+            <p>Robert mentioned a Morgan Stanley note that priced at <strong>12.30%</strong>, tied to the S&P 500, Russell 2000, and KRE Regional Bank Index, with 30% downside protection — meaning all three indexes would need to fall more than 30% before the coupon is lost.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-3b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-3b')">
+        Why does the bank's credit rating matter?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Structured notes are not FDIC insured — they're backed by the <strong>creditworthiness of the issuing bank</strong>. If the bank fails, the note could be worthless. This is why Robert focuses exclusively on the world's largest, highest-rated banks.</p>
+          <p>In the episode, Robert addressed a claim from a competitor that BNP (one of their note issuers) had "been in bankruptcy since 2019." He called this flat-out false — BNP carries an <strong>A+ credit rating</strong>, higher than JP Morgan, and its credit default swap pricing (the cost to insure against default) is among the lowest in the world.</p>
+          <div class="callout">
+            <div class="callout-label">Key Point</div>
+            <p><span class="key-term" data-term="cds">Credit default swaps</span> (CDS) are a market-based measure of default risk. The lower the CDS spread, the less the market believes a bank will default. BNP's CDS is among the lowest globally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 3 · FILL IN THE BLANK -->
+    <div class="quiz-block" id="quiz-3">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div><div class="quiz-title">Chapter 3 · Fill in the Blank</div><div class="quiz-subtitle">Type the missing number or term, then check all at once · 3 points possible</div></div>
+      </div>
+
+      <div class="fib-questions">
+        <div class="fib-row">
+          <div class="fib-qlabel">Q1</div>
+          <div class="fib-sentence">KCP's preferred structured notes target an annual coupon of over ____%.</div>
+          <div class="fib-blank-wrap">
+            <input class="fib-input" id="fib-q6" data-correct="12" data-alts="12%|twelve" placeholder="number" maxlength="6">
+            <span class="fib-hint" id="fib-q6-hint"></span>
+          </div>
+        </div>
+        <div class="fib-row">
+          <div class="fib-qlabel">Q2</div>
+          <div class="fib-sentence">With a 30% buffer note, the monthly coupon stops if any tracked index drops beyond _____%.</div>
+          <div class="fib-blank-wrap">
+            <input class="fib-input" id="fib-q7" data-correct="30" data-alts="30%|thirty" placeholder="number" maxlength="6">
+            <span class="fib-hint" id="fib-q7-hint"></span>
+          </div>
+        </div>
+        <div class="fib-row">
+          <div class="fib-qlabel">Q3</div>
+          <div class="fib-sentence">BNP carries an _____ credit rating — Robert says this is higher than JP Morgan's.</div>
+          <div class="fib-blank-wrap">
+            <input class="fib-input" id="fib-q8" data-correct="A+" data-alts="a+|a plus" placeholder="rating" maxlength="6">
+            <span class="fib-hint" id="fib-q8-hint"></span>
+          </div>
+        </div>
+      </div>
+      <button class="fib-check-btn" id="fib-check-3" onclick="checkFIB('quiz-3')">Check Answers</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 4 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-4" id="chapter-4">
+  <div class="container">
+    <div class="chapter-num">Chapter 04</div>
+    <h2>Principal Protection: The Indexed Annuity</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      Not all annuities are bad. Robert breaks down a specific 5-year <span class="key-term" data-term="indexed-annuity">indexed annuity</span> he views as a legitimate bond alternative — one with zero downside risk, locked-in gains, and market-linked upside up to a cap. Understanding the difference between this and the income annuities most advisors sell is crucial.
+    </p>
+
+    <div class="callout gold">
+      <div class="callout-label">The Nuance</div>
+      <p>"You can't tell me we're against annuities. We're just against the <em>bulk</em> of annuities. Out of 100 different annuity strategies, there's really only one or two that we would use."</p>
+    </div>
+
+    <div class="accordion" id="acc-4a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-4a')">
+        How does the 5-year indexed annuity work?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>The KCP-recommended indexed annuity works like this:</p>
+          <ul>
+            <li><strong>Tied to an index</strong> (typically S&P 500) — pure price movement, no income component</li>
+            <li><strong>Annual cap:</strong> Currently 10–11% — you earn 100% of the index's gain, up to the cap</li>
+            <li><strong>Zero floor:</strong> If the S&P is negative — even down 50% — your return is 0%, not negative</li>
+            <li><strong>Locked-in gains:</strong> Each year's positive return is locked in permanently — you never give it back</li>
+            <li><strong>5-year term:</strong> Popular for IRA money</li>
+            <li><strong>No fee to investor:</strong> Commission is paid by the insurance company, not the client</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-4b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-4b')">
+        Why is Robert against most income annuities?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Income annuities are widely sold with pitches like "7% guaranteed income for life." Robert's critique:</p>
+          <ul>
+            <li>The <strong>"7% guaranteed"</strong> refers to a growth rate on an <em>income account</em> — not your actual investable cash value</li>
+            <li>Insurance companies know actuarially that most accounts won't go to zero — so they limit withdrawals and growth just enough to stay solvent</li>
+            <li><strong>Inflation risk:</strong> A fixed income stream loses purchasing power over 20–30 years of retirement</li>
+            <li>Most clients don't actually understand what they own</li>
+          </ul>
+          <div class="callout">
+            <div class="callout-label">The Contrast</div>
+            <p>The pure growth indexed annuity Robert recommends has <strong>no income component</strong> — it's simply a principal-protected growth vehicle. This is fundamentally different from the income annuities typically pitched by financial advisors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 4 · SLIDER CHALLENGE -->
+    <div class="quiz-block" id="quiz-4">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></div>
+        <div><div class="quiz-title">Chapter 4 · Slider Challenge</div><div class="quiz-subtitle">Drag each slider to your best estimate — then submit · 3 points possible</div></div>
+      </div>
+
+      <div class="slider-question" id="sq9">
+        <div class="sl-qlabel">Estimate 1</div>
+        <div class="sl-text">Drag the slider to the annual return <strong>CAP</strong> on the indexed annuity Robert describes (%).</div>
+        <div class="sl-range-hint">Scale: 0% — 25%</div>
+        <div class="sl-track">
+          <input type="range" class="sl-input" id="sl-q9" min="0" max="25" step="1" value="15"
+            data-answer="10" data-accept-min="9" data-accept-max="13" data-unit="%"
+            oninput="updateSliderDisplay('sl-q9')">
+          <div class="sl-val" id="sl-q9-val">15%</div>
+        </div>
+        <div class="sl-feedback" id="sl-q9-fb"></div>
+      </div>
+
+      <div class="slider-question" id="sq10">
+        <div class="sl-qlabel">Estimate 2</div>
+        <div class="sl-text">Drag the slider to the return <strong>FLOOR</strong> in a down year — what % do you earn if the S&P falls 40%?</div>
+        <div class="sl-range-hint">Scale: −20% — +20%</div>
+        <div class="sl-track">
+          <input type="range" class="sl-input" id="sl-q10" min="-20" max="20" step="1" value="-10"
+            data-answer="0" data-accept-min="-1" data-accept-max="1" data-unit="%"
+            oninput="updateSliderDisplay('sl-q10')">
+          <div class="sl-val" id="sl-q10-val">-10%</div>
+        </div>
+        <div class="sl-feedback" id="sl-q10-fb"></div>
+      </div>
+
+      <div class="slider-question" id="sq11">
+        <div class="sl-qlabel">Estimate 3</div>
+        <div class="sl-text">Drag the slider to the <strong>term length</strong> of the indexed annuity Robert recommends (years).</div>
+        <div class="sl-range-hint">Scale: 1 — 15 years</div>
+        <div class="sl-track">
+          <input type="range" class="sl-input" id="sl-q11" min="1" max="15" step="1" value="8"
+            data-answer="5" data-accept-min="4" data-accept-max="6" data-unit=" yrs"
+            oninput="updateSliderDisplay('sl-q11')">
+          <div class="sl-val" id="sl-q11-val">8 yrs</div>
+        </div>
+        <div class="sl-feedback" id="sl-q11-fb"></div>
+      </div>
+
+      <button class="slider-check-btn" id="slider-check-4" onclick="checkSliders('quiz-4')">Submit My Estimates</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 5 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-5" id="chapter-5">
+  <div class="container">
+    <div class="chapter-num">Chapter 05</div>
+    <h2>Tax Reduction: The Year-Round Strategy</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      Tax planning isn't a November–December scramble — it's a 12-month discipline. KCP's energy fund strategy allows <span class="key-term" data-term="accredited">accredited investors</span> to dramatically reduce taxable income while maintaining investment distributions. This is the episode's central thesis.
+    </p>
+
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">~$90K</div><div class="stat-label">Taxable income reduction per $100K invested (2023 results)</div></div>
+      <div class="stat-card"><div class="stat-num">~20%</div><div class="stat-label">Targeted annual distributions at $65/barrel oil</div></div>
+      <div class="stat-card"><div class="stat-num">$1M+</div><div class="stat-label">Net worth required to qualify as an accredited investor</div></div>
+    </div>
+
+    <div class="accordion" id="acc-5a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-5a')">
+        How does the energy tax strategy work?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>The strategy uses <span class="key-term" data-term="idc">Intangible Drilling Cost (IDC)</span> deductions available in the U.S. tax code for oil and gas investments:</p>
+          <ul>
+            <li>Investors in the KCP energy fund can deduct a large portion of their investment as a tax deduction against active or passive income</li>
+            <li>In 2023, the deduction was <strong>~$89,750 per $100,000 invested</strong></li>
+            <li>Generally the full 100% deduction is achieved over <strong>two years</strong> (often 50–90% in year one)</li>
+            <li>This is entirely within the U.S. tax code — Robert calls it "very black and white"</li>
+            <li>Additionally, investors receive <strong>targeted distributions of ~20% annually</strong> (at $65/barrel oil)</li>
+          </ul>
+          <div class="callout gold">
+            <div class="callout-label">Practical Use Case</div>
+            <p>If you sold a business, exercised stock options, have significant capital gains, or are doing a Roth conversion — the energy strategy can offset the resulting taxable income. Instead of paying taxes on a large income event, you invest in the fund and generate a deduction of approximately equal size.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-5b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-5b')">
+        Who qualifies, and what are the risks?
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p><strong>Who qualifies (Accredited Investor):</strong></p>
+          <ul>
+            <li>Net worth of $1M+ <em>not including</em> your primary residence, OR</li>
+            <li>Annual income of $200K+ (individual) or $300K+ (joint) for the past two years</li>
+          </ul>
+          <p><strong>Best use cases:</strong> Business sale, building sale, stock options, high W-2 income, capital gains, Roth IRA conversion</p>
+          <p><strong>Important disclaimers Robert emphasizes:</strong></p>
+          <ul>
+            <li>KCP is not a tax advisor — all tax-related discussion is for informational purposes only</li>
+            <li>Always consult your CPA or tax professional before making decisions</li>
+            <li>Distributions are <em>targeted</em> — actual results depend on oil prices and fund performance</li>
+            <li>Energy investments are illiquid and involve commodity risk</li>
+          </ul>
+          <div class="callout">
+            <div class="callout-label">Why You Haven't Heard This Before</div>
+            <p>Robert notes that big banks and brokerage firms don't allow their advisors to offer energy fund strategies — creating a structural gap that only independent advisors can fill.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 5 · CONNECT THE DOTS -->
+    <div class="quiz-block" id="quiz-5">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+        <div><div class="quiz-title">Chapter 5 · Connect the Dots</div><div class="quiz-subtitle">Click a term, then click its matching definition · 3 points possible</div></div>
+      </div>
+
+      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:16px;font-family:var(--fb)">Select a term on the left, then tap its definition on the right. Make all 3 connections, then check your matches.</p>
+
+      <div class="ctd-grid">
+        <div>
+          <div class="ctd-col-label">Terms</div>
+          <div class="ctd-item" id="ctd-l1" onclick="ctdClickLeft('ctd-l1')">
+            Intangible Drilling Cost (IDC)
+          </div>
+          <div class="ctd-item" id="ctd-l2" onclick="ctdClickLeft('ctd-l2')">
+            Accredited Investor
+          </div>
+          <div class="ctd-item" id="ctd-l3" onclick="ctdClickLeft('ctd-l3')">
+            Year-Round Tax Strategy
+          </div>
+        </div>
+        <div>
+          <div class="ctd-col-label">Definitions</div>
+          <div class="ctd-item" id="ctd-r1" onclick="ctdClickRight('ctd-r1')">
+            <div>SEC designation requiring $1M+ net worth (excl. primary home) or $200K+ annual income</div>
+            <div class="ctd-hint">Who can access the energy fund</div>
+          </div>
+          <div class="ctd-item" id="ctd-r2" onclick="ctdClickRight('ctd-r2')">
+            <div>Drilling expense (labor, fuel, chemicals) with no salvage value — 100% deductible in the year incurred under U.S. tax code</div>
+            <div class="ctd-hint">The mechanism behind the ~$90K deduction</div>
+          </div>
+          <div class="ctd-item" id="ctd-r3" onclick="ctdClickRight('ctd-r3')">
+            <div>KCP's approach: time investments to coincide with large taxable income events rather than scrambling in November</div>
+            <div class="ctd-hint">The episode's central thesis</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="ctd-check-btn" id="ctd-check" onclick="checkCTD()" disabled>Check My Matches</button>
+      <div class="ctd-result" id="ctd-result"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- CHAPTER 6 -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="chapter ch-6" id="chapter-6">
+  <div class="container">
+    <div class="chapter-num">Chapter 06</div>
+    <h2>Portfolio Construction & The Hedge Principle</h2>
+    <div class="chapter-divider"></div>
+    <p class="chapter-intro">
+      Robert's portfolio philosophy is deceptively simple: <strong>lose less, make more</strong>. The compounding math of limiting drawdowns outperforms any attempt to time the market or chase returns. The key is building a real <span class="key-term" data-term="hedge">hedge</span> — not just hoping the market recovers.
+    </p>
+
+    <div class="callout gold">
+      <div class="callout-label">The Core Principle</div>
+      <p>"I'm not a math genius, but I know that if I lose less, I make more. Really simple philosophy. I lose less, I make more."</p>
+    </div>
+
+    <div class="accordion" id="acc-6a">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-6a')">
+        Why waiting for a correction is a flawed strategy
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Robert addresses the large group of investors sitting in cash, waiting for markets to drop before investing. His data:</p>
+          <ul>
+            <li>Historically, stocks have a <strong>75% probability</strong> of closing lower at some point in the future — which sounds like good odds for waiting</li>
+            <li>But that means <strong>25% of the time</strong>, stocks just keep running and the correction never gives you a better entry point</li>
+            <li>Timing the market is essentially a coin flip — not an edge</li>
+          </ul>
+          <p>The solution: rather than making macro calls, <em>build a portfolio that doesn't require perfect timing</em>. Use structured notes with buffers, indexed annuities with floors, and hedged strategies so you can stay invested with protection.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="acc-6b">
+      <button class="accordion-trigger" onclick="toggleAccordion('acc-6b')">
+        Momentum-based strategies and why they work
+        <span class="accordion-icon">+</span>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <p>Robert advocates for <strong>momentum-based, algorithm-driven</strong> investment strategies as part of a diversified portfolio:</p>
+          <ul>
+            <li>These strategies don't care about headlines, macroeconomic predictions, or gut feelings — they follow mathematical signals</li>
+            <li>Written by data scientists and PhDs, backtested extensively</li>
+            <li>KCP's "Growth Plus" model (which they access as a conduit): <strong>700%+ return since 2015</strong> vs. the S&P's ~320% over the same period</li>
+            <li>Appropriate allocation: 5–15% of portfolio, not majority (due to volatility)</li>
+          </ul>
+          <div class="callout">
+            <div class="callout-label">Disclaimer</div>
+            <p>Past performance is not indicative of future results. This is for illustrative purposes only. Investment decisions should not be based on historical performance alone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUIZ 6 · SPOT THE LIE -->
+    <div class="quiz-block" id="quiz-6">
+      <div class="quiz-header">
+        <div class="quiz-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div><div class="quiz-title">Chapter 6 · Spot the Lie</div><div class="quiz-subtitle">One statement per round is FALSE — find it · 4 points possible</div></div>
+      </div>
+
+      <p style="font-size:13px;color:rgba(255,255,255,.45);margin-bottom:20px;font-family:var(--fb)">Three statements are TRUE. One is a LIE. Pick the false one.</p>
+
+      <div class="quiz-question" id="q15">
+        <div class="q-num" style="background:rgba(248,113,113,.15);color:#F87171">Round 1 / 4 — About market timing</div>
+        <div class="q-text" style="margin-top:10px">Which of these statements is FALSE?</div>
+        <div class="q-options">
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q15')"><span class="opt-letter">A</span>Stocks have a 75% probability of eventually closing lower — so waiting for a dip sounds smart.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q15')"><span class="opt-letter">B</span>25% of the time, stocks never give you a cheaper entry — they just keep running higher.</div>
+          <div class="q-option" data-correct="true" onclick="selectOption(this,'q15')"><span class="opt-letter">C</span>Robert recommends sitting in cash during market uncertainty — patience always pays off.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q15')"><span class="opt-letter">D</span>Robert's solution is building a portfolio with buffers so you don't need to time the market at all.</div>
+        </div>
+        <div class="q-feedback correct" id="q15-correct">You spotted it! Robert argues the opposite — sitting in cash is risky because 25% of the time markets never pull back. His approach is building in protection so you stay invested.</div>
+        <div class="q-feedback wrong" id="q15-wrong">That's actually TRUE. The LIE is C — Robert argues against waiting in cash. His thesis is that you build a portfolio with buffers precisely so you don't need to call the market's direction.</div>
+        <button class="q-check" id="q15-btn" onclick="checkAnswer('q15')" disabled>Spot the Lie</button>
+      </div>
+
+      <div class="quiz-question" id="q16">
+        <div class="q-num" style="background:rgba(248,113,113,.15);color:#F87171">Round 2 / 4 — About compounding math</div>
+        <div class="q-text" style="margin-top:10px">Which of these statements is FALSE?</div>
+        <div class="q-options">
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q16')"><span class="opt-letter">A</span>"Lose less, make more" — limiting drawdowns mathematically compounds better than chasing high returns.</div>
+          <div class="q-option" data-correct="true" onclick="selectOption(this,'q16')"><span class="opt-letter">B</span>A 30% portfolio loss only requires a 30% gain to fully recover and break even.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q16')"><span class="opt-letter">C</span>KCP's Growth Plus model returned 700%+ since 2015, vs. the S&amp;P's ~320% over the same period.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q16')"><span class="opt-letter">D</span>Robert recommends 5–15% of a portfolio in aggressive momentum strategies — not the majority.</div>
+        </div>
+        <div class="q-feedback correct" id="q16-correct">You spotted it! B is the lie. A 30% loss requires a <strong>43% gain</strong> to break even — not 30%. That asymmetry is exactly why Robert obsesses over limiting losses.</div>
+        <div class="q-feedback wrong" id="q16-wrong">That's actually TRUE. The LIE is B — a 30% loss requires a 43% gain to recover, not 30%. Losses compound against you, which is the core argument for downside protection.</div>
+        <button class="q-check" id="q16-btn" onclick="checkAnswer('q16')" disabled>Spot the Lie</button>
+      </div>
+
+      <div class="quiz-question" id="q17">
+        <div class="q-num" style="background:rgba(248,113,113,.15);color:#F87171">Round 3 / 4 — About market risk scenarios</div>
+        <div class="q-text" style="margin-top:10px">Which of these statements is FALSE?</div>
+        <div class="q-options">
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q17')"><span class="opt-letter">A</span>Robert is more worried about stagflation — high inflation + low growth — than a sharp 2008-style crash.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q17')"><span class="opt-letter">B</span>2008-style crashes are "generally bought and then pop right back up," per Robert.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q17')"><span class="opt-letter">C</span>The Microsoft example (2000–2014) illustrates how slow, grinding losses are harder to survive than sharp drops.</div>
+          <div class="q-option" data-correct="true" onclick="selectOption(this,'q17')"><span class="opt-letter">D</span>Robert is fully invested in equities and recommends clients ignore stagflation risk entirely.</div>
+        </div>
+        <div class="q-feedback correct" id="q17-correct">You spotted it! D is the lie. Robert is specifically concerned about stagflation and builds portfolios with structured notes, annuities, and hedges precisely to guard against it.</div>
+        <div class="q-feedback wrong" id="q17-wrong">That's actually TRUE. The LIE is D — Robert is deeply concerned about stagflation, which is why he uses principal protection strategies. He's the opposite of "ignore the risk."</div>
+        <button class="q-check" id="q17-btn" onclick="checkAnswer('q17')" disabled>Spot the Lie</button>
+      </div>
+
+      <div class="quiz-question" id="q18">
+        <div class="q-num" style="background:rgba(248,113,113,.15);color:#F87171">Round 4 / 4 — About KCP's portfolio approach</div>
+        <div class="q-text" style="margin-top:10px">Which of these statements is FALSE?</div>
+        <div class="q-options">
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q18')"><span class="opt-letter">A</span>Structured notes, indexed annuities, and the energy tax strategy are all used within a single KCP client portfolio.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q18')"><span class="opt-letter">B</span>KCP's momentum-based strategies are data-driven, algorithm-based, and written by PhDs.</div>
+          <div class="q-option" data-correct="true" onclick="selectOption(this,'q18')"><span class="opt-letter">C</span>Robert recommends putting the majority — 50%+ — of a portfolio into aggressive Growth Plus momentum strategies.</div>
+          <div class="q-option" data-correct="false" onclick="selectOption(this,'q18')"><span class="opt-letter">D</span>KCP operates as an independent fiduciary, unaffiliated with any bank or brokerage firm.</div>
+        </div>
+        <div class="q-feedback correct" id="q18-correct">You spotted it! C is the lie. Robert recommends only 5–15% in aggressive momentum strategies — "everybody's different" but it's always a minority position, not the majority.</div>
+        <div class="q-feedback wrong" id="q18-wrong">That's actually TRUE. The LIE is C — Robert explicitly recommends 5–15% in aggressive strategies, not 50%+. High volatility strategies belong as a small slice, not the anchor of the portfolio.</div>
+        <button class="q-check" id="q18-btn" onclick="checkAnswer('q18')" disabled>Spot the Lie</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ -->
+<!-- FINAL SCORE -->
+<!-- ══════════════════════════════════════════════════ -->
+<section class="s-navy section-pad" id="final-section" style="padding:80px 0">
+  <div class="container">
+    <div class="final-score" id="final-score-card" style="display:none">
+      <span class="fs-emoji" id="fs-emoji">🎯</span>
+      <div class="fs-score" id="fs-score">0</div>
+      <div class="fs-total">out of <span id="fs-total">18</span> points</div>
+      <div class="fs-bar-wrap"><div class="fs-bar" id="fs-bar" style="width:0%"></div></div>
+      <div class="fs-grade" id="fs-grade">—</div>
+      <div class="fs-msg" id="fs-msg">Complete all quizzes to see your score.</div>
+      <div class="sg-ctas">
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn-gold" target="_blank" rel="noopener">Talk to Robert's Team</a>
+        <a href="../" class="btn-outline-white">More Episodes →</a>
+      </div>
+    </div>
+    <div id="final-prompt" style="text-align:center;padding:40px 0">
+      <div style="font-family:var(--fd);font-weight:900;font-size:28px;color:var(--white);margin-bottom:12px">Complete All Quizzes to See Your Score</div>
+      <div style="color:rgba(255,255,255,.55);font-size:16px">Work through all 6 chapters above, then your final score will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────── -->
+<footer class="sg-footer">
+  <p>This study guide is for educational purposes only and is based on the Destination Retirement radio program. It does not constitute investment, tax, or legal advice. Kuhn Capital Partners is a registered investment adviser. Past performance is not indicative of future results. All investments involve risk, including possible loss of principal. Tax strategies discussed are for informational purposes — consult your CPA before making financial decisions.</p>
+  <p style="margin-top:12px;color:rgba(255,255,255,.2)">© 2026 Kuhn Capital Partners, LLC · Study guide produced by Orbis Marketing</p>
+</footer>
+
+<!-- ─── SCRIPTS ─────────────────────────────────────── -->
+<script>
+/* ── Key Terms ────────────────────────────────────── */
+const TERMS = {
+  'fiduciary': {
+    term: 'Fiduciary',
+    def: 'A fiduciary is legally and ethically obligated to act in the best interest of their client — not their firm, not shareholders, and not their own compensation. This is a higher legal standard than the "suitability" standard most brokers operate under.',
+    example: 'A fiduciary cannot recommend a higher-commission product when an equally suitable lower-cost option exists. Most big bank advisors are NOT fiduciaries — they only need to recommend "suitable" investments.'
+  },
+  'correlation': {
+    term: 'Correlation',
+    def: 'A statistical measure (ranging from -1 to +1) of how closely two things move together. A portfolio correlation of 1.0 to the S&P 500 means your portfolio tracks the index perfectly — every move up and down is mirrored.',
+    example: 'If your portfolio has a correlation of 0.98 to the S&P, you\'re essentially paying your advisor to own an expensive index fund. A true hedge brings correlation toward 0 for a portion of your assets.'
+  },
+  'closet-index': {
+    term: 'Closet Index Fund',
+    def: 'A portfolio that is marketed as actively managed and customized, but in reality has a correlation near 1.0 to a major market index. The investor pays active management fees for what is functionally a passive strategy.',
+    example: '"Your portfolio is spruced up, custom, sophisticated" — but when you run the stress test, the correlation to the S&P is 0.97. That\'s a closet index fund, and you\'re overpaying for it.'
+  },
+  'structured-notes': {
+    term: 'Structured Notes',
+    def: 'Debt instruments issued by major banks whose return is linked to the performance of underlying indexes (like the S&P 500). They offer defined outcomes: a stated coupon rate with a downside buffer that protects against moderate market declines.',
+    example: 'A note paying 12.30% annually tied to the S&P, Russell 2000, and KRE — with 30% downside protection. If none of the indexes fall more than 30%, you receive the full coupon each month.'
+  },
+  'indexed-annuity': {
+    term: 'Indexed Annuity',
+    def: 'An insurance product whose returns are linked to a market index. The key features are a floor (typically 0% — you can\'t lose principal) and a cap (the maximum you can earn, e.g., 11%). Not to be confused with income annuities.',
+    example: 'S&P up 15%? You earn 11% (the cap). S&P up 8%? You earn 8%. S&P down 40%? You earn 0% — no loss. Each year\'s gains are locked in permanently.'
+  },
+  'accredited': {
+    term: 'Accredited Investor',
+    def: 'An SEC designation for investors who meet financial thresholds that qualify them to invest in private, unregistered securities. Criteria: $1M+ net worth (excluding primary residence) OR $200K+ annual income (individual) / $300K+ (joint).',
+    example: 'The KCP energy fund is only available to accredited investors. If you\'ve sold a business, have significant investment assets, or earn a high income, you likely qualify — check with your advisor.'
+  },
+  'idc': {
+    term: 'Intangible Drilling Costs (IDC)',
+    def: 'Costs associated with drilling oil and gas wells that have no salvage value — labor, fuel, chemicals, drill bits, and supplies. Under U.S. tax code Section 263(c), these costs are 100% deductible in the year they\'re incurred.',
+    example: 'If a well costs $1M to drill and $850K of that is IDC, an investor can deduct $850K from their taxable income in that year. This is the mechanism behind KCP\'s ~$90K deduction per $100K invested.'
+  },
+  'cds': {
+    term: 'Credit Default Swap (CDS)',
+    def: 'A financial contract that acts like insurance against a bond issuer defaulting. The buyer pays a premium; the seller pays out if the referenced entity defaults. CDS spreads reflect the market\'s assessment of default risk.',
+    example: 'BNP\'s CDS spread is among the lowest globally — meaning the market prices its default risk as extremely low. Higher spreads = more risk. This is why CDS pricing is a better real-time indicator than a rating agency\'s static grade.'
+  },
+  'hedge': {
+    term: 'Portfolio Hedge',
+    def: 'An investment or strategy designed to offset or reduce the risk of adverse price movements in another investment. In Robert\'s framework, a hedge is any position that provides positive returns or preserves capital when the market falls.',
+    example: 'A structured note with 30% downside buffer is a hedge. A principal-protected indexed annuity is a hedge. They allow you to stay invested in the market while limiting your maximum loss in a downturn.'
+  }
+};
+
+document.querySelectorAll('.key-term').forEach(el => {
+  el.addEventListener('click', () => {
+    const key = el.dataset.term;
+    const t = TERMS[key];
+    if (!t) return;
+    document.getElementById('popup-term').textContent = t.term;
+    document.getElementById('popup-def').textContent = t.def;
+    const ex = document.getElementById('popup-example');
+    if (t.example) { ex.textContent = t.example; ex.style.display = 'block'; }
+    else { ex.style.display = 'none'; }
+    const ov = document.getElementById('popup-overlay');
+    ov.classList.add('open');
+    document.getElementById('popup-close').focus();
+  });
+});
+
+document.getElementById('popup-close').addEventListener('click', closePopup);
+document.getElementById('popup-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('popup-overlay')) closePopup();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+function closePopup() { document.getElementById('popup-overlay').classList.remove('open'); }
+
+/* ── Accordion ──────────────────────────────────── */
+function toggleAccordion(id) {
+  const acc = document.getElementById(id);
+  const btn = acc.querySelector('.accordion-trigger');
+  const body = acc.querySelector('.accordion-body');
+  const isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open', !isOpen);
+  body.classList.toggle('open', !isOpen);
+}
+
+/* ── Quiz Engine ──────────────────────────────────── */
+let score = 0;
+let answered = 0;
+const TOTAL = 18;
+
+function updateScoreDisplay() {
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('total-display').textContent = answered;
+  document.getElementById('progress-fill').style.width = Math.min(100,(answered/TOTAL)*100) + '%';
+  if (answered >= TOTAL) showFinalScore();
+}
+
+/* ── Multiple Choice (used by Spot the Lie) ─── */
+function selectOption(el, qid) {
+  const q = document.getElementById(qid);
+  if (q.dataset.answered) return;
+  q.querySelectorAll('.q-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById(qid + '-btn').disabled = false;
+}
+
+function checkAnswer(qid) {
+  const q = document.getElementById(qid);
+  if (q.dataset.answered) return;
+  q.dataset.answered = '1';
+  const selected = q.querySelector('.q-option.selected');
+  if (!selected) return;
+  const correct = selected.dataset.correct === 'true';
+  q.querySelectorAll('.q-option').forEach(o => {
+    o.classList.add('locked');
+    if (o.dataset.correct === 'true') o.classList.add('correct');
+  });
+  if (correct) {
+    selected.classList.add('correct');
+    score++;
+    document.getElementById(qid + '-correct').classList.add('show');
+  } else {
+    selected.classList.add('incorrect');
+    document.getElementById(qid + '-wrong').classList.add('show');
+  }
+  const btn = document.getElementById(qid + '-btn');
+  btn.disabled = true;
+  btn.textContent = correct ? '✓ Found it!' : '✗ Missed it';
+  btn.style.background = correct ? '#16A34A' : '#DC2626';
+  btn.style.color = '#fff';
+  answered++;
+  updateScoreDisplay();
+}
+
+/* ── Flashcard Flip ───────────────────────────── */
+function flipCard(id) {
+  document.getElementById(id).classList.add('revealed');
+}
+function scoreFlashcard(id, knew) {
+  const card = document.getElementById(id);
+  if (card.dataset.scored) return;
+  card.dataset.scored = '1';
+  card.querySelectorAll('.fc-btn-knew,.fc-btn-missed').forEach(b => { b.disabled = true; });
+  if (knew) {
+    score++;
+    card.querySelector('.fc-btn-knew').style.background = 'rgba(74,222,128,.35)';
+  } else {
+    card.querySelector('.fc-btn-missed').style.background = 'rgba(248,113,113,.28)';
+  }
+  const badge = document.getElementById(id + '-badge');
+  if (badge) {
+    badge.textContent = knew ? '+1 point — great recall!' : 'No point this round — keep studying';
+    badge.style.display = 'block';
+    badge.style.background = knew ? 'rgba(74,222,128,.15)' : 'rgba(248,113,113,.08)';
+    badge.style.color = knew ? '#4ADE80' : '#F87171';
+    badge.style.borderColor = knew ? 'rgba(74,222,128,.3)' : 'rgba(248,113,113,.2)';
+    badge.style.padding = '8px 12px';
+    badge.style.borderRadius = '8px';
+    badge.style.fontFamily = 'var(--fd)';
+    badge.style.fontWeight = '700';
+    badge.style.fontSize = '12px';
+    badge.style.border = '1px solid';
+  }
+  answered++;
+  updateScoreDisplay();
+}
+
+/* ── True / False ─────────────────────────────── */
+function answerTF(btnEl, qid, userChoice, correctChoice) {
+  const q = document.getElementById(qid);
+  if (q.dataset.answered) return;
+  q.dataset.answered = '1';
+  q.querySelectorAll('.tf-btn').forEach(b => { b.disabled = true; });
+  const isCorrect = (userChoice === correctChoice);
+  btnEl.classList.add(isCorrect ? 'tf-correct' : 'tf-wrong');
+  if (!isCorrect) {
+    const cb = q.querySelector('.tf-btn[data-choice="' + correctChoice + '"]');
+    if (cb) cb.classList.add('tf-correct');
+  }
+  const fb = q.querySelector('.tf-feedback');
+  if (fb) {
+    const key = isCorrect ? 'correct' : 'wrong';
+    fb.innerHTML = (isCorrect ? '<strong>✓ Correct!</strong> ' : '<strong>✗ Wrong.</strong> ') + fb.dataset[key];
+    fb.classList.add('show', isCorrect ? 'correct' : 'wrong');
+  }
+  if (isCorrect) score++;
+  answered++;
+  updateScoreDisplay();
+}
+
+/* ── Fill in the Blank ────────────────────────── */
+function checkFIB(quizId) {
+  const quiz = document.getElementById(quizId);
+  if (quiz.dataset.answered) return;
+  quiz.dataset.answered = '1';
+  const inputs = quiz.querySelectorAll('.fib-input');
+  let correct = 0;
+  inputs.forEach(inp => {
+    const user = inp.value.trim().toLowerCase().replace(/[%+\s]/g,'');
+    const ans = inp.dataset.correct.toLowerCase().replace(/[%+\s]/g,'');
+    const alts = (inp.dataset.alts||'').split('|').filter(Boolean).map(a => a.toLowerCase().replace(/[%+\s]/g,''));
+    const ok = user === ans || alts.includes(user);
+    inp.classList.add(ok ? 'fib-right' : 'fib-wrong');
+    inp.disabled = true;
+    const hint = inp.nextElementSibling;
+    if (hint && hint.classList.contains('fib-hint')) {
+      hint.textContent = ok ? '✓ Correct' : 'Answer: ' + inp.dataset.correct;
+      hint.classList.add('show', ok ? 'fib-ok' : 'fib-err');
+    }
+    if (ok) correct++;
+  });
+  score += correct;
+  answered += inputs.length;
+  const btn = document.getElementById('fib-check-' + quizId.replace('quiz-',''));
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = correct === inputs.length ? '✓ All Correct!' : correct + '/' + inputs.length + ' Correct';
+    btn.style.background = correct === inputs.length ? '#16A34A' : '#D97706';
+    btn.style.color = '#fff';
+  }
+  updateScoreDisplay();
+}
+
+/* ── Slider Challenge ─────────────────────────── */
+function updateSliderDisplay(id) {
+  const inp = document.getElementById(id);
+  const disp = document.getElementById(id + '-val');
+  if (disp) disp.textContent = inp.value + (inp.dataset.unit || '');
+}
+function checkSliders(quizId) {
+  const quiz = document.getElementById(quizId);
+  if (quiz.dataset.answered) return;
+  quiz.dataset.answered = '1';
+  const sliders = quiz.querySelectorAll('.sl-input');
+  let correct = 0;
+  sliders.forEach(sl => {
+    const val = parseFloat(sl.value);
+    const ok = val >= parseFloat(sl.dataset.acceptMin) && val <= parseFloat(sl.dataset.acceptMax);
+    const wrap = sl.closest('.slider-question');
+    if (wrap) {
+      wrap.classList.add(ok ? 'sl-correct' : 'sl-wrong');
+      const fb = wrap.querySelector('.sl-feedback');
+      if (fb) {
+        fb.textContent = ok
+          ? '✓ Spot on! Answer: ' + sl.dataset.answer + (sl.dataset.unit||'')
+          : 'The answer is ' + sl.dataset.answer + (sl.dataset.unit||'') + '. Your estimate: ' + sl.value + (sl.dataset.unit||'');
+        fb.classList.add('show', ok ? 'correct' : 'wrong');
+      }
+    }
+    sl.disabled = true;
+    if (ok) correct++;
+  });
+  score += correct;
+  answered += sliders.length;
+  const btn = document.getElementById('slider-check-' + quizId.replace('quiz-',''));
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = correct + '/' + sliders.length + ' Estimates Correct';
+    btn.style.background = correct === sliders.length ? '#16A34A' : '#D97706';
+    btn.style.color = '#fff';
+  }
+  updateScoreDisplay();
+}
+
+/* ── Connect the Dots ─────────────────────────── */
+const ctd = { sel: null, pairs: {}, locked: false };
+// Correct: l1→r2, l2→r1, l3→r3
+const CTD_ANSWERS = { 'ctd-l1':'ctd-r2', 'ctd-l2':'ctd-r1', 'ctd-l3':'ctd-r3' };
+
+function ctdRefresh() {
+  document.querySelectorAll('.ctd-item').forEach(el => {
+    el.classList.remove('ctd-selected','ctd-pending');
+  });
+  Object.entries(ctd.pairs).forEach(([l, r]) => {
+    document.getElementById(l).classList.add('ctd-pending');
+    document.getElementById(r).classList.add('ctd-pending');
+  });
+  if (ctd.sel) document.getElementById(ctd.sel).classList.add('ctd-selected');
+  const n = Object.keys(ctd.pairs).length;
+  const btn = document.getElementById('ctd-check');
+  if (btn) btn.disabled = n < 3;
+}
+function ctdClickLeft(id) {
+  if (ctd.locked) return;
+  ctd.sel = (ctd.sel === id) ? null : id;
+  ctdRefresh();
+}
+function ctdClickRight(id) {
+  if (ctd.locked || !ctd.sel) return;
+  const l = ctd.sel;
+  // Remove any prior match for this left item
+  if (ctd.pairs[l]) {
+    const old = ctd.pairs[l];
+    delete ctd.pairs[l];
+    document.getElementById(old).classList.remove('ctd-pending');
+  }
+  // Remove any prior match pointing to this right item
+  for (const k in ctd.pairs) { if (ctd.pairs[k] === id) { delete ctd.pairs[k]; break; } }
+  ctd.pairs[l] = id;
+  ctd.sel = null;
+  ctdRefresh();
+}
+function checkCTD() {
+  if (ctd.locked) return;
+  ctd.locked = true;
+  let correct = 0;
+  document.querySelectorAll('.ctd-item').forEach(el => el.classList.add('ctd-locked'));
+  for (const [l, r] of Object.entries(CTD_ANSWERS)) {
+    const ok = ctd.pairs[l] === r;
+    document.getElementById(l).classList.remove('ctd-pending','ctd-selected');
+    document.getElementById(r).classList.remove('ctd-pending','ctd-selected');
+    document.getElementById(l).classList.add(ok ? 'ctd-matched-ok' : 'ctd-matched-err');
+    document.getElementById(r).classList.add(ok ? 'ctd-matched-ok' : 'ctd-matched-err');
+    if (ok) correct++;
+  }
+  score += correct;
+  answered += 3;
+  const btn = document.getElementById('ctd-check');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = correct + '/3 Correct Matches';
+    btn.style.background = correct === 3 ? '#16A34A' : '#D97706';
+    btn.style.color = '#fff';
+  }
+  const res = document.getElementById('ctd-result');
+  if (res) {
+    res.textContent = correct === 3
+      ? '✓ Perfect — all three matched correctly!'
+      : correct + '/3 correct. Review the highlighted pairs above.';
+    res.classList.add('show', correct === 3 ? 'correct' : 'partial');
+  }
+  updateScoreDisplay();
+}
+
+function updateProgress() {
+  // kept for chapter nav scroll
+  const chapters = document.querySelectorAll('[id^="chapter-"]');
+  const btns = document.querySelectorAll('.chapter-nav-btn');
+  let active = 0;
+  chapters.forEach((ch, i) => { if (ch.getBoundingClientRect().top <= 120) active = i; });
+  btns.forEach((b, i) => b.classList.toggle('active', i === active));
+}
+
+function showFinalScore() {
+  document.getElementById('final-prompt').style.display = 'none';
+  const card = document.getElementById('final-score-card');
+  card.style.display = 'block';
+
+  const pct = score / TOTAL;
+  document.getElementById('fs-score').textContent = score;
+  document.getElementById('fs-total').textContent = TOTAL;
+
+  setTimeout(() => {
+    document.getElementById('fs-bar').style.width = (pct * 100) + '%';
+  }, 100);
+
+  let emoji, grade, msg;
+  if (pct >= 0.94) {
+    emoji = '🏆'; grade = 'Expert — Institutional Thinker';
+    msg = 'Outstanding! You understand KCP\'s strategies at the level Robert expects of his own clients. You\'re ready to have a meaningful conversation about structured notes, tax strategy, and portfolio construction.';
+  } else if (pct >= 0.78) {
+    emoji = '🎯'; grade = 'Proficient — Well Above Average';
+    msg = 'Strong performance. You have a solid grasp of the core concepts. A few areas to revisit, but you clearly understand the difference between a real financial strategy and a closet index fund.';
+  } else if (pct >= 0.61) {
+    emoji = '📈'; grade = 'Developing — Good Foundation';
+    msg = 'Good start. You understand the basics but some of the more nuanced concepts — structured notes, IDC deductions, correlation — may benefit from a re-listen of the episode.';
+  } else {
+    emoji = '📚'; grade = 'Keep Learning — Re-listen Recommended';
+    msg = 'This material takes time to absorb. Re-read the chapter summaries, re-listen to the episode, and try again. Robert\'s strategies are genuinely different from what most advisors offer — it takes a few passes to fully understand them.';
+  }
+
+  document.getElementById('fs-emoji').textContent = emoji;
+  document.getElementById('fs-grade').textContent = grade;
+  document.getElementById('fs-msg').textContent = msg;
+
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ── Chapter nav scroll ─────────────────────────── */
+window.addEventListener('scroll', () => {
+  const chapters = document.querySelectorAll('[id^="chapter-"]');
+  const btns = document.querySelectorAll('.chapter-nav-btn');
+  let active = 0;
+  chapters.forEach((ch, i) => {
+    if (ch.getBoundingClientRect().top <= 130) active = i;
+  });
+  btns.forEach((b, i) => b.classList.toggle('active', i === active));
+});
+
+document.querySelectorAll('.chapter-nav-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = document.getElementById(btn.dataset.target);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+/* ── Audio Player ─────────────────────────────────── */
+(function(){
+  const audio = document.getElementById('ep-audio');
+  if (!audio) return;
+  const playBtn = document.getElementById('apc-play');
+  const playIcon = document.getElementById('apc-play-icon');
+  const scrubber = document.getElementById('apc-scrubber');
+  const fill = document.getElementById('apc-fill');
+  const currentEl = document.getElementById('apc-current');
+  const durEl = document.getElementById('apc-duration');
+  const waveform = document.getElementById('apc-waveform');
+  const speedSel = document.getElementById('apc-speed');
+  const volSlider = document.getElementById('apc-vol');
+  const muteBtn = document.getElementById('apc-mute');
+  const volIcon = document.getElementById('apc-vol-icon');
+  const backBtn = document.getElementById('apc-back');
+  const fwdBtn = document.getElementById('apc-fwd');
+  const VOL_SVG = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>';
+  const MUTE_SVG = '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>';
+  function fmt(s){if(isNaN(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60);return m+':'+(sec+'').padStart(2,'0');}
+  playBtn.addEventListener('click',()=>{ audio.paused ? audio.play() : audio.pause(); });
+  audio.addEventListener('play',()=>{ playIcon.innerHTML='<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'; waveform.classList.add('playing'); });
+  audio.addEventListener('pause',()=>{ playIcon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>'; waveform.classList.remove('playing'); });
+  audio.addEventListener('ended',()=>{ playIcon.innerHTML='<polygon points="5 3 19 12 5 21 5 3"/>'; waveform.classList.remove('playing'); });
+  audio.addEventListener('timeupdate',()=>{
+    if(!audio.duration) return;
+    const pct=(audio.currentTime/audio.duration)*100;
+    fill.style.width=pct+'%';
+    scrubber.value=pct;
+    currentEl.textContent=fmt(audio.currentTime);
+    const times=[0,600,1320,1920,2400,2820];
+    let ai=0; times.forEach((t,i)=>{ if(audio.currentTime>=t) ai=i; });
+    document.querySelectorAll('.apc-ch-btn').forEach((b,i)=>b.classList.toggle('apc-ch-active',i===ai));
+  });
+  audio.addEventListener('loadedmetadata',()=>{ durEl.textContent=fmt(audio.duration); });
+  scrubber.addEventListener('input',()=>{
+    if(!audio.duration) return;
+    audio.currentTime=(scrubber.value/100)*audio.duration;
+    fill.style.width=scrubber.value+'%';
+  });
+  backBtn.addEventListener('click',()=>{ audio.currentTime=Math.max(0,audio.currentTime-15); });
+  fwdBtn.addEventListener('click',()=>{ audio.currentTime=Math.min(audio.duration||9999,audio.currentTime+30); });
+  speedSel.addEventListener('change',()=>{ audio.playbackRate=parseFloat(speedSel.value); });
+  volSlider.addEventListener('input',()=>{ audio.volume=parseFloat(volSlider.value); volIcon.innerHTML=audio.volume===0?MUTE_SVG:VOL_SVG; });
+  muteBtn.addEventListener('click',()=>{ audio.muted=!audio.muted; volIcon.innerHTML=audio.muted?MUTE_SVG:VOL_SVG; });
+  document.querySelectorAll('.apc-ch-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      audio.currentTime=parseInt(btn.dataset.time,10);
+      if(audio.paused) audio.play();
+    });
+  });
+})();
+
+/* ── Init score display ─────────────────────────── */
+document.getElementById('score-display').textContent = '0';
+document.getElementById('total-display').textContent = '0';
+</script>
+</body>
+</html>
