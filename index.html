@@ -120,7 +120,7 @@ a { text-decoration: none; }
   margin: 0 auto;
   padding: 0 40px;
 }
-.nav-logo img { height: 34px; }
+.nav-logo img { height: 70px; }
 .nav-links {
   display: flex;
   list-style: none;
@@ -434,72 +434,167 @@ a { text-decoration: none; }
 }
 .radio-station-logos img:hover { opacity: 1; }
 
-/* ─── MAP ─────────────────────────────────────────── */
-.map-section {
-  background: var(--white);
+/* ─── REACH SECTION ───────────────────────────────── */
+.reach-section {
+  background: var(--navy);
   padding: 100px 0;
-}
-.map-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-.map-header h2 { color: var(--navy); margin-bottom: 16px; }
-.map-header p {
-  max-width: 520px;
-  margin: 0 auto;
-  color: var(--gray);
-  font-size: 18px;
-}
-.map-wrapper {
-  max-width: 860px;
-  margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
-.map-wrapper svg { width: 100%; height: auto; }
-.map-stats {
+.reach-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.9s ease;
+  z-index: 0;
+}
+.reach-bg-layer.inactive { opacity: 0; }
+.reach-bg-layer.active   { opacity: 1; }
+.reach-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to right,
+    rgba(2,44,88,0.92) 0%,
+    rgba(2,44,88,0.82) 45%,
+    rgba(2,44,88,0.55) 75%,
+    rgba(2,44,88,0.35) 100%);
+}
+.reach-section .container { position: relative; z-index: 2; }
+.reach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.reach-left h2 { color: var(--white); margin-bottom: 20px; }
+.reach-left p {
+  color: rgba(255,255,255,0.68);
+  font-size: 18px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+  max-width: 460px;
+}
+.reach-stats {
   display: flex;
-  justify-content: center;
   gap: 0;
-  margin-top: 56px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 40px;
 }
-.map-stat {
-  text-align: center;
-  padding: 0 56px;
-  border-right: 1px solid #E5E7EB;
+.reach-stat {
+  flex: 1;
+  padding-right: 32px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+  margin-right: 32px;
 }
-.map-stat:last-child { border-right: none; }
-.map-stat strong {
+.reach-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+.reach-stat strong {
   display: block;
   font-family: var(--font-d);
   font-weight: 900;
-  font-size: 44px;
-  color: var(--navy);
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--gold);
   line-height: 1;
   margin-bottom: 6px;
 }
-.map-stat span {
-  font-size: 12px;
+.reach-stat span {
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--gray);
+  letter-spacing: 0.13em;
+  color: rgba(255,255,255,0.45);
 }
-
-/* ─── MAP DOT TOOLTIP ─────────────────────────────── */
-.map-dot { cursor: pointer; }
-.map-dot:hover circle { stroke: var(--gold); stroke-width: 3; }
-.map-tooltip {
-  display: none;
-  position: absolute;
-  background: var(--navy);
-  color: var(--white);
+.reach-right {
+  background: rgba(2,44,88,0.55);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.reach-right-label {
   font-family: var(--font-b);
   font-weight: 700;
-  font-size: 12px;
-  padding: 6px 12px;
-  border-radius: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 24px;
+  display: block;
+}
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.state-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.state-pill:hover {
+  background: rgba(255,185,33,0.15);
+  border-color: rgba(255,185,33,0.5);
+}
+.state-pill abbr {
+  display: block;
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.state-pill span {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+  line-height: 1.2;
+}
+.state-pill.home {
+  background: rgba(255,185,33,0.18);
+  border-color: rgba(255,185,33,0.55);
+}
+.state-pill.home abbr { color: var(--gold); }
+.state-pill.active {
+  background: rgba(255,185,33,0.22);
+  border-color: var(--gold);
+}
+.state-pill.active abbr { color: var(--gold); }
+.state-blurb-wrap {
+  margin-top: 20px;
+  min-height: 52px;
+  position: relative;
+}
+.state-blurb {
+  font-family: var(--font-b);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.58);
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.35s ease;
   pointer-events: none;
-  white-space: nowrap;
-  z-index: 10;
+}
+.state-blurb strong { color: var(--white); font-weight: 700; }
+.state-blurb.visible { opacity: 1; position: relative; }
+@media (max-width: 1100px) {
+  .reach-grid { grid-template-columns: 1fr; gap: 56px; }
+  .reach-left p { max-width: none; }
+}
+@media (max-width: 640px) {
+  .state-grid { grid-template-columns: repeat(3, 1fr); }
+  .reach-stats { flex-direction: column; gap: 24px; }
+  .reach-stat { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid #E5E7EB; padding-bottom: 24px; }
+  .reach-stat:last-child { border-bottom: none; padding-bottom: 0; }
 }
 
 /* ─── ADVISOR ─────────────────────────────────────── */
@@ -953,113 +1048,99 @@ a { text-decoration: none; }
   </div>
 </section>
 
-<!-- ─── CLIENT MAP ────────────────────────────────── -->
-<section class="map-section">
+<!-- ─── REACH ───────────────────────────────────────── -->
+<section class="reach-section" id="reach-section">
+  <div class="reach-bg-layer active"  id="reach-bg-a"></div>
+  <div class="reach-bg-layer inactive" id="reach-bg-b"></div>
+  <div class="reach-overlay"></div>
   <div class="container">
-    <div class="map-header">
-      <span class="eyebrow eyebrow--dark">Clients Nationwide</span>
-      <h2 class="display-lg">Trusted Across America</h2>
-      <p>From our Oak Brook, Illinois headquarters, we serve clients in <strong>14+ states</strong> — physicians, business owners, and families ready to demand more from their advisor.</p>
-    </div>
-    <div class="map-wrapper" id="map-wrapper">
-      <svg viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map showing Kuhn Capital Partners client locations across the United States">
-        <!-- US Background -->
-        <rect width="960" height="580" fill="transparent"/>
-        <!-- Continental US outline -->
-        <polygon
-          points="105,82 155,68 205,58 280,55 360,52 440,52 520,56 600,62 665,65 720,68 775,70 830,76 868,90 892,118 908,152 910,196 900,248 882,290 860,326 840,358 818,385 794,410 770,435 762,468 755,500 735,525 700,538 672,528 648,524 618,528 585,522 555,526 522,516 492,524 460,514 428,520 395,508 362,500 328,490 296,476 268,460 244,444 222,428 202,408 182,388 162,360 144,328 128,290 114,248 105,200 100,155 100,118"
-          fill="#EEF2F7" stroke="#B4E2FF" stroke-width="1.5"/>
-        <!-- Great Lakes region detail -->
-        <ellipse cx="638" cy="195" rx="30" ry="18" fill="#FFFFFE" stroke="#B4E2FF" stroke-width="1" opacity="0.8"/>
-        <ellipse cx="608" cy="218" rx="18" ry="12" fill="#FFFFFE" stroke="#B4E2FF" stroke-width="1" opacity="0.8"/>
-        <!-- Florida peninsula -->
-        <polygon points="730,480 748,508 762,524 755,538 735,525 720,500 718,475" fill="#EEF2F7" stroke="#B4E2FF" stroke-width="1"/>
-        <!-- Alaska (small inset) -->
-        <g transform="translate(40,480) scale(0.28)">
-          <polygon points="50,20 180,10 230,60 260,120 240,180 190,210 130,230 80,200 40,160 20,100" fill="#EEF2F7" stroke="#B4E2FF" stroke-width="3"/>
-        </g>
-        <!-- Hawaii (small inset) -->
-        <ellipse cx="200" cy="530" rx="28" ry="10" fill="#EEF2F7" stroke="#B4E2FF" stroke-width="1.5"/>
-        <ellipse cx="240" cy="534" rx="18" ry="8" fill="#EEF2F7" stroke="#B4E2FF" stroke-width="1.5"/>
-
-        <!-- ── CLIENT DOTS ──────────────────────── -->
-        <!-- IL — Home (featured, larger, pulsing) -->
-        <g class="map-dot" data-state="Illinois — Home Office">
-          <circle cx="592" cy="292" r="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2.5"/>
-          <circle cx="592" cy="292" r="10" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.5">
-            <animate attributeName="r" values="10;22;10" dur="2.2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0;0.5" dur="2.2s" repeatCount="indefinite"/>
-          </circle>
-        </g>
-        <!-- TX -->
-        <g class="map-dot" data-state="Texas">
-          <circle cx="435" cy="448" r="7" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- FL -->
-        <g class="map-dot" data-state="Florida">
-          <circle cx="735" cy="490" r="7" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- NY -->
-        <g class="map-dot" data-state="New York">
-          <circle cx="828" cy="182" r="7" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- CA -->
-        <g class="map-dot" data-state="California">
-          <circle cx="145" cy="342" r="7" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- CO -->
-        <g class="map-dot" data-state="Colorado">
-          <circle cx="345" cy="330" r="7" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- AZ -->
-        <g class="map-dot" data-state="Arizona">
-          <circle cx="242" cy="408" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- GA -->
-        <g class="map-dot" data-state="Georgia">
-          <circle cx="706" cy="420" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- OH -->
-        <g class="map-dot" data-state="Ohio">
-          <circle cx="688" cy="268" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- TN -->
-        <g class="map-dot" data-state="Tennessee">
-          <circle cx="648" cy="368" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- MN -->
-        <g class="map-dot" data-state="Minnesota">
-          <circle cx="518" cy="172" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- NC -->
-        <g class="map-dot" data-state="North Carolina">
-          <circle cx="752" cy="345" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- WI -->
-        <g class="map-dot" data-state="Wisconsin">
-          <circle cx="568" cy="228" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-        <!-- MI -->
-        <g class="map-dot" data-state="Michigan">
-          <circle cx="648" cy="215" r="6" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
-        </g>
-      </svg>
-      <!-- Tooltip -->
-      <div class="map-tooltip" id="map-tooltip"></div>
-    </div>
-
-    <div class="map-stats">
-      <div class="map-stat">
-        <strong>14+</strong>
-        <span>States Served</span>
+    <div class="reach-grid">
+      <div class="reach-left">
+        <span class="eyebrow">Clients Nationwide</span>
+        <h2 class="display-lg">Trusted Across America</h2>
+        <p>From our Oak Brook, Illinois headquarters, we serve physicians, business owners, and families in 14+ states who are ready to demand more from their advisor.</p>
+        <div class="reach-stats">
+          <div class="reach-stat">
+            <strong>14+</strong>
+            <span>States Served</span>
+          </div>
+          <div class="reach-stat">
+            <strong>$2M–$15M</strong>
+            <span>Typical Client Range</span>
+          </div>
+          <div class="reach-stat">
+            <strong>100%</strong>
+            <span>Independent &amp; Fiduciary</span>
+          </div>
+        </div>
       </div>
-      <div class="map-stat">
-        <strong>$2M–$15M</strong>
-        <span>Typical Client Range</span>
-      </div>
-      <div class="map-stat">
-        <strong>100%</strong>
-        <span>Independent &amp; Fiduciary</span>
+      <div class="reach-right">
+        <span class="reach-right-label">Where We Serve</span>
+        <div class="state-grid" id="state-grid">
+          <div class="state-pill home" data-blurb="<strong>Oak Brook, Illinois</strong> — our home base. Every client relationship starts here, built on direct access and real accountability." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363786/state-il.jpg">
+            <abbr title="Illinois">IL</abbr>
+            <span>Home Office</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>California</strong> — tech executives and entrepreneurs managing equity complexity, concentrated positions, and high state-tax exposure." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363786/state-ca.jpg">
+            <abbr title="California">CA</abbr>
+            <span>California</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Texas</strong> — energy investors and business owners building generational wealth with a tax-advantaged edge." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363787/state-tx.jpg">
+            <abbr title="Texas">TX</abbr>
+            <span>Texas</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Florida</strong> — retirement-ready clients who want reliable income, downside protection, and a plan built to last." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363786/state-fl.jpg">
+            <abbr title="Florida">FL</abbr>
+            <span>Florida</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>New York</strong> — professionals who've outgrown their wirehouse and want genuine independence without the institutional overhead." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363786/state-ny.jpg">
+            <abbr title="New York">NY</abbr>
+            <span>New York</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Ohio</strong> — physicians and business owners who want a disciplined, fiduciary alternative to the advice they've been getting." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363788/state-oh.jpg">
+            <abbr title="Ohio">OH</abbr>
+            <span>Ohio</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Michigan</strong> — families navigating major transitions: business exits, inheritances, and the jump into retirement." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363788/state-mi.jpg">
+            <abbr title="Michigan">MI</abbr>
+            <span>Michigan</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Wisconsin</strong> — business owners who built something real and need a plan that protects it — and grows it — for the next generation." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363788/state-wi.jpg">
+            <abbr title="Wisconsin">WI</abbr>
+            <span>Wisconsin</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Minnesota</strong> — high-income professionals who want institutional-quality portfolio construction without the institutional indifference." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363788/state-mn.jpg">
+            <abbr title="Minnesota">MN</abbr>
+            <span>Minnesota</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Colorado</strong> — growth-oriented clients who want strategies as dynamic as their ambitions, backed by structured downside discipline." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363788/state-co.jpg">
+            <abbr title="Colorado">CO</abbr>
+            <span>Colorado</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Arizona</strong> — pre-retirees and retirees who want their next chapter planned as carefully as the one that got them here." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363789/state-az.jpg">
+            <abbr title="Arizona">AZ</abbr>
+            <span>Arizona</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Tennessee</strong> — entrepreneurs and executives focused on tax efficiency, income generation, and keeping more of what they've earned." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363789/state-tn.jpg">
+            <abbr title="Tennessee">TN</abbr>
+            <span>Tennessee</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>Georgia</strong> — Atlanta-area professionals ready for a wealth manager who thinks beyond the portfolio to the full financial picture." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363789/state-ga.jpg">
+            <abbr title="Georgia">GA</abbr>
+            <span>Georgia</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>North Carolina</strong> — clients across the Carolinas who want a true fiduciary partner — not a product pusher with a quota." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363789/state-nc.jpg">
+            <abbr title="North Carolina">NC</abbr>
+            <span>N. Carolina</span>
+          </div>
+          <div class="state-pill" data-blurb="<strong>And growing</strong> — we expand where serious investors need serious advice. Wherever you are, the conversation starts with a phone call." data-img="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776363789/state-expand.jpg">
+            <abbr title="And growing">+</abbr>
+            <span>And growing</span>
+          </div>
+        </div>
+        <div class="state-blurb-wrap" id="state-blurb-wrap">
+          <div class="state-blurb visible" id="state-blurb"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1192,24 +1273,65 @@ const bragObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 bragObserver.observe(document.querySelector('.brag-bar'));
 
-/* Map Dot Tooltips */
-const tooltip = document.getElementById('map-tooltip');
-const mapWrapper = document.getElementById('map-wrapper');
-document.querySelectorAll('.map-dot').forEach(dot => {
-  dot.addEventListener('mouseenter', e => {
-    const state = dot.dataset.state;
-    tooltip.textContent = state;
-    tooltip.style.display = 'block';
+/* State Rotator + Background Crossfade */
+(function() {
+  const grid  = document.getElementById('state-grid');
+  const blurb = document.getElementById('state-blurb');
+  const bgA   = document.getElementById('reach-bg-a');
+  const bgB   = document.getElementById('reach-bg-b');
+  if (!grid || !blurb || !bgA || !bgB) return;
+
+  const pills = Array.from(grid.querySelectorAll('.state-pill'));
+  let current = 0;
+  let paused  = false;
+  let resumeTimer = null;
+  let frontIsA = true;
+
+  function setBackground(url) {
+    const front = frontIsA ? bgA : bgB;
+    const back  = frontIsA ? bgB : bgA;
+    back.style.backgroundImage = `url('${url}')`;
+    back.classList.remove('inactive');
+    back.classList.add('active');
+    front.classList.remove('active');
+    front.classList.add('inactive');
+    frontIsA = !frontIsA;
+  }
+
+  function show(index, userTriggered) {
+    pills.forEach(p => p.classList.remove('active'));
+    pills[index].classList.add('active');
+
+    // Crossfade background
+    const img = pills[index].dataset.img;
+    if (img) setBackground(img);
+
+    // Crossfade blurb
+    blurb.classList.remove('visible');
+    setTimeout(() => {
+      blurb.innerHTML = pills[index].dataset.blurb;
+      blurb.classList.add('visible');
+    }, 150);
+
+    current = index;
+    if (userTriggered) {
+      paused = true;
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { paused = false; }, 6000);
+    }
+  }
+
+  pills.forEach((pill, i) => {
+    pill.addEventListener('mouseenter', () => show(i, true));
+    pill.addEventListener('click',      () => show(i, true));
   });
-  dot.addEventListener('mousemove', e => {
-    const rect = mapWrapper.getBoundingClientRect();
-    tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
-    tooltip.style.top  = (e.clientY - rect.top  - 32) + 'px';
-  });
-  dot.addEventListener('mouseleave', () => {
-    tooltip.style.display = 'none';
-  });
-});
+
+  // Preload first image
+  show(0);
+  setInterval(() => {
+    if (!paused) show((current + 1) % pills.length, false);
+  }, 2800);
+})();
 
 /* Nav shrink on scroll */
 const nav = document.getElementById('site-nav');
