@@ -175,27 +175,54 @@ a { text-decoration: none; }
 
 /* ─── PAGE HERO ───────────────────────────────────── */
 .page-hero {
-  padding: 160px 0 100px;
+  height: 90vh;
+  min-height: 580px;
   background: var(--navy);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 72px;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/v1776355070/about-hero-team.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  z-index: 0;
 }
 .page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,185,33,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(180,226,255,0.06) 0%, transparent 50%);
+  z-index: 1;
+  background: linear-gradient(to top,
+    rgba(2,44,88,0.96) 0%,
+    rgba(2,44,88,0.70) 35%,
+    rgba(2,44,88,0.15) 65%,
+    rgba(2,44,88,0.00) 100%);
 }
-.page-hero .container { position: relative; z-index: 1; }
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 60px 64px;
+}
 .page-hero .eyebrow { color: var(--gold); }
-.page-hero h1 { color: var(--white); margin-bottom: 24px; max-width: 900px; }
+.page-hero h1 {
+  color: var(--white);
+  margin-bottom: 20px;
+  max-width: none;
+  width: 100%;
+}
 .page-hero h1 span { color: var(--gold); }
 .page-hero p {
-  font-size: clamp(17px, 1.8vw, 21px);
+  font-size: clamp(16px, 1.6vw, 19px);
   color: rgba(255,255,255,0.78);
-  max-width: 600px;
+  max-width: 680px;
   line-height: 1.6;
 }
 
@@ -683,7 +710,7 @@ a { text-decoration: none; }
   <div class="container">
     <span class="eyebrow">About Kuhn Capital Partners</span>
     <h1 class="display-xl">
-      Built on a<br><span>Simple</span><br>Conviction
+      Built on a <span>Simple</span> Conviction
     </h1>
     <p>Most investors are being underserved — not because of a lack of products, but a lack of discipline, clear thinking, and accountability.</p>
   </div>

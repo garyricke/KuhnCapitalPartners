@@ -179,14 +179,24 @@ a { text-decoration: none; }
   position: relative;
   overflow: hidden;
 }
-.podcast-hero::before {
-  content: '';
+.podcast-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 0;
+}
+.podcast-hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 90% at 70% 50%, rgba(255,185,33,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 70% at 5% 80%, rgba(32,86,156,0.18) 0%, transparent 50%);
+    linear-gradient(to right, rgba(2,44,88,0.82) 0%, rgba(2,44,88,0.45) 55%, rgba(0,0,0,0.25) 100%),
+    linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 40%);
+  z-index: 1;
 }
+.podcast-hero::before { display: none; }
 /* Sound wave decoration */
 .podcast-hero::after {
   content: '';
@@ -201,12 +211,11 @@ a { text-decoration: none; }
     transparent 100%);
   opacity: 0.5;
 }
-.podcast-hero .container { position: relative; z-index: 1; }
+.podcast-hero .container { position: relative; z-index: 2; }
 .podcast-hero-inner {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 64px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  max-width: 700px;
 }
 .podcast-hero h1 { color: var(--white); margin-bottom: 16px; }
 .podcast-hero h1 span { color: var(--gold); }
@@ -227,53 +236,8 @@ a { text-decoration: none; }
   margin-bottom: 40px;
 }
 .podcast-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
-.podcast-cover {
-  width: 220px;
-  height: 220px;
-  border-radius: 18px;
-  background: var(--navy);
-  overflow: hidden;
-  border: 3px solid rgba(255,185,33,0.3);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.podcast-cover-inner {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--navy) 0%, #0a4a8c 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-.podcast-cover-inner .cover-logo {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 900;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-.podcast-cover-inner .cover-title {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  text-transform: uppercase;
-  line-height: 1.05;
-  color: var(--white);
-  text-align: center;
-}
-.podcast-cover-inner .cover-mic {
-  margin-top: 16px;
-  color: rgba(255,185,33,0.6);
-}
-.podcast-cover-inner .cover-mic svg { width: 36px; height: 36px; }
 
-/* ─── EMBEDDED PLAYER ─────────────────────────────── */
+/* ─── SUBSCRIBE / LISTEN SECTION ──────────────────── */
 .player-section {
   background: var(--navy);
   padding: 64px 0;
@@ -282,7 +246,6 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -320,10 +283,236 @@ a { text-decoration: none; }
   color: var(--gold);
 }
 .subscribe-btn svg { width: 16px; height: 16px; }
-.podbean-frame {
-  border-radius: 10px;
+
+/* ─── STICKY AUDIO PLAYER ──────────────────────────── */
+.sticky-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--navy);
+  border-top: 2px solid var(--gold);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
+  transform: translateY(100%);
+  transition: transform 0.32s cubic-bezier(0.42,0,0.58,1);
+}
+.sticky-player.visible { transform: translateY(0); }
+.sp-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: grid;
+  grid-template-columns: 44px 1fr 36px;
+  align-items: center;
+  gap: 16px;
+}
+.sp-play {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  flex-shrink: 0;
+  transition: transform 0.2s, background 0.2s;
+}
+.sp-play:hover { transform: scale(1.08); background: #ffc93a; }
+.sp-play svg { width: 18px; height: 18px; margin-left: 2px; }
+.sp-play.is-playing svg.icon-play { display: none; }
+.sp-play:not(.is-playing) svg.icon-pause { display: none; }
+.sp-info { overflow: hidden; }
+.sp-title {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--white);
+  white-space: nowrap;
   overflow: hidden;
-  background: rgba(255,255,255,0.05);
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+.sp-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sp-time, .sp-duration {
+  font-family: var(--font-b);
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+  min-width: 34px;
+}
+.sp-duration { text-align: right; }
+.sp-progress {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.18);
+  outline: none;
+  cursor: pointer;
+}
+.sp-progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+  margin-top: -5px;
+}
+.sp-progress::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+}
+.sp-progress::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.18);
+}
+.sp-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.45);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.sp-close:hover { color: var(--white); }
+@media (max-width: 640px) {
+  .sp-inner { padding: 12px 16px; gap: 12px; }
+  .sp-title { font-size: 12px; }
+}
+
+/* ─── POPULAR EPISODES ────────────────────────────── */
+.popular-section {
+  background: var(--navy);
+  padding: 80px 0;
+}
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.popular-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.popular-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.5); }
+.popular-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s var(--ease);
+}
+.popular-card:hover .popular-card-bg { transform: scale(1.04); }
+.popular-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2,20,50,0.92) 0%, rgba(2,20,50,0.55) 50%, rgba(0,0,0,0.1) 100%);
+}
+.popular-card-body {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+.popular-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.popular-downloads {
+  font-family: var(--font-b);
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.popular-title {
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: var(--white);
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+.popular-play {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  transition: transform 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+.popular-play:hover { transform: scale(1.1); background: #ffc93a; }
+.popular-play svg { width: 14px; height: 14px; margin-left: 2px; }
+.popular-study-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border-radius: 20px;
+  border: 1.5px solid rgba(255,185,33,0.6);
+  color: var(--gold);
+  font-family: var(--font-d);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.popular-study-btn:hover { background: var(--gold); color: var(--navy); }
+.popular-loading {
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+  font-family: var(--font-b);
+  text-align: center;
+  padding: 40px 0;
+}
+@media (max-width: 900px) {
+  .popular-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .popular-grid { grid-template-columns: 1fr; }
+  .popular-card { min-height: 200px; }
 }
 
 /* ─── EPISODE FEED ────────────────────────────────── */
@@ -366,6 +555,14 @@ a { text-decoration: none; }
   line-height: 1.15;
   transition: color 0.2s;
 }
+.ep-epnum {
+  font-family: var(--font-d);
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
 .ep-meta {
   font-family: var(--font-b);
   font-size: 13px;
@@ -374,8 +571,9 @@ a { text-decoration: none; }
   align-items: center;
   gap: 12px;
 }
-.ep-meta .ep-date { }
-.ep-meta .ep-dur::before { content: '·'; margin-right: 12px; }
+.ep-meta .ep-date::before,
+.ep-meta .ep-dur::before { content: '·'; margin: 0 8px; color: var(--gray); }
+.ep-meta :first-child::before { display: none; }
 .ep-desc {
   font-size: 15px;
   color: #4a4a4a;
@@ -658,7 +856,6 @@ a { text-decoration: none; }
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: block; }
   .podcast-hero-inner { grid-template-columns: 1fr; }
-  .podcast-cover { display: none; }
   .host-inner { grid-template-columns: 1fr; }
   .host-photo-wrap { max-height: 320px; }
   .topics-grid { grid-template-columns: repeat(2, 1fr); }
@@ -777,7 +974,7 @@ a { text-decoration: none; }
     </div>
     <span class="lock-eyebrow">Private Access Required</span>
     <form id="lock-form" novalidate>
-      <input type="password" id="lock-pw" placeholder="Enter password" autocomplete="current-password" autofocus>
+      <input type="password" id="lock-pw" placeholder="Enter password" autocomplete="current-password">
       <button type="submit" class="lock-submit">Unlock</button>
       <p id="lock-error">Incorrect password. Try again.</p>
     </form>
@@ -790,6 +987,7 @@ a { text-decoration: none; }
   var K='kcp_auth';
   var ls=document.getElementById('lock-screen');
   if(sessionStorage.getItem(K)===H){ls.style.display='none';return;}
+  setTimeout(function(){document.getElementById('lock-pw').focus();},50);
   async function sha256(s){
     var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
     return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');
@@ -846,6 +1044,14 @@ a { text-decoration: none; }
 
 <!-- ─── PODCAST HERO ───────────────────────────────── -->
 <section class="podcast-hero">
+  <video
+    class="podcast-hero-video"
+    src="https://res.cloudinary.com/dsbllwpbh/video/upload/q_auto/f_auto/podcast-hero-video.mp4"
+    poster="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/podcast-hero-wide.jpg"
+    autoplay muted loop playsinline
+    aria-hidden="true">
+  </video>
+  <div class="podcast-hero-overlay" aria-hidden="true"></div>
   <div class="container">
     <div class="podcast-hero-inner">
       <div>
@@ -859,30 +1065,16 @@ a { text-decoration: none; }
           <a href="#subscribe" class="btn btn-outline">Subscribe Free</a>
         </div>
       </div>
-      <div class="podcast-cover" aria-hidden="true">
-        <div class="podcast-cover-inner">
-          <div class="cover-logo">Kuhn Capital</div>
-          <div class="cover-title">Destination Retirement</div>
-          <div class="cover-mic">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/>
-              <line x1="8" y1="23" x2="16" y2="23"/>
-            </svg>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── EMBEDDED PLAYER ─────────────────────────────── -->
+<!-- ─── SUBSCRIBE / LISTEN ────────────────────────────── -->
 <section class="player-section" id="subscribe">
   <div class="container">
     <div class="player-header">
-      <h2>Full Episode Player</h2>
+      <h2>Listen &amp; Subscribe</h2>
       <div class="subscribe-links">
-        <!-- Replace hrefs with actual platform URLs when available -->
         <a href="https://feed.podbean.com/kuhncp/feed.xml" class="subscribe-btn" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
           RSS Feed
@@ -895,19 +1087,44 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 1 1-.277-1.215c3.809-.87 7.077-.496 9.712 1.115.294.18.387.563.207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.131-9.965-1.166a.78.78 0 0 1-.973-.519.78.78 0 0 1 .519-.972c3.632-1.102 8.147-.568 11.234 1.328a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 0 1-.583-1.782c3.532-1.157 9.404-.933 13.115 1.338a.937.937 0 0 1-0.915 1.6z"/></svg>
           Spotify
         </a>
+        <a href="https://www.podbean.com/site/podcatcher/index/blog/tGGJcAm4V9lFr" class="subscribe-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Podbean
+        </a>
       </div>
     </div>
-    <div class="podbean-frame">
-      <iframe
-        src="https://www.podbean.com/media/player/multi?playlist=http%3A%2F%2Ffeed.podbean.com%2Fkuhncp%2Ffeed.xml&vjs=1&size=315&skin=3&episode_limit=20&btn-skin=7&share=1&fonts=Helvetica&auto=0&download=0&rtl=0&pbad=0"
-        width="100%"
-        height="315"
-        scrolling="no"
-        frameborder="0"
-        allowfullscreen=""
-        title="Destination Retirement — Podbean Player"
-        loading="lazy">
-      </iframe>
+  </div>
+</section>
+
+<!-- ─── STICKY AUDIO PLAYER ──────────────────────────── -->
+<div class="sticky-player" id="sticky-player" aria-hidden="true" role="region" aria-label="Audio player">
+  <audio id="main-audio" preload="none"></audio>
+  <div class="sp-inner">
+    <button class="sp-play" id="sp-play-btn" aria-label="Play/Pause">
+      <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+    </button>
+    <div class="sp-info">
+      <div class="sp-title" id="sp-title">—</div>
+      <div class="sp-progress-wrap">
+        <span class="sp-time" id="sp-time">0:00</span>
+        <input type="range" class="sp-progress" id="sp-progress" min="0" max="100" value="0" step="0.1" aria-label="Seek">
+        <span class="sp-duration" id="sp-duration">—</span>
+      </div>
+    </div>
+    <button class="sp-close" id="sp-close-btn" aria-label="Close player">✕</button>
+  </div>
+</div>
+
+<!-- ─── POPULAR EPISODES ─────────────────────────────── -->
+<section class="popular-section" id="popular">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="eyebrow" style="color:var(--gold);">Most Downloaded</span>
+      <h2 class="display-md" style="color:var(--white);margin-top:8px;">Popular Episodes</h2>
+    </div>
+    <div class="popular-grid" id="popular-grid">
+      <div class="popular-loading">Loading popular episodes…</div>
     </div>
   </div>
 </section>
@@ -1091,10 +1308,97 @@ mobileNav.querySelectorAll('a').forEach(a => {
   });
 });
 
+/* ── Popular Episodes ────────────────────────────── */
+const POPULAR = [
+  {
+    title:     'Think Differently When Investing',
+    match:     'think differently',
+    downloads: 409,
+    bg:        'https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/ep-bg-think-differently.jpg'
+  },
+  {
+    title:     'What Will Happen in 2025, Up or Down?',
+    match:     'what will happen in 2025',
+    downloads: 323,
+    bg:        'https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/ep-bg-bull-bear-2025.jpg'
+  },
+  {
+    title:     'Tax Reduction Is a Year Round Activity!',
+    match:     'tax reduction is a year round',
+    downloads: 266,
+    bg:        'https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/ep-bg-tax-reduction.jpg',
+    studyGuide: 'tax-reduction-study-guide/'
+  },
+  {
+    title:     'Direct, Honest Investment Advice May Be Hard for You to Hear',
+    match:     'direct, honest investment advice',
+    downloads: 256,
+    bg:        'https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/ep-bg-direct-advice.jpg'
+  }
+];
+
+function renderPopular(rssItems) {
+  const grid = document.getElementById('popular-grid');
+
+  // Try to match each popular episode to its RSS audio URL
+  POPULAR.forEach(ep => {
+    const match = rssItems.find(item => {
+      const t = (item.querySelector('title')?.textContent || '').toLowerCase();
+      return t.includes(ep.match);
+    });
+    ep.audio = match ? (match.querySelector('enclosure')?.getAttribute('url') || '') : '';
+  });
+
+  grid.innerHTML = POPULAR.map(ep => `
+    <div class="popular-card" onclick="playEpisode('${escHtml(ep.audio)}','${escHtml(ep.title)}')"
+         role="button" tabindex="0" aria-label="Play: ${escHtml(ep.title)}">
+      <div class="popular-card-bg" style="background-image:url('${ep.bg}')"></div>
+      <div class="popular-card-overlay"></div>
+      <div class="popular-card-body">
+        <div class="popular-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="9" height="9"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Most Popular
+        </div>
+        <div class="popular-downloads">${ep.downloads.toLocaleString()} downloads</div>
+        <div class="popular-title">${escHtml(ep.title)}</div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <button class="popular-play" onclick="event.stopPropagation();playEpisode('${escHtml(ep.audio)}','${escHtml(ep.title)}')" aria-label="Play episode">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </button>
+          ${ep.studyGuide ? `<a href="${escHtml(ep.studyGuide)}" onclick="event.stopPropagation()" class="popular-study-btn" aria-label="Open Study Guide">Study Guide</a>` : ''}
+        </div>
+      </div>
+    </div>`).join('');
+
+  grid.querySelectorAll('.popular-card').forEach(card => {
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
+  });
+}
+
 /* ── RSS Feed Reader ──────────────────────────────── */
 const RSS_URL = 'https://feed.podbean.com/kuhncp/feed.xml';
-// Use a CORS proxy to fetch the RSS feed client-side
-const PROXY   = 'https://api.allorigins.win/get?url=';
+
+// Try multiple CORS proxies in order; return raw XML text
+async function fetchRSS(url) {
+  const proxies = [
+    async (u) => {
+      const r = await fetch('https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u));
+      if (!r.ok) throw new Error('codetabs ' + r.status);
+      return r.text();
+    },
+    async (u) => {
+      const r = await fetch('https://corsproxy.io/?' + encodeURIComponent(u));
+      if (!r.ok) throw new Error('corsproxy.io ' + r.status);
+      return r.text();
+    }
+  ];
+  for (const proxy of proxies) {
+    try { return await proxy(url); } catch (e) { /* try next */ }
+  }
+  throw new Error('All CORS proxies failed');
+}
 
 async function loadFeed() {
   const loadingEl = document.getElementById('feed-loading');
@@ -1102,14 +1406,15 @@ async function loadFeed() {
   const errorEl   = document.getElementById('feed-error');
 
   try {
-    const res = await fetch(PROXY + encodeURIComponent(RSS_URL));
-    if (!res.ok) throw new Error('Network error');
-    const data = await res.json();
-    const text = data.contents;
+    const text = await fetchRSS(RSS_URL);
 
     const parser = new DOMParser();
     const xml = parser.parseFromString(text, 'application/xml');
-    const items = Array.from(xml.querySelectorAll('item')).slice(0, 20);
+    const allItems = Array.from(xml.querySelectorAll('item'));
+    const items = allItems.slice(0, 20);
+
+    // Populate popular cards using full item list for matching
+    renderPopular(allItems);
 
     if (!items.length) {
       loadingEl.style.display = 'none';
@@ -1126,20 +1431,31 @@ async function loadFeed() {
       const encl    = item.querySelector('enclosure');
       const audio   = encl ? encl.getAttribute('url') : '';
 
+      // Strip date patterns from title (e.g. "4/12/25 - ", "04-12-2025 ", "Apr 12, 2025 – ")
+      const cleanTitle = title
+        .replace(/^\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4}\s*[-–—:·]?\s*/,'')
+        .replace(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\.?\s+\d{1,2},?\s+\d{4}\s*[-–—:·]?\s*/i,'')
+        .trim() || title;
+
       const dateStr = pubDate
         ? new Date(pubDate).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' })
         : '';
+
+      const epNum = item.querySelector('episode')?.textContent
+        || item.getElementsByTagNameNS('http://www.itunes.com/dtds/podcast-1.0.dtd','episode')[0]?.textContent
+        || '';
 
       // Strip HTML tags from description for plain text preview
       const plainDesc = desc.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
       const shortDesc = plainDesc.length > 200 ? plainDesc.slice(0, 200) + '…' : plainDesc;
 
       return `
-        <div class="episode-card" onclick="playEpisode('${escHtml(audio)}', '${escHtml(title)}')" role="button" tabindex="0" aria-label="Play: ${escHtml(title)}">
+        <div class="episode-card" onclick="playEpisode('${escHtml(audio)}', '${escHtml(cleanTitle)}')" role="button" tabindex="0" aria-label="Play: ${escHtml(cleanTitle)}">
           <div class="ep-num">${String(i + 1).padStart(2, '0')}</div>
           <div class="ep-body">
-            <div class="ep-title">${escHtml(title)}</div>
+            <div class="ep-title">${escHtml(cleanTitle)}</div>
             <div class="ep-meta">
+              ${epNum ? `<span class="ep-epnum">Ep. ${escHtml(epNum)}</span>` : ''}
               ${dateStr ? `<span class="ep-date">${dateStr}</span>` : ''}
               ${dur ? `<span class="ep-dur">${formatDur(dur)}</span>` : ''}
             </div>
@@ -1166,6 +1482,8 @@ async function loadFeed() {
     console.error('RSS feed error:', err);
     loadingEl.style.display = 'none';
     errorEl.style.display = 'block';
+    // Still render popular cards without audio links
+    renderPopular([]);
   }
 }
 
@@ -1191,10 +1509,71 @@ function formatDur(dur) {
     : `${m}:${String(s).padStart(2,'0')}`;
 }
 
+/* ── Sticky Audio Player ────────────────────────────── */
+const audio     = document.getElementById('main-audio');
+const player    = document.getElementById('sticky-player');
+const playBtn   = document.getElementById('sp-play-btn');
+const progress  = document.getElementById('sp-progress');
+const timeEl    = document.getElementById('sp-time');
+const durEl     = document.getElementById('sp-duration');
+const titleEl   = document.getElementById('sp-title');
+
+function fmtTime(s) {
+  if (!isFinite(s)) return '—';
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = Math.floor(s % 60);
+  return h > 0
+    ? `${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`
+    : `${m}:${String(sec).padStart(2,'0')}`;
+}
+
+function setPlayIcon(playing) {
+  playBtn.classList.toggle('is-playing', playing);
+  playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+}
+
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progress.value = pct;
+  timeEl.textContent = fmtTime(audio.currentTime);
+});
+
+audio.addEventListener('loadedmetadata', () => {
+  durEl.textContent = fmtTime(audio.duration);
+});
+
+audio.addEventListener('ended', () => setPlayIcon(false));
+audio.addEventListener('play',  () => setPlayIcon(true));
+audio.addEventListener('pause', () => setPlayIcon(false));
+
+progress.addEventListener('input', () => {
+  if (audio.duration) {
+    audio.currentTime = (progress.value / 100) * audio.duration;
+  }
+});
+
+playBtn.addEventListener('click', () => {
+  if (audio.paused) { audio.play(); } else { audio.pause(); }
+});
+
+document.getElementById('sp-close-btn').addEventListener('click', () => {
+  audio.pause();
+  player.classList.remove('visible');
+  player.setAttribute('aria-hidden', 'true');
+});
+
 function playEpisode(audioUrl, title) {
-  // The Podbean iframe player handles playback.
-  // Scroll to the embedded player so the user can play it there.
-  document.getElementById('subscribe').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!audioUrl) return;
+  titleEl.textContent = title;
+  timeEl.textContent  = '0:00';
+  durEl.textContent   = '—';
+  progress.value      = 0;
+  audio.src = audioUrl;
+  player.classList.add('visible');
+  player.setAttribute('aria-hidden', 'false');
+  audio.play().catch(() => { /* autoplay blocked — user can press play manually */ });
 }
 
 loadFeed();

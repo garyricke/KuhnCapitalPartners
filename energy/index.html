@@ -68,6 +68,7 @@ a{text-decoration:none}
   position:relative;overflow:hidden;display:flex;align-items:center;
 }
 .hero-bg{position:absolute;inset:0;background:url('../images/portal-energy.png') center/cover no-repeat}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;pointer-events:none}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(26,18,0,.92) 0%,rgba(26,18,0,.7) 60%,rgba(26,18,0,.3) 100%)}
 .hero-inner{position:relative;z-index:1}
 .hero h1{color:var(--white);margin-bottom:24px}
@@ -321,6 +322,9 @@ a{text-decoration:none}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="https://res.cloudinary.com/dsbllwpbh/video/upload/q_auto/f_auto/v1776354156/energy-hero-oil-well.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="container hero-inner">
     <span class="eyebrow">Energy & Tax Advantage</span>

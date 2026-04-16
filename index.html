@@ -416,23 +416,23 @@ a { text-decoration: none; }
   margin-bottom: 16px;
   line-height: 1.6;
 }
-.radio-stations {
+.radio-station-logos {
   display: flex;
-  gap: 12px;
-  margin: 28px 0;
+  gap: 20px;
+  margin-top: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
-.station-badge {
-  background: var(--navy);
-  color: var(--white);
-  font-family: var(--font-b);
-  font-weight: 700;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 8px 16px;
-  border-radius: 4px;
+.radio-station-logos img {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.82;
+  transition: opacity 0.2s;
 }
+.radio-station-logos img:hover { opacity: 1; }
 
 /* ─── MAP ─────────────────────────────────────────── */
 .map-section {
@@ -927,11 +927,19 @@ a { text-decoration: none; }
 <section class="radio-section">
   <div class="container">
     <div class="radio-grid">
-      <div class="radio-image-wrap">
-        <img src="images/robert-studio.png" alt="Robert Kuhn — Destination Retirement Radio">
-        <div class="radio-badge">
-          Destination Retirement
-          <span>AS HEARD ON WLS-AM 890</span>
+      <div>
+        <div class="radio-image-wrap">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/podcast-robert-studio.jpg" alt="Robert Kuhn — Destination Retirement Radio" loading="lazy">
+          <div class="radio-badge">
+            Destination Retirement
+            <span>AS HEARD ON WLS-AM 890</span>
+          </div>
+        </div>
+        <div class="radio-station-logos">
+          <img src="assets/media-logo-1.webp"    alt="WLS-AM 890" loading="lazy">
+          <img src="assets/media-logo-am560.png" alt="AM 560 The Answer" loading="lazy">
+          <img src="assets/media-logo-wzlb.png"  alt="WZLB Radio" loading="lazy">
+          <img src="assets/media-logo-3.png"     alt="Destination Retirement" loading="lazy">
         </div>
       </div>
       <div class="radio-content">
@@ -939,12 +947,6 @@ a { text-decoration: none; }
         <h2 class="display-lg" style="color:var(--navy);">The Show That Cuts Through the Noise</h2>
         <p>Every week, Robert Kuhn breaks down the strategies, tax moves, and investment truths that most advisors keep to themselves. No product pitches. No fluff. Just the information you need to make better decisions with your money.</p>
         <p>Airing weekly on two of Chicago's most-listened-to stations — and available everywhere you stream.</p>
-        <div class="radio-stations">
-          <span class="station-badge">WLS-AM 890</span>
-          <span class="station-badge">AM 560</span>
-          <span class="station-badge">Podbean</span>
-          <span class="station-badge">Apple Podcasts</span>
-        </div>
         <a href="podcast/" class="btn btn-navy">Browse All Episodes →</a>
       </div>
     </div>
