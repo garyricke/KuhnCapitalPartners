@@ -843,6 +843,25 @@ a { text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+.footer-admin {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-b);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.footer-admin a {
+  color: rgba(255,255,255,0.2);
+  transition: color 0.2s;
+}
+.footer-admin a:hover { color: rgba(255,255,255,0.5); }
+.footer-admin span { color: rgba(255,255,255,0.12); }
 </style>
 </head>
 <body>
@@ -901,6 +920,7 @@ a { text-decoration: none; }
       <li><a href="../structured-notes/">Structured Notes</a></li>
       <li><a href="../webinar/" style="color:var(--gold);">Webinar</a></li>
       <li><a href="../services/">Services</a></li>
+      <li><a href="../podcast/">Podcast</a></li>
       <li><a href="../about/">About</a></li>
     </ul>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold btn-inline" target="_blank" rel="noopener">Schedule a Call</a>
@@ -1307,7 +1327,6 @@ a { text-decoration: none; }
             <li><a href="../about/">About Us</a></li>
             <li><a href="../services/">Services</a></li>
             <li><a href="../podcast/">Podcast</a></li>
-          <li><a href="../kuhncp-brand-guide.html">Brand Guide</a></li>
             <li><a href="../">Home</a></li>
           </ul>
         </div>
@@ -1323,6 +1342,11 @@ a { text-decoration: none; }
     <div class="footer-bottom">
       <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice or a solicitation. Structured note investments may not be suitable for all investors. These are complex instruments — please read all offering documents carefully. Structured notes are subject to market, credit, liquidity, and other risks. Principal is subject to the credit risk of the issuer. Past performance is not indicative of future results.</p>
       <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+    <div class="footer-admin">
+      <a href="../status/">Status</a>
+      <span>·</span>
+      <a href="../kuhncp-brand-guide.html">Brand Guide</a>
     </div>
   </div>
 </footer>

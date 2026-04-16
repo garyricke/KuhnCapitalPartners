@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Status — Kuhn Capital Partners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&family=Rambla:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Rambla', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #151515;
+  background: #F4F5F7;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+:root {
+  --navy:     #022C58;
+  --gold:     #FFB921;
+  --white:    #FFFFFE;
+  --off-white:#F4F5F7;
+  --black:    #151515;
+  --gray:     #6B7280;
+  --font-d:   'Rubik', sans-serif;
+  --font-b:   'Rambla', sans-serif;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 40px; }
+
+/* ─── LOCK ──────────────────────────────────────── */
+#lock-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  transition: opacity 0.45s ease;
+}
+#lock-screen.fade-out { opacity: 0; pointer-events: none; }
+.lock-box { width: 100%; max-width: 420px; text-align: center; }
+.lock-logo-wrap { margin-bottom: 48px; }
+.lock-logo-wrap img { height: 38px; margin: 0 auto; display: block; }
+.lock-tagline {
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #FFB921;
+  margin-top: 14px;
+}
+.lock-eyebrow {
+  display: block;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 32px;
+}
+#lock-pw {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  padding: 16px 20px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 17px;
+  color: #fff;
+  outline: none;
+  letter-spacing: 0.1em;
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+  display: block;
+}
+#lock-pw::placeholder { color: rgba(255,255,255,0.3); letter-spacing: 0.04em; }
+#lock-pw:focus { border-color: #FFB921; }
+.lock-submit {
+  width: 100%;
+  background: #FFB921;
+  border: 2px solid #022C58;
+  border-radius: 6px;
+  padding: 16px;
+  font-family: 'Rambla', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #151515;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.lock-submit:hover { opacity: 0.88; }
+#lock-error {
+  display: none;
+  margin-top: 14px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 13px;
+  color: #ff8080;
+}
+.lock-credit {
+  margin-top: 56px;
+  font-family: 'Rambla', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.18);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ─── HEADER ────────────────────────────────────── */
+.status-header {
+  background: var(--navy);
+  padding: 48px 0 40px;
+  border-bottom: 3px solid var(--gold);
+}
+.status-header-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.status-header img { height: 36px; }
+.status-header-meta {
+  text-align: right;
+}
+.status-header-meta p {
+  font-family: var(--font-b);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+.status-header-meta span { color: var(--gold); }
+
+/* ─── MAIN ──────────────────────────────────────── */
+.status-main { padding: 56px 0 96px; }
+
+/* ─── SECTION LABEL ─────────────────────────────── */
+.section-label {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  background: var(--navy);
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* ─── CLIENT BRIEF ──────────────────────────────── */
+.brief-card {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid #e2e5ea;
+  padding: 36px 40px;
+  margin-bottom: 48px;
+}
+.brief-card h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.brief-card .brief-sub {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ebee;
+}
+.brief-groups { display: flex; flex-direction: column; gap: 28px; }
+.brief-group-title {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--navy);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9ebee;
+}
+.brief-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+.brief-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #2a3a4a;
+  line-height: 1.5;
+}
+.brief-item::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+/* ─── CHANGELOG ─────────────────────────────────── */
+.changelog { display: flex; flex-direction: column; gap: 0; }
+
+.log-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 40px;
+  position: relative;
+}
+
+/* vertical timeline line */
+.log-entry::before {
+  content: '';
+  position: absolute;
+  left: 152px;
+  top: 28px;
+  bottom: -1px;
+  width: 2px;
+  background: #dde1e7;
+}
+.log-entry:last-child::before { display: none; }
+
+.log-date-col {
+  padding: 24px 0 32px;
+  text-align: right;
+  position: relative;
+}
+.log-date {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.log-date span {
+  display: block;
+  font-family: var(--font-b);
+  font-weight: 400;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+  margin-top: 2px;
+}
+
+/* dot on timeline */
+.log-date-col::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--off-white);
+  z-index: 1;
+}
+
+.log-content-col {
+  padding: 20px 0 32px;
+}
+.log-card {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid #e2e5ea;
+  padding: 24px 28px;
+}
+.log-card-title {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.log-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.log-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #2a3a4a;
+  line-height: 1.5;
+}
+.log-tag {
+  display: inline-block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.tag-new     { background: #e8f5e9; color: #2e7d32; }
+.tag-update  { background: #e3f2fd; color: #1565c0; }
+.tag-fix     { background: #fff3e0; color: #e65100; }
+.tag-design  { background: #f3e5f5; color: #6a1b9a; }
+
+.log-page-group { margin-top: 20px; }
+.log-page-group:first-child { margin-top: 0; }
+.log-page-label {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--navy);
+  background: var(--off-white);
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* ─── FOOTER ────────────────────────────────────── */
+.status-footer {
+  background: var(--navy);
+  padding: 28px 0;
+  text-align: center;
+}
+.status-footer p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  font-family: var(--font-b);
+}
+.status-footer a {
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s;
+}
+.status-footer a:hover { color: var(--gold); }
+
+@media (max-width: 700px) {
+  .container { padding: 0 20px; }
+  .brief-grid { grid-template-columns: 1fr; }
+  .brief-groups { gap: 20px; }
+  .log-entry { grid-template-columns: 1fr; }
+  .log-entry::before { display: none; }
+  .log-date-col { padding-bottom: 8px; text-align: left; }
+  .log-date-col::after { display: none; }
+  .status-header-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── LOCK ──────────────────────────────────────── -->
+<div id="lock-screen" role="dialog" aria-modal="true" aria-label="Password required">
+  <div class="lock-box">
+    <div class="lock-logo-wrap">
+      <img src="../assets/KUHN-logo-on-dark.svg" alt="Kuhn Capital Partners">
+      <span class="lock-tagline">Protect · Grow · Reduce Taxes</span>
+    </div>
+    <span class="lock-eyebrow">Private Access Required</span>
+    <form id="lock-form" novalidate>
+      <input type="password" id="lock-pw" placeholder="Enter password" autocomplete="current-password" autofocus>
+      <button type="submit" class="lock-submit">Unlock</button>
+      <p id="lock-error">Incorrect password. Try again.</p>
+    </form>
+    <p class="lock-credit">Prepared by Orbis Marketing</p>
+  </div>
+</div>
+<script>
+(function(){
+  var H='768c5aebaedd7dd4a97bf64af5f26067d75e4e61e884bdbca3742ccc7c4ceecc';
+  var K='kcp_auth';
+  var ls=document.getElementById('lock-screen');
+  if(sessionStorage.getItem(K)===H){ls.style.display='none';return;}
+  async function sha256(s){
+    var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');
+  }
+  document.getElementById('lock-form').addEventListener('submit',async function(e){
+    e.preventDefault();
+    var h=await sha256(document.getElementById('lock-pw').value);
+    if(h===H){
+      sessionStorage.setItem(K,h);
+      ls.classList.add('fade-out');
+      setTimeout(function(){ls.style.display='none';},460);
+    } else {
+      document.getElementById('lock-error').style.display='block';
+      document.getElementById('lock-pw').value='';
+      document.getElementById('lock-pw').focus();
+    }
+  });
+})();
+</script>
+
+<!-- ─── HEADER ────────────────────────────────────── -->
+<header class="status-header">
+  <div class="container">
+    <div class="status-header-inner">
+      <a href="../"><img src="../assets/KUHN-logo-on-dark.svg" alt="Kuhn Capital Partners"></a>
+      <div class="status-header-meta">
+        <p>Website Status &amp; Change Log</p>
+        <p>Prepared by <span>Orbis Marketing</span></p>
+        <p>gary.ricke@orbisdesign.com</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MAIN ──────────────────────────────────────── -->
+<main class="status-main">
+  <div class="container">
+
+    <!-- CLIENT BRIEF -->
+    <div class="section-label">Client Scope</div>
+    <div class="brief-card">
+      <h2>Project Brief — KCP Website</h2>
+      <p class="brief-sub">Goals, requirements, and direction captured across client meetings on March 24, March 25, April 6, and April 8, 2026.</p>
+
+      <div class="brief-groups">
+
+        <!-- GOALS -->
+        <div>
+          <div class="brief-group-title">Overall Goals</div>
+          <div class="brief-grid">
+            <div class="brief-item">Position KCP as a "change agent" — bold, cutting-edge, tech-company aesthetic; not a stuffy financial advisor site</div>
+            <div class="brief-item">Drive traffic to three distinct business lines while proving they are "greater together than the sum of their parts"</div>
+            <div class="brief-item">Shift lead generation beyond the Chicago radio market to a nationwide audience via webinar campaigns and paid Meta/Facebook ads</div>
+            <div class="brief-item">Educate before selling — use whitepapers, videos, and podcasts to pre-qualify leads; all paths lead to a phone call or calendar booking</div>
+            <div class="brief-item">Target client profile: ages 50–70, net worth $2–15M, business owners and professionals with tax efficiency as primary pain point</div>
+            <div class="brief-item">Growth target: $1B AUM by 2030 (from ~$200M); structured notes and energy fund projected as primary growth drivers</div>
+          </div>
+        </div>
+
+        <!-- HOMEPAGE -->
+        <div>
+          <div class="brief-group-title">Homepage</div>
+          <div class="brief-grid">
+            <div class="brief-item">Design inspired by ritholtzwealth.com — bold typography, clean layout, prominent CTAs, visible nav bar (not hamburger)</div>
+            <div class="brief-item">Hero video: train moving through Chicago with city skyline (Red Line preferred)</div>
+            <div class="brief-item">Hero headline: "RAISING AMERICA'S FINANCIAL IQ"</div>
+            <div class="brief-item">Hero subheadline: "At the frontier of wealth management, obstacles are just the next opportunity. We're with you every step."</div>
+            <div class="brief-item">Three strategy boxes driving to dedicated pages: Energy (Tax-Advantaged), Wealth Management (Holistic Financial Planning), Custom Income Notes (More Income. Defined Downside.)</div>
+            <div class="brief-item">Brag bar: radio presence, station logos, media placements, credentials, and third-party recognition</div>
+            <div class="brief-item">Radio show section: prominent placement, Robert Kuhn in studio setting, most recent episode with on-site playback — no redirecting to Podbean</div>
+            <div class="brief-item">By-the-numbers section: AUM, years of experience, client reach — interactive, animated counters (reference: ccpwealth.com)</div>
+            <div class="brief-item">"Talk to An Advisor" contact section styled after ritholtzwealth.com/contact/ with rounded/oval CTA buttons</div>
+          </div>
+        </div>
+
+        <!-- STRATEGY PAGES -->
+        <div>
+          <div class="brief-group-title">Strategy Pages</div>
+          <div class="brief-grid">
+            <div class="brief-item">Each strategy page includes 3 content pieces: a video, podcast episode, and whitepaper download</div>
+            <div class="brief-item"><strong>Structured Notes:</strong> Webinar-gated landing page inspired by Phoenix Energy's campaign; messaging around JP Morgan-backed income at 9–15% with 30% downside buffer</div>
+            <div class="brief-item"><strong>Structured Notes:</strong> Simple language — "Market can drop 29.999% and you still get paid your monthly coupon"; avoid over-explaining before webinar</div>
+            <div class="brief-item"><strong>Energy / Oil &amp; Gas:</strong> 3–4 short educational videos (Oil &amp; Gas 101, tax benefits, exit strategy, investment thesis); visual reference from bisonnr.com</div>
+            <div class="brief-item"><strong>Energy:</strong> Lead messaging — "$100K invested = $80–90K in tax writeoffs against active/passive income"; position as blue-chip, non-speculative fractional interests</div>
+            <div class="brief-item"><strong>Wealth Management:</strong> Sub-pages for Tax Planning, Estate Planning, Financial Planning, Insurance, Corporate Retirement, Institutional Investing</div>
+            <div class="brief-item"><strong>Wealth Management:</strong> Each sub-page focused on how KCP does it differently, not just definitions; tie tax planning back to Energy Fund strategy</div>
+          </div>
+        </div>
+
+        <!-- PODCAST & MEDIA -->
+        <div>
+          <div class="brief-group-title">Podcast &amp; Media</div>
+          <div class="brief-grid">
+            <div class="brief-item">RSS feed integration displaying most recent 50 episodes on-site with titles, descriptions, and play functionality</div>
+            <div class="brief-item">Floating media player (bottom-right) so users can listen while browsing; do not redirect to external Podbean</div>
+            <div class="brief-item">Study guide format for each episode: interactive quiz, key takeaways, transcript — modeled after medical/educational study guides</div>
+            <div class="brief-item">300+ episodes planned for AI repurposing: one episode = one YouTube video + one podcast + one email + one social clip series per week</div>
+            <div class="brief-item">Future: transition to video podcast once studio buildout is complete; record, publish to YouTube and RSS simultaneously</div>
+          </div>
+        </div>
+
+        <!-- ABOUT & TEAM -->
+        <div>
+          <div class="brief-group-title">About &amp; Team</div>
+          <div class="brief-grid">
+            <div class="brief-item">Messaging: "100% principal-owned, no private equity, no conflicting agendas — boutique by design"</div>
+            <div class="brief-item">Key differentiator: "We define the downside first, then build for different market environments"</div>
+            <div class="brief-item">Team members: Robert Kuhn, Andrew Kuhn, Brian Phillips, Alexa Cirrincione, Paige Lacy, Jessica Greer + additional advisor and WM associate</div>
+            <div class="brief-item">Professional headshots with studio-quality lighting (AI enhancement for lighting only, not faces); reference style: ccpwealth.com team page</div>
+            <div class="brief-item">Short video interviews (5–7 min) per team member: authentic, unrehearsed, sport coat + button-up; film on-site during scheduled office visit</div>
+          </div>
+        </div>
+
+        <!-- FEATURES & FUNCTIONALITY -->
+        <div>
+          <div class="brief-group-title">Features &amp; Functionality</div>
+          <div class="brief-grid">
+            <div class="brief-item">Contact forms: collect name, phone, email; route leads to immediate calendar booking; track which strategy generated each lead</div>
+            <div class="brief-item">Webinar gating: email capture with compliance disclaimer; immediate access on signup, no manual confirmation</div>
+            <div class="brief-item">Answer Engine Optimization (AEO): dedicated deep-focus pages per strategy so LLMs and AI search engines can cite KCP as source of record</div>
+            <div class="brief-item">Interactive geographic map showing client spread by state</div>
+            <div class="brief-item">CRM integration: text + email follow-up capability; leads tagged by source strategy</div>
+          </div>
+        </div>
+
+        <!-- TECHNICAL -->
+        <div>
+          <div class="brief-group-title">Technical &amp; Hosting</div>
+          <div class="brief-grid">
+            <div class="brief-item">Static HTML hosted on Netlify with GitHub auto-deploy; no WordPress, no database vulnerabilities</div>
+            <div class="brief-item">Media hosted on Cloudinary CDN (images, video, SVGs) for fast global delivery</div>
+            <div class="brief-item">Password protection on all pages during build phase; single shared session-based password</div>
+            <div class="brief-item">Built with Claude Code + AI tools for rapid iteration; nano-banana for image generation/enhancement; Descript for podcast/video editing</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CHANGELOG -->
+    <div class="section-label">Change Log</div>
+    <div class="changelog">
+
+      <!-- ENTRY: April 16, 2026 -->
+      <div class="log-entry">
+        <div class="log-date-col">
+          <div class="log-date">Apr 16<span>2026</span></div>
+        </div>
+        <div class="log-content-col">
+          <div class="log-card">
+            <div class="log-card-title">Initial Site Launch — All Pages &amp; Features</div>
+
+            <!-- SITEWIDE -->
+            <div class="log-page-group">
+              <div class="log-page-label">Sitewide</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Ritholtz-inspired brand system: Rubik 900 + Rambla, Navy #022C58, Gold #FFB921, Sky #B4E2FF — applied uniformly across all 8 pages</li>
+                <li><span class="log-tag tag-new">New</span> SHA-256 password protection on all pages — session-based, single shared password, fade-out unlock animation</li>
+                <li><span class="log-tag tag-new">New</span> Fixed top nav: logo, 8 navigation links, "Schedule a Call" CTA button, mobile burger menu with full-screen overlay</li>
+                <li><span class="log-tag tag-new">New</span> Netlify contact modal: intercepts all Google Calendar CTA links sitewide; 5 interest pills with intelligent pre-selection based on page context; AJAX form submission; honeypot spam protection</li>
+                <li><span class="log-tag tag-new">New</span> All media (images, video, SVGs) hosted on Cloudinary CDN for fast global delivery</li>
+                <li><span class="log-tag tag-new">New</span> Footer: Strategies column, Company column, Contact column; admin-only links (Status, Brand Guide) separated at bottom right</li>
+              </ul>
+            </div>
+
+            <!-- HOMEPAGE -->
+            <div class="log-page-group">
+              <div class="log-page-label">Homepage</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: Chicago train video (Cloudinary, autoplay/muted/loop), headline "RAISING AMERICA'S FINANCIAL IQ", subheadline per brief, dual CTA buttons</li>
+                <li><span class="log-tag tag-new">New</span> Three strategy portal cards (Energy, Wealth Management, Structured Notes) — each with Cloudinary background image and link to dedicated page</li>
+                <li><span class="log-tag tag-new">New</span> Animated brag bar: 30+ Years of Experience, 300+ Radio Episodes, 15%+ Enhanced Yield Note Returns, 100% Independent &amp; Fiduciary — counters animate on scroll into view</li>
+                <li><span class="log-tag tag-new">New</span> Radio show section: Robert Kuhn studio photo with "As Heard On WLS-AM 890" badge, 4 radio station logos (AM 560, Florida Man Radio, News Talk, WLS-AM 890), episode description, link to all episodes</li>
+                <li><span class="log-tag tag-new">New</span> Reach/stats section: animated client-reach map, AUM milestone, years in market, states served — background crossfade animation</li>
+                <li><span class="log-tag tag-new">New</span> "Talk to an Advisor" section: team headshots for Robert, Andrew, Brian, Alexa, Paige, and Eric; scheduling CTA</li>
+              </ul>
+            </div>
+
+            <!-- ENERGY -->
+            <div class="log-page-group">
+              <div class="log-page-label">Energy &amp; Tax Advantage</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: tax-advantage headline, IDC deduction core message ($100K invested = $80–90K in tax writeoffs), dual CTAs</li>
+                <li><span class="log-tag tag-new">New</span> How It Works: step-by-step IDC deduction explainer — invest, deduct, earn, exit</li>
+                <li><span class="log-tag tag-new">New</span> Who Qualifies: accredited investor criteria, income/net worth thresholds</li>
+                <li><span class="log-tag tag-new">New</span> Video section: placeholder for Robert's Energy 101 / tax-benefit video series</li>
+                <li><span class="log-tag tag-new">New</span> Podcast section: featured energy-strategy episode with inline player</li>
+                <li><span class="log-tag tag-new">New</span> Whitepaper gate: email capture form; success state confirmation (PDF delivery pending)</li>
+              </ul>
+            </div>
+
+            <!-- STRUCTURED NOTES -->
+            <div class="log-page-group">
+              <div class="log-page-label">Structured Notes (Custom Income Notes)</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: income + downside-protection headline, core stats (JP Morgan A1/A-, 15.45% p.a., 30% buffer, SPX/RTY/KRE, 60-month term)</li>
+                <li><span class="log-tag tag-new">New</span> Explainer section: autocallable monthly note mechanics, "market can drop 29.999% and you still get paid" plain-language example</li>
+                <li><span class="log-tag tag-new">New</span> Video section: placeholder for structured note explainer video</li>
+                <li><span class="log-tag tag-new">New</span> Podcast section: featured structured notes episode with inline player</li>
+                <li><span class="log-tag tag-new">New</span> Whitepaper gate: email capture form; success state confirmation (PDF delivery pending)</li>
+              </ul>
+            </div>
+
+            <!-- WEALTH MANAGEMENT -->
+            <div class="log-page-group">
+              <div class="log-page-label">Wealth Management</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: full-bleed Cloudinary image (andrew-office-woman), fiduciary headline, holistic planning subtext</li>
+                <li><span class="log-tag tag-new">New</span> Intro/fiduciary section: 100% principal-owned, no private equity, no conflicting agendas messaging</li>
+                <li><span class="log-tag tag-new">New</span> Who We Serve: client profile grid — business owners, pre-retirees, executives, families; net worth and age targeting</li>
+                <li><span class="log-tag tag-new">New</span> Video section: placeholder for Robert's wealth management / planning philosophy video</li>
+                <li><span class="log-tag tag-new">New</span> Podcast section: featured wealth management episode with inline player</li>
+                <li><span class="log-tag tag-new">New</span> Whitepaper gate: email capture form; success state confirmation (PDF delivery pending)</li>
+              </ul>
+            </div>
+
+            <!-- WEBINAR -->
+            <div class="log-page-group">
+              <div class="log-page-label">Webinar (Structured Notes Campaign)</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: webinar registration CTA, event title, date/time placeholder, urgency framing per Phoenix Energy campaign model</li>
+                <li><span class="log-tag tag-new">New</span> "What You'll Learn" section: 4-point benefit list — income structure, downside protection, JP Morgan backing, suitability criteria</li>
+                <li><span class="log-tag tag-new">New</span> "Why Structured Notes" section: plain-language objection handling, differentiation from traditional fixed income</li>
+                <li><span class="log-tag tag-new">New</span> Featured note breakdown: current offering specs (15.45% p.a., 30% buffer, monthly autocall, 60-month term)</li>
+                <li><span class="log-tag tag-new">New</span> Host bio: Robert Kuhn credentials, firm background, radio show credibility</li>
+                <li><span class="log-tag tag-new">New</span> Register CTA: compliance-friendly disclaimer, lead capture form (name, phone, email)</li>
+              </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div class="log-page-group">
+              <div class="log-page-label">Services</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: full services overview headline, "institutional strategies for individual investors" positioning</li>
+                <li><span class="log-tag tag-new">New</span> Services grid: Tax Planning, Estate Planning, Financial Planning, Insurance Services, Corporate Retirement, Institutional Investing — each with description and CTA</li>
+                <li><span class="log-tag tag-new">New</span> Approach strip: "we define the downside first" philosophy, offense + defense framework</li>
+                <li><span class="log-tag tag-new">New</span> Fiduciary banner: 100% independent, no conflicts of interest, registered investment adviser disclosure</li>
+              </ul>
+            </div>
+
+            <!-- ABOUT -->
+            <div class="log-page-group">
+              <div class="log-page-label">About</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: firm story headline, "boutique by design" positioning</li>
+                <li><span class="log-tag tag-new">New</span> About body: full firm narrative — "most investors are underserved not because of a lack of products but a lack of discipline, clear thinking, and accountability"</li>
+                <li><span class="log-tag tag-new">New</span> Conviction callout: "we define the downside first, then build for different market environments"</li>
+                <li><span class="log-tag tag-new">New</span> By the Numbers: animated stats — years in market, episodes aired, states served, team size</li>
+                <li><span class="log-tag tag-new">New</span> Independence section: 100% principal-owned, no private equity, no outside agendas — full disclosure block</li>
+                <li><span class="log-tag tag-new">New</span> Team grid: Robert Kuhn, Andrew Kuhn, Brian Phillips, Alexa Cirrincione, Paige Lacy, Eric Shaffer — headshots, titles, bio excerpts</li>
+              </ul>
+            </div>
+
+            <!-- PODCAST -->
+            <div class="log-page-group">
+              <div class="log-page-label">Podcast</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Hero: Cloudinary background video, "Destination Retirement" show title, "Listen. Learn. Retire Well." headline, Browse Episodes + Subscribe CTAs</li>
+                <li><span class="log-tag tag-new">New</span> "As Heard On" radio logos in hero: AM 560, Florida Man Radio, News Talk, WLS-AM 890 (on-dark SVG variants)</li>
+                <li><span class="log-tag tag-new">New</span> Subscribe/Listen bar: RSS Feed, Apple Podcasts, Spotify, Podbean links</li>
+                <li><span class="log-tag tag-new">New</span> Sticky audio player: play/pause, skip ±15s, scrubber, speed selector, volume — appears on episode play</li>
+                <li><span class="log-tag tag-new">New</span> Live episode feed: pulls from Podbean RSS feed, renders episode titles, dates, descriptions, and play buttons on-site (no redirect to Podbean)</li>
+                <li><span class="log-tag tag-new">New</span> Topics grid: key subject areas covered across 300+ episodes</li>
+                <li><span class="log-tag tag-new">New</span> Host bio: Robert Kuhn credentials, show history, radio station affiliations</li>
+                <li><span class="log-tag tag-new">New</span> Newsletter / email capture section</li>
+              </ul>
+            </div>
+
+            <!-- STUDY GUIDE -->
+            <div class="log-page-group">
+              <div class="log-page-label">Podcast — Tax Reduction Study Guide</div>
+              <ul class="log-items">
+                <li><span class="log-tag tag-new">New</span> Studio console audio player: waveform animation (15 bars), timeline scrubber, play/pause, skip ±15s, playback speed (0.75×–2×), volume/mute, download, 6 chapter jump markers</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 1 — Flashcard Flip: 2 cards with 3D flip reveal, self-scored "knew it / missed it" buttons</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 2 — True/False Rapid Fire: 3 statements, instant correct/wrong feedback per answer</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 3 — Fill in the Blank: 3 sentences, typed answers checked against correct values and accepted alternates</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 4 — Slider Challenge: 3 numeric range questions (cap rate, floor rate, term), range inputs with live value display</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 5 — Connect the Dots: match 3 terms to 3 definitions; visual selection state and check button</li>
+                <li><span class="log-tag tag-new">New</span> Quiz 6 — Spot the Lie: 4 rounds of 4 statements; identify the false one — tests retention of key episode facts</li>
+                <li><span class="log-tag tag-new">New</span> Centralized 18-point score engine: all quiz formats feed single score display; final summary on completion</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- FUTURE ENTRIES GO HERE -->
+
+    </div>
+  </div>
+</main>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer class="status-footer">
+  <div class="container">
+    <p><a href="../">← Back to Site</a> &nbsp;·&nbsp; <a href="../kuhncp-brand-guide.html">Brand Guide</a> &nbsp;·&nbsp; © 2026 Kuhn Capital Partners, LLC</p>
+  </div>
+</footer>
+
+</body>
+</html>

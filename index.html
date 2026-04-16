@@ -839,6 +839,25 @@ a { text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+.footer-admin {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-b);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.footer-admin a {
+  color: rgba(255,255,255,0.2);
+  transition: color 0.2s;
+}
+.footer-admin a:hover { color: rgba(255,255,255,0.5); }
+.footer-admin span { color: rgba(255,255,255,0.12); }
 </style>
 </head>
 <body>
@@ -895,8 +914,9 @@ a { text-decoration: none; }
       <li><a href="energy/">Energy</a></li>
       <li><a href="wealth-management/">Wealth Management</a></li>
       <li><a href="structured-notes/">Structured Notes</a></li>
-      <li><a href="webinar/">Join a Webinar</a></li>
+      <li><a href="webinar/">Webinar</a></li>
       <li><a href="services/">Services</a></li>
+      <li><a href="podcast/">Podcast</a></li>
       <li><a href="about/">About</a></li>
     </ul>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold nav-cta" target="_blank" rel="noopener">Schedule a Call</a>
@@ -913,7 +933,7 @@ a { text-decoration: none; }
   <a href="energy/">Energy</a>
   <a href="wealth-management/">Wealth Management</a>
   <a href="structured-notes/">Structured Notes</a>
-  <a href="webinar/">Join a Webinar</a>
+  <a href="webinar/">Webinar</a>
   <a href="services/">Services</a>
   <a href="about/">About</a>
   <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener" style="color:var(--gold);">Schedule a Call →</a>
@@ -963,7 +983,7 @@ a { text-decoration: none; }
 
     <!-- Wealth Management -->
     <a href="wealth-management/" class="portal-card">
-      <div class="portal-card-bg" style="background-image: url('images/portal-wealth.png'); background-position: center top;"></div>
+      <div class="portal-card-bg" style="background-image: url('https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/wm-hero.jpg'); background-position: center top;"></div>
       <div class="portal-content">
         <span class="portal-tag">Holistic Financial Planning</span>
         <h2>Wealth Management</h2>
@@ -1031,10 +1051,10 @@ a { text-decoration: none; }
           </div>
         </div>
         <div class="radio-station-logos">
-          <img src="assets/media-logo-1.webp"    alt="WLS-AM 890" loading="lazy">
-          <img src="assets/media-logo-am560.png" alt="AM 560 The Answer" loading="lazy">
-          <img src="assets/media-logo-wzlb.png"  alt="WZLB Radio" loading="lazy">
-          <img src="assets/media-logo-3.png"     alt="Destination Retirement" loading="lazy">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-am560.svg"      alt="AM 560 The Answer" loading="lazy">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-florida-man.svg" alt="Florida Man Radio" loading="lazy">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-news-talk.svg"  alt="News Talk Radio" loading="lazy">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-wls.svg"        alt="WLS-AM 890" loading="lazy">
         </div>
       </div>
       <div class="radio-content">
@@ -1171,7 +1191,7 @@ a { text-decoration: none; }
             <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>
           </svg>
         </div>
-        <h3>Join a Webinar</h3>
+        <h3>Webinar</h3>
         <p>Learn how Structured Notes deliver 10–15%+ yields with 30% downside protection — live with Robert Kuhn. Free to attend.</p>
         <a href="webinar/" class="btn btn-outline">Register Free →</a>
       </div>
@@ -1204,7 +1224,7 @@ a { text-decoration: none; }
           <li><a href="energy/">Energy &amp; Tax Advantage</a></li>
           <li><a href="wealth-management/">Wealth Management</a></li>
           <li><a href="structured-notes/">Structured Notes</a></li>
-          <li><a href="webinar/">Join a Webinar</a></li>
+          <li><a href="webinar/">Webinar</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1213,7 +1233,6 @@ a { text-decoration: none; }
           <li><a href="about/">About Us</a></li>
           <li><a href="services/">Services</a></li>
           <li><a href="podcast/">Podcast</a></li>
-          <li><a href="kuhncp-brand-guide.html">Brand Guide</a></li>
           <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Schedule a Call</a></li>
         </ul>
       </div>
@@ -1229,6 +1248,11 @@ a { text-decoration: none; }
     <div class="footer-bottom">
       <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice or a solicitation. Past performance is not indicative of future results. Investments involve risk, including possible loss of principal. Structured notes are complex instruments and may not be suitable for all investors. Please read all offering documents carefully before investing.</p>
       <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+    <div class="footer-admin">
+      <a href="status/">Status</a>
+      <span>·</span>
+      <a href="kuhncp-brand-guide.html">Brand Guide</a>
     </div>
   </div>
 </footer>
@@ -1350,5 +1374,19 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 </script>
+
+
+<!-- Netlify form detection — do not remove -->
+<form name="kcp-contact" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="kcp-contact">
+  <input name="bot-field" type="text">
+  <input name="first-name" type="text">
+  <input name="last-name"  type="text">
+  <input name="email"      type="email">
+  <input name="phone"      type="tel">
+  <input name="interest"   type="text">
+  <textarea name="message"></textarea>
+</form>
+<script src="contact-modal.js"></script>
 </body>
 </html>

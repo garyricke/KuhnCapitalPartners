@@ -66,7 +66,7 @@ a{text-decoration:none}
   min-height:100vh;padding:140px 0 80px;
   position:relative;overflow:hidden;display:flex;align-items:center;
 }
-.hero-bg{position:absolute;inset:0;background:url('../images/portal-wealth.png') center top/cover no-repeat}
+.hero-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/wm-hero.jpg') center top/cover no-repeat}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(2,44,88,.93) 0%,rgba(2,44,88,.75) 55%,rgba(2,44,88,.3) 100%)}
 .hero-inner{position:relative;z-index:1}
 .hero h1{color:var(--white);margin-bottom:24px}
@@ -240,6 +240,25 @@ a{text-decoration:none}
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+.footer-admin {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-b);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.footer-admin a {
+  color: rgba(255,255,255,0.2);
+  transition: color 0.2s;
+}
+.footer-admin a:hover { color: rgba(255,255,255,0.5); }
+.footer-admin span { color: rgba(255,255,255,0.12); }
 </style>
 </head>
 <body>
@@ -294,8 +313,9 @@ a{text-decoration:none}
       <li><a href="../energy/">Energy</a></li>
       <li><a href="../wealth-management/" class="active">Wealth Management</a></li>
       <li><a href="../structured-notes/">Structured Notes</a></li>
-      <li><a href="../webinar/">Join a Webinar</a></li>
+      <li><a href="../webinar/">Webinar</a></li>
       <li><a href="../services/">Services</a></li>
+      <li><a href="../podcast/">Podcast</a></li>
       <li><a href="../about/">About</a></li>
     </ul>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold btn-sm nav-cta-btn" target="_blank" rel="noopener">Schedule a Call</a>
@@ -308,7 +328,7 @@ a{text-decoration:none}
   <a href="../energy/">Energy</a>
   <a href="../wealth-management/" style="color:var(--gold)">Wealth Management</a>
   <a href="../structured-notes/">Structured Notes</a>
-  <a href="../webinar/">Join a Webinar</a>
+  <a href="../webinar/">Webinar</a>
   <a href="../services/">Services</a>
   <a href="../about/">About</a>
   <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener" style="color:var(--gold)">Schedule a Call →</a>
@@ -460,7 +480,7 @@ a{text-decoration:none}
       </div>
       <div>
         <div class="video-thumb" onclick="openVideo()">
-          <img src="../images/portal-wealth.png" alt="What Sets Kuhn Capital Apart — Video">
+          <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/wm-hero.jpg" alt="What Sets Kuhn Capital Apart — Video">
           <div class="play-btn">
             <div class="play-btn-inner">
               <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -576,7 +596,7 @@ a{text-decoration:none}
           <li><a href="../energy/">Energy</a></li>
           <li><a href="../wealth-management/">Wealth Management</a></li>
           <li><a href="../structured-notes/">Structured Notes</a></li>
-          <li><a href="../webinar/">Join a Webinar</a></li>
+          <li><a href="../webinar/">Webinar</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -585,7 +605,6 @@ a{text-decoration:none}
           <li><a href="../about/">About Us</a></li>
           <li><a href="../services/">Services</a></li>
           <li><a href="../podcast/">Podcast</a></li>
-          <li><a href="../kuhncp-brand-guide.html">Brand Guide</a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
@@ -596,6 +615,11 @@ a{text-decoration:none}
     <div class="footer-bottom">
       <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice. Past performance is not indicative of future results.</p>
       <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+    <div class="footer-admin">
+      <a href="../status/">Status</a>
+      <span>·</span>
+      <a href="../kuhncp-brand-guide.html">Brand Guide</a>
     </div>
   </div>
 </footer>
@@ -614,5 +638,19 @@ function submitGate(e){
   document.getElementById('gate-success').style.display='block';
 }
 </script>
+
+
+<!-- Netlify form detection — do not remove -->
+<form name="kcp-contact" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="kcp-contact">
+  <input name="bot-field" type="text">
+  <input name="first-name" type="text">
+  <input name="last-name"  type="text">
+  <input name="email"      type="email">
+  <input name="phone"      type="tel">
+  <input name="interest"   type="text">
+  <textarea name="message"></textarea>
+</form>
+<script src="../contact-modal.js"></script>
 </body>
 </html>

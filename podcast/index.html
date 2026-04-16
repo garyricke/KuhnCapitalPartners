@@ -236,6 +236,35 @@ a { text-decoration: none; }
   margin-bottom: 40px;
 }
 .podcast-hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.podcast-hero-radio {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.podcast-hero-radio p {
+  font-family: var(--font-b);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin: 0 0 12px;
+}
+.podcast-hero-radio-logos {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.podcast-hero-radio-logos img {
+  height: 44px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.podcast-hero-radio-logos img:hover { opacity: 1; }
 
 /* ─── SUBSCRIBE / LISTEN SECTION ──────────────────── */
 .player-section {
@@ -961,6 +990,25 @@ a { text-decoration: none; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
+.footer-admin {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-b);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.footer-admin a {
+  color: rgba(255,255,255,0.2);
+  transition: color 0.2s;
+}
+.footer-admin a:hover { color: rgba(255,255,255,0.5); }
+.footer-admin span { color: rgba(255,255,255,0.12); }
 </style>
 </head>
 <body>
@@ -1018,8 +1066,9 @@ a { text-decoration: none; }
       <li><a href="../energy/">Energy</a></li>
       <li><a href="../wealth-management/">Wealth Management</a></li>
       <li><a href="../structured-notes/">Structured Notes</a></li>
-      <li><a href="../webinar/">Join a Webinar</a></li>
+      <li><a href="../webinar/">Webinar</a></li>
       <li><a href="../services/">Services</a></li>
+      <li><a href="../podcast/" class="active">Podcast</a></li>
       <li><a href="../about/">About</a></li>
     </ul>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" class="btn btn-gold nav-cta" target="_blank" rel="noopener">Schedule a Call</a>
@@ -1036,7 +1085,7 @@ a { text-decoration: none; }
   <a href="../energy/">Energy</a>
   <a href="../wealth-management/">Wealth Management</a>
   <a href="../structured-notes/">Structured Notes</a>
-  <a href="../webinar/">Join a Webinar</a>
+  <a href="../webinar/">Webinar</a>
   <a href="../services/">Services</a>
   <a href="../about/">About</a>
   <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener" style="color:var(--gold);">Schedule a Call →</a>
@@ -1055,7 +1104,7 @@ a { text-decoration: none; }
   <div class="container">
     <div class="podcast-hero-inner">
       <div>
-        <div class="podcast-tagline">Destination Retirement · WGN Radio</div>
+        <div class="podcast-tagline">Destination Retirement</div>
         <h1 class="display-xl">
           Listen.<br>Learn.<br><span>Retire Well.</span>
         </h1>
@@ -1063,6 +1112,15 @@ a { text-decoration: none; }
         <div class="podcast-hero-ctas">
           <a href="#episodes" class="btn btn-gold">Browse Episodes</a>
           <a href="#subscribe" class="btn btn-outline">Subscribe Free</a>
+        </div>
+        <div class="podcast-hero-radio">
+          <p>As heard on</p>
+          <div class="podcast-hero-radio-logos">
+            <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-am560-on-dark.svg"      alt="AM 560 The Answer" loading="lazy">
+            <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radio-forida-man-on-dark.svg" alt="Florida Man Radio" loading="lazy">
+            <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-news-talk-on-dark.svg"  alt="News Talk Radio" loading="lazy">
+            <img src="https://res.cloudinary.com/dsbllwpbh/image/upload/q_auto/f_auto/radios-wls-on-dark.svg"        alt="WLS-AM 890" loading="lazy">
+          </div>
         </div>
       </div>
     </div>
@@ -1262,7 +1320,7 @@ a { text-decoration: none; }
           <li><a href="../energy/">Energy &amp; Tax Advantage</a></li>
           <li><a href="../wealth-management/">Wealth Management</a></li>
           <li><a href="../structured-notes/">Structured Notes</a></li>
-          <li><a href="../webinar/">Join a Webinar</a></li>
+          <li><a href="../webinar/">Webinar</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1271,7 +1329,6 @@ a { text-decoration: none; }
           <li><a href="../about/">About Us</a></li>
           <li><a href="../services/">Services</a></li>
           <li><a href="../podcast/">Podcast</a></li>
-          <li><a href="../kuhncp-brand-guide.html">Brand Guide</a></li>
           <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2hSYZs8YnrMvqIsWaGVql-Fu2PRZswdmjPHtg8Ye7YZElbCJh2fMG34MltkNFEzBEhNxs_qbFc" target="_blank" rel="noopener">Schedule a Call</a></li>
         </ul>
       </div>
@@ -1287,6 +1344,11 @@ a { text-decoration: none; }
     <div class="footer-bottom">
       <p class="footer-legal">Kuhn Capital Partners is a registered investment adviser. This website is for informational purposes only and does not constitute investment advice or a solicitation. Past performance is not indicative of future results. Investments involve risk, including possible loss of principal.</p>
       <p class="footer-copy">© 2026 Kuhn Capital Partners, LLC</p>
+    </div>
+    <div class="footer-admin">
+      <a href="../status/">Status</a>
+      <span>·</span>
+      <a href="../kuhncp-brand-guide.html">Brand Guide</a>
     </div>
   </div>
 </footer>
@@ -1600,5 +1662,19 @@ document.getElementById('nl-form').addEventListener('submit', async function(e) 
   document.getElementById('nl-success').style.display = 'block';
 });
 </script>
+
+
+<!-- Netlify form detection — do not remove -->
+<form name="kcp-contact" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="kcp-contact">
+  <input name="bot-field" type="text">
+  <input name="first-name" type="text">
+  <input name="last-name"  type="text">
+  <input name="email"      type="email">
+  <input name="phone"      type="tel">
+  <input name="interest"   type="text">
+  <textarea name="message"></textarea>
+</form>
+<script src="../contact-modal.js"></script>
 </body>
 </html>
