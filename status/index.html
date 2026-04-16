@@ -168,6 +168,87 @@ a { text-decoration: none; }
   margin-bottom: 20px;
 }
 
+/* ─── REVIEW NOTES ──────────────────────────────── */
+.review-card {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid #e2e5ea;
+  border-left: 4px solid var(--gold);
+  padding: 36px 40px;
+  margin-bottom: 48px;
+}
+.review-card h2 {
+  font-family: var(--font-d);
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.review-card .review-sub {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e9ebee;
+}
+.review-sections { display: flex; flex-direction: column; gap: 24px; }
+.review-section-title {
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--navy);
+  background: var(--off-white);
+  padding: 4px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.review-notes-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.review-notes-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #2a3a4a;
+  line-height: 1.55;
+}
+.review-notes-list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.todo-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.todo-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #2a3a4a;
+  line-height: 1.55;
+}
+.todo-badge {
+  display: inline-block;
+  font-family: var(--font-b);
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  background: #fff8e1;
+  color: #b45309;
+}
+
 /* ─── CLIENT BRIEF ──────────────────────────────── */
 .brief-card {
   background: var(--white);
@@ -438,6 +519,102 @@ a { text-decoration: none; }
 <!-- ─── MAIN ──────────────────────────────────────── -->
 <main class="status-main">
   <div class="container">
+
+    <!-- REVIEW NOTES -->
+    <div class="section-label">April 16 — Review Notes</div>
+    <div class="review-card">
+      <h2>What to Look At Today</h2>
+      <p class="review-sub">A page-by-page walkthrough of what's been built, what's placeholder, what's working well, and what's still in progress. Review these notes as you explore the site.</p>
+
+      <div class="review-sections">
+
+        <div>
+          <div class="review-section-title">Navigation &amp; Sitewide</div>
+          <ul class="review-notes-list">
+            <li>The top navigation bar is fully functional — all 8 pages are linked and accessible from every page.</li>
+            <li>Every "Schedule a Call" or "Book Now" button sitewide opens a contact popup form rather than redirecting to an external calendar link. The form lets you pre-select your area of interest (Energy, Structured Notes, Wealth Management, etc.) and is cleaner and more engaging than a standard calendar embed.</li>
+            <li>The overall brand look and feel is modeled after Ritholtz Wealth Management — bold typography, clean layout, and a premium feel. The Brand Guide (linked in the footer, password protected) shows the full color and font system we used.</li>
+            <li>A privacy policy link still needs to be added to the footer — that's on the to-do list.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Homepage</div>
+          <ul class="review-notes-list">
+            <li>The hero video shows a train moving through Chicago — this sets the tone immediately and plays automatically on load.</li>
+            <li>The three strategy cards (Energy, Wealth Management, Structured Notes) each link through to their dedicated pages. These are the primary navigation drivers.</li>
+            <li>The brag bar below the cards animates the key stats on scroll — years of experience, episodes aired, yield note returns, and independence status.</li>
+            <li>The radio show section features an AI-generated image of Robert in a studio setting. This is easily swapped for a real photo once one is available, but it was important to show the vision. The radio station logos were completely redrawn as custom SVGs and color-matched to the KCP brand — they're sharp, on-brand, and raise the perceived quality of the show significantly.</li>
+            <li>The "Trusted Across America" section was reimagined from the original request. Instead of a simple animated map, hovering over each state reveals a full background photo of that region along with a custom blurb (e.g., "In Wisconsin, business owners who built something real..."). This communicates geographic reach in a far more visually compelling and human way — each state feels intentional rather than decorative.</li>
+            <li>The "Talk to an Advisor" section shows team headshots and links to scheduling. These photos are current placeholders — the more we can replace them with real KCP team members, the stronger this section becomes.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Images &amp; Photography</div>
+          <ul class="review-notes-list">
+            <li>Most images across the site are placeholders — they establish layout and visual intent but are designed to be swapped out easily.</li>
+            <li>The Services page has a particularly good example of how team photos could be staged — Andrew's photo there gives a sense of the lighting and framing that would work well throughout.</li>
+            <li>If a professional photographer is brought in, these placeholder compositions make it easy to brief the shoot — the framing, posture, and background style are already defined. Real KCP team members in these spots will make the site significantly more personal and trustworthy. AI can improve lighting and studio quality of real photos, but it's best to start with something authentic.</li>
+            <li>The About page team photos were sourced from existing images, colorized, and AI-enhanced to look like studio shots. A group photo was also composed. These are solid placeholders and set a clear bar for what the real photography should aim to match.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Energy, Wealth Management &amp; Structured Notes Pages</div>
+          <ul class="review-notes-list">
+            <li>All three strategy pages follow the same structure: hero → explainer → video placeholder → podcast episode → whitepaper download gate → CTA bar. This consistency makes them easy to scan and easy to maintain.</li>
+            <li>Each page has a video placeholder section — let's discuss what the video content should be for each (e.g., Oil &amp; Gas 101 for Energy, income mechanics for Structured Notes, planning philosophy for Wealth Management).</li>
+            <li>The whitepaper download gates are functional in terms of design and email capture — the actual PDF files and EmailOctopus list connection still need to be wired up once those are provided.</li>
+            <li>On the Wealth Management hero, the text currently overlaps Andrew's face slightly — that's a small layout adjustment to make.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Webinar Page</div>
+          <ul class="review-notes-list">
+            <li>The webinar page is a restyled version of the original Andrew built, now fully aligned with the KCP brand system. The structure follows the Phoenix Energy campaign model — clear benefit list, note breakdown, and a registration CTA with compliance language.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Podcast Page</div>
+          <ul class="review-notes-list">
+            <li>The podcast hero uses a short video clip of Robert at the controls — same easy-swap philosophy as other images.</li>
+            <li>The custom-redrawn radio station logos appear here as well, in white/on-dark versions that look sharp against the dark hero.</li>
+            <li>The most popular episodes were hand-selected and featured prominently at the top. Below that, the full live episode feed pulls directly from the Podbean RSS — episode titles, dates, descriptions, and play buttons all render on-site without redirecting anywhere.</li>
+            <li>The sticky audio player appears at the bottom of the screen when you hit play on any episode, so you can keep listening while browsing the rest of the site — this was specifically requested.</li>
+            <li>A "load more" link for episodes beyond the first page still needs to be added — there are 300+ episodes and right now only the most recent batch loads automatically.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Tax Reduction Study Guide (Podcast Sub-Page)</div>
+          <ul class="review-notes-list">
+            <li>This is one of the most differentiated features on the site. The full "Tax Reduction Is a Year-Round Strategy" episode was taken and rebuilt as an interactive study guide — the same format being used successfully with other clients.</li>
+            <li>The audio player has a custom studio console design with a waveform display, six chapter jump markers that skip directly to key moments in the episode, playback speed control, and volume. It's a far more engaging way to present audio content than a simple play button.</li>
+            <li>Below the player are six different quiz types — Flashcard Flip, True/False Rapid Fire, Fill in the Blank, Slider Challenge, Connect the Dots, and Spot the Lie. Each one tests a different aspect of what Robert covers in the episode.</li>
+            <li>This format is completely replicable — any future episode can be turned into a study guide using the same structure. It's also easy to gate: require an email address to unlock the guide, which is a natural list-building mechanism.</li>
+            <li>This is a strong differentiator — most financial advisors publish a podcast and walk away. Turning each episode into an interactive learning experience keeps people engaged, builds trust, and creates a reason to come back.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="review-section-title">Open Items &amp; Next Steps</div>
+          <ul class="todo-list">
+            <li><span class="todo-badge">To Do</span> Add privacy policy page and link it in the footer</li>
+            <li><span class="todo-badge">To Do</span> Fix podcast episode player error on the Energy page</li>
+            <li><span class="todo-badge">To Do</span> Wire up whitepaper download gates to actual PDFs once provided (Energy, Wealth Management, Structured Notes)</li>
+            <li><span class="todo-badge">To Do</span> Connect email capture forms to EmailOctopus list once credentials are provided</li>
+            <li><span class="todo-badge">To Do</span> Add "load more" link for podcast episodes beyond the initial feed page</li>
+            <li><span class="todo-badge">To Do</span> Adjust Wealth Management hero — text overlapping Andrew's face</li>
+            <li><span class="todo-badge">To Do</span> Replace placeholder images with real KCP team photos as they become available</li>
+            <li><span class="todo-badge">To Do</span> Add real video URLs to all three strategy page video sections once recorded</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
 
     <!-- CLIENT BRIEF -->
     <div class="section-label">Client Scope</div>
